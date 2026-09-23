@@ -1,0 +1,1432 @@
+[
+ {
+  "dir": "acquisition-channel-advisor",
+  "name": "acquisition-channel-advisor",
+  "desc": "Evaluate acquisition channels using unit economics, customer quality, and scalability. Use when deciding whether to scale, test, or kill a growth channel.",
+  "type": "interactive",
+  "theme": "finance-metrics",
+  "est": "15-25 min",
+  "best_for": [
+   "Deciding whether a paid or outbound channel deserves more budget",
+   "Comparing channel quality, payback, and scalability side by side",
+   "Making scale, test, or kill decisions with finance-backed reasoning"
+  ],
+  "scenarios": [
+   "Should we keep investing in paid LinkedIn ads for enterprise leads?",
+   "Compare content marketing, outbound email, and partner referrals as acquisition channels",
+   "Help me decide whether to scale or kill our webinar acquisition channel"
+  ],
+  "chars": 22074
+ },
+ {
+  "dir": "agent-orchestration-advisor",
+  "name": "agent-orchestration-advisor",
+  "desc": "Design multi-agent AI workflows with clear boundaries, handoffs, and monitoring. Use when a complex PM task should run as parallel specialized agents instead of one linear process.",
+  "type": "interactive",
+  "theme": "ai-agents",
+  "est": "15-25 min",
+  "best_for": [
+   "Breaking a complex PM workflow into parallel, specialized AI agents",
+   "Designing agent boundaries, handoffs, and human review points",
+   "Setting up launch control tower monitoring for agentic workflows"
+  ],
+  "scenarios": [
+   "I spend hours on competitive research every week — help me design agents to run it in parallel",
+   "Our AI workflow is one giant sequential prompt chain — help me re-architect it as an orchestrated system"
+  ],
+  "chars": 33802
+ },
+ {
+  "dir": "ai-shaped-readiness-advisor",
+  "name": "ai-shaped-readiness-advisor",
+  "desc": "Assess whether your product work is AI-first or AI-shaped. Use when evaluating AI maturity and choosing the next team capability to build.",
+  "type": "interactive",
+  "theme": "ai-agents",
+  "est": "15-20 min",
+  "best_for": [
+   "Assessing whether your team is AI-first or genuinely AI-shaped",
+   "Identifying which of the 5 AI competencies to build next",
+   "Understanding your product org's AI maturity honestly"
+  ],
+  "scenarios": [
+   "My team uses AI tools but I'm not sure if we're working differently or just automating the same tasks",
+   "I want to assess my product org's AI maturity and prioritize where to invest next quarter"
+  ],
+  "chars": 42942
+ },
+ {
+  "dir": "altitude-horizon-framework",
+  "name": "altitude-horizon-framework",
+  "desc": "Understand the PM-to-Director transition through altitude and horizon thinking. Use when diagnosing scope, time-horizon, or leadership-level gaps.",
+  "type": "component",
+  "theme": "career-leadership",
+  "est": "10-15 min",
+  "best_for": [
+   "Understanding what actually changes when you move from PM to Director",
+   "Diagnosing which transition zone is creating friction in your role",
+   "Applying the Cascading Context Map when organizational direction is vague"
+  ],
+  "scenarios": [
+   "I'm a senior PM trying to understand what changes when I become a Director",
+   "I'm newly promoted to Director and something isn't clicking — help me diagnose it",
+   "My team has no clear direction and I need to create context from a vague company strategy"
+  ],
+  "chars": 15323
+ },
+ {
+  "dir": "ansoff-matrix",
+  "name": "ansoff-matrix",
+  "desc": "Map evidence-backed growth options across the Ansoff Matrix with risk-rated sequencing. Use when the question is where the next tranche of growth comes from, and at what risk.",
+  "type": "workflow",
+  "theme": "market-intelligence",
+  "est": "25-40 min per run",
+  "best_for": [
+   "Answering 'where does the next tranche of growth come from?' with evidence per option",
+   "Forcing diversification proposals to carry the evidence burden their risk demands",
+   "Sequencing growth moves so early wins fund the riskier bets"
+  ],
+  "scenarios": [
+   "Growth planning for next year — map our options across the Ansoff quadrants with evidence",
+   "The board wants a diversification story; pressure-test it against what the signals actually support"
+  ],
+  "chars": 11334
+ },
+ {
+  "dir": "autonomous-investigation",
+  "name": "autonomous-investigation",
+  "desc": "The protocol behind every investigation skill. Use when AI research must proceed without you: search-plan gate, Fact/Inference/Assumption labels, confidence stacking, diffable outputs.",
+  "type": "workflow",
+  "theme": "market-intelligence",
+  "est": "protocol reference; investigations vary (15-45 min per run)",
+  "best_for": [
+   "Defining consistent behavior for research skills that run as agent tasks or on schedules",
+   "Keeping AI research honest: labeled evidence, real citations, no invented facts",
+   "Making run N and run N+1 diffable so delta monitoring is possible"
+  ],
+  "scenarios": [
+   "Set up a competitive scan that can re-run quarterly without me babysitting it",
+   "I want research output where I can tell facts from the AI's guesses"
+  ],
+  "chars": 12310
+ },
+ {
+  "dir": "battle-card-builder",
+  "name": "battle-card-builder",
+  "desc": "Research and draft a competitive battle card from public evidence — every claim labeled and sourced. Use when a rep needs a field-action card, not a research report.",
+  "type": "workflow",
+  "theme": "market-intelligence",
+  "est": "20-35 min per run",
+  "best_for": [
+   "Arming sales against one competitor with claims they can actually defend",
+   "Turning a competitive snapshot or watch report into a field-action artifact",
+   "Building trap questions whose documented answers favor you"
+  ],
+  "scenarios": [
+   "We keep hitting the same rival in enterprise deals — build the battle card from public evidence",
+   "Our battle card is six months old and sales stopped trusting it; rebuild it with sources"
+  ],
+  "chars": 10280
+ },
+ {
+  "dir": "business-health-diagnostic",
+  "name": "business-health-diagnostic",
+  "desc": "Diagnose SaaS business health across growth, retention, efficiency, and capital. Use when preparing a business review or prioritizing urgent fixes.",
+  "type": "interactive",
+  "theme": "finance-metrics",
+  "est": "20-30 min",
+  "best_for": [
+   "Getting a complete read on your SaaS business health across all dimensions",
+   "Identifying which metrics are red flags vs. leading indicators",
+   "Preparing for a board meeting or investor review"
+  ],
+  "scenarios": [
+   "Our growth is strong but we're burning cash fast — I need to understand our unit economics before the board meeting",
+   "I'm preparing for a Series A board meeting and need to assess our business health across growth, retention, and efficiency"
+  ],
+  "chars": 23049
+ },
+ {
+  "dir": "company-intel",
+  "name": "company-intel",
+  "desc": "Research a company, industry, or competitor set using web search and seven analytical lenses. Use when you need structured intel that feeds downstream PM skills.",
+  "type": "workflow",
+  "theme": "market-intelligence",
+  "est": "30-60 min",
+  "best_for": [
+   "Building deep company or industry knowledge before a client engagement or workshop",
+   "Generating structured research that feeds battlecards, SWOT, positioning, or PESTEL",
+   "Running a competitive scan across 3-5 companies with cross-company comparison",
+   "Refreshing intel quarterly on companies you track"
+  ],
+  "scenarios": [
+   "Run company-intel on [company or their domain, e.g. helix-motion.com]",
+   "Give me intel on the clinical data management industry",
+   "Compare [Company A], [Company B], and [Company C]",
+   "Run company-intel on [company] competitors",
+   "Refresh my intel on [company] — what's changed since last quarter?"
+  ],
+  "chars": 32391
+ },
+ {
+  "dir": "company-research",
+  "name": "company-research",
+  "desc": "Create a company research brief with executive quotes, product strategy, and org context. Use when preparing for interviews, competitive analysis, partnerships, or market-entry work.",
+  "type": "component",
+  "theme": "market-intelligence",
+  "est": "20-40 min",
+  "best_for": [
+   "Preparing for a PM interview with real company context",
+   "Building a competitor or partner brief before a first meeting",
+   "Understanding a company's product strategy from public signals"
+  ],
+  "scenarios": [
+   "I have a PM interview next week and need real context on their product strategy",
+   "We're meeting a potential partner and I need a brief on how they actually make money"
+  ],
+  "chars": 15122
+ },
+ {
+  "dir": "competitive-analysis-process",
+  "name": "competitive-analysis-process",
+  "desc": "Orchestrate a complete competitive analysis across six steps, from landscape to strategic direction. Use when you need the full picture, not a single scan or card.",
+  "type": "workflow",
+  "theme": "market-intelligence",
+  "est": "1-2 weeks calendar time; each step is a 20-45 min working session",
+  "best_for": [
+   "Running a complete competitive analysis instead of a one-off scan",
+   "Sequencing the market-intelligence skills into one coherent engagement",
+   "Choosing which analytical step (and which framework) a competitive question actually needs"
+  ],
+  "scenarios": [
+   "New fiscal year, new strategy cycle — run the full competitive analysis on our space",
+   "I've got scattered competitive research everywhere; give me the process that organizes it"
+  ],
+  "chars": 13392
+ },
+ {
+  "dir": "competitive-intel-watch",
+  "name": "competitive-intel-watch",
+  "desc": "Scheduled delta monitoring against a prior competitive snapshot. Use when tracking competitors on a cadence: material shifts only, cited evidence, battle-card update flags, runs unattended.",
+  "type": "workflow",
+  "theme": "market-intelligence",
+  "est": "10-25 min per run (after the baseline exists)",
+  "best_for": [
+   "Keeping battle cards and positioning current without regenerating research weekly",
+   "Running unattended on a schedule and reporting only changes a rep or roadmap owner would act on",
+   "Turning competitive research from a one-off deliverable into a standing capability"
+  ],
+  "scenarios": [
+   "Run this against last quarter's snapshot and tell me what actually changed",
+   "Set up a monthly competitor watch that flags when our battle card goes stale"
+  ],
+  "chars": 10566
+ },
+ {
+  "dir": "competitive-research-snapshot",
+  "name": "competitive-research-snapshot",
+  "desc": "Research a competitive landscape with cited snapshots, a comparison matrix, and so-what implications. Use when a product decision needs competitive grounding, not a market report.",
+  "type": "workflow",
+  "theme": "market-intelligence",
+  "est": "20-40 min per run",
+  "best_for": [
+   "Grounding a positioning, roadmap, or deal-support decision in cited competitive evidence",
+   "Creating the baseline snapshot that the competitive intel watch diffs against",
+   "Board or exec prep that needs labeled facts instead of confident storytelling"
+  ],
+  "scenarios": [
+   "We're rewriting our positioning next sprint — get me a cited read on our top three competitors",
+   "Sales keeps losing to one rival; I need evidence on where they're actually strong and weak"
+  ],
+  "chars": 9883
+ },
+ {
+  "dir": "context-engineering-advisor",
+  "name": "context-engineering-advisor",
+  "desc": "Diagnose context stuffing vs. context engineering. Use when an AI workflow feels bloated, brittle, or hard to steer reliably.",
+  "type": "interactive",
+  "theme": "ai-agents",
+  "est": "15-20 min",
+  "best_for": [
+   "Diagnosing context stuffing vs. context engineering in your AI workflows",
+   "Building better memory and retrieval architecture for AI agents",
+   "Improving AI output quality through structured context design"
+  ],
+  "scenarios": [
+   "My AI outputs are mediocre even though I'm giving it lots of information — diagnose what's wrong",
+   "I want to architect context properly for a multi-step AI workflow in my product team"
+  ],
+  "chars": 32350
+ },
+ {
+  "dir": "customer-journey-map",
+  "name": "customer-journey-map",
+  "desc": "Create a customer journey map across stages, touchpoints, actions, emotions, and metrics. Use when diagnosing a broken experience or aligning a team on the full customer flow.",
+  "type": "component",
+  "theme": "workshops-facilitation",
+  "est": "20-30 min",
+  "best_for": [
+   "Mapping the full customer experience across all touchpoints",
+   "Aligning cross-functional teams on the end-to-end customer journey",
+   "Identifying pain points and opportunities by stage with measurable KPIs"
+  ],
+  "scenarios": [
+   "I need to map the customer journey for our B2B SaaS onboarding experience from signup to first value",
+   "Create a journey map for a PM leader evaluating our skills repo — from discovery through loyalty"
+  ],
+  "chars": 14895
+ },
+ {
+  "dir": "customer-journey-mapping-workshop",
+  "name": "customer-journey-mapping-workshop",
+  "desc": "Run a customer journey mapping workshop with adaptive questions and outputs. Use when you need to map stages, actions, emotions, pain points, and opportunities for a persona and scenario.",
+  "type": "interactive",
+  "theme": "workshops-facilitation",
+  "est": "45-90 min",
+  "best_for": [
+   "Running a workshop to map an end-to-end customer experience",
+   "Finding pain points across a user's journey",
+   "Aligning teams on the stages, emotions, and breakdowns in an experience"
+  ],
+  "scenarios": [
+   "Help me run a journey mapping workshop for new customer onboarding",
+   "Map the experience of a buyer from trial signup to first value",
+   "Facilitate a workshop on the support journey for churn-risk customers"
+  ],
+  "chars": 18626
+ },
+ {
+  "dir": "derisk-measurement-advisor",
+  "name": "derisk-measurement-advisor",
+  "desc": "Identify what to measure, test, or track to de-risk a product or AI idea. Use when stress-testing an idea across internal (DUFV) and external (PESTEL) dimensions.",
+  "type": "interactive",
+  "theme": "validation-experiments",
+  "est": "15-20 min",
+  "best_for": [
+   "Stress-testing an AI or product idea before putting it on the roadmap",
+   "Identifying the cheapest tests to run before committing teams and budget",
+   "Scanning for external forces that could blindside your product plans",
+   "Building a risk register with clear act-now vs. watch-and-track priorities"
+  ],
+  "scenarios": [
+   "I have an AI product idea. What should I measure before we commit?",
+   "Help me figure out what risks to act on now vs. track over time",
+   "We're about to put this on the roadmap. What could go wrong internally and externally?",
+   "Is this idea worth the squeeze? What should we test first?"
+  ],
+  "chars": 23501
+ },
+ {
+  "dir": "director-readiness-advisor",
+  "name": "director-readiness-advisor",
+  "desc": "Guide the PM-to-Director transition across preparing, interviewing, landing, and recalibrating. Use when leadership scope is changing and you need practical coaching.",
+  "type": "interactive",
+  "theme": "career-leadership",
+  "est": "10-15 min",
+  "best_for": [
+   "Preparing to make the leap to Director over the next 3-12 months",
+   "Navigating your first 6 months in a new Director role",
+   "Diagnosing what isn't working 12+ months into the Director role"
+  ],
+  "scenarios": [
+   "I'm a senior PM preparing for Director interviews next quarter",
+   "I just got promoted to Director and I can't stop jumping into the tactical work",
+   "I've been a Director for 18 months and my exec relationships aren't working"
+  ],
+  "chars": 19320
+ },
+ {
+  "dir": "discovery-interview-prep",
+  "name": "discovery-interview-prep",
+  "desc": "Plan customer discovery interviews with the right goal, segment, constraints, and method. Use when preparing interviews for problem validation, churn research, or new product ideas.",
+  "type": "interactive",
+  "theme": "discovery-research",
+  "est": "15-20 min",
+  "best_for": [
+   "Designing a customer discovery interview plan",
+   "Choosing the right interview methodology for your goals and constraints",
+   "Preparing for research with limited customer access"
+  ],
+  "scenarios": [
+   "I need to interview 5 enterprise customers about why they churned in the last 90 days",
+   "I'm validating a new product idea with a 2-week deadline and cold outreach only",
+   "I want to understand why users aren't activating on our core feature"
+  ],
+  "chars": 18993
+ },
+ {
+  "dir": "discovery-process",
+  "name": "discovery-process",
+  "desc": "Run a full discovery cycle from problem hypothesis to validated solution. Use when a team needs a structured path through framing, interviews, synthesis, and experiments.",
+  "type": "workflow",
+  "theme": "discovery-research",
+  "est": "30-60 min",
+  "best_for": [
+   "Running a full discovery cycle from hypothesis to validated solution",
+   "Investigating a retention or churn problem systematically",
+   "Setting up continuous discovery as an ongoing practice"
+  ],
+  "scenarios": [
+   "I have a hypothesis that B2B customers struggle with onboarding and want to validate it before building anything",
+   "Our activation rate dropped 15% this quarter and I need to run discovery to find out why"
+  ],
+  "chars": 19403
+ },
+ {
+  "dir": "eol-checklist",
+  "name": "eol-checklist",
+  "desc": "Build a phase-gated EOL checklist sized to the sunset, with a named owner on every item. Use when the decision to retire is made and you need the operational plan.",
+  "type": "component",
+  "theme": "eol-transition",
+  "est": "20-40 min",
+  "best_for": [
+   "Turning a sunset decision into an operational plan with owners and dates",
+   "Making sure a retirement doesn't strand data, contracts, or inventory",
+   "Right-sizing process so a feature deprecation doesn't get a flagship playbook"
+  ],
+  "scenarios": [
+   "We've decided to retire the legacy module in December — what actually has to happen between now and then?",
+   "Hardware line with channel partners and service contracts; I need the full cross-functional checklist"
+  ],
+  "chars": 12601
+ },
+ {
+  "dir": "eol-internal-enablement",
+  "name": "eol-internal-enablement",
+  "desc": "Build the support FAQ, sales talking points, and objection handling teams need before an EOL announcement. Use when customer-facing teams must be ready before customers hear.",
+  "type": "component",
+  "theme": "eol-transition",
+  "est": "25-45 min",
+  "best_for": [
+   "Arming Support and Sales before the announcement, not five minutes after it",
+   "Turning predictable EOL objections into honest, non-defensive responses",
+   "Giving escalations a named path before the churn-risk calls start"
+  ],
+  "scenarios": [
+   "We announce the sunset in three weeks and Support has nothing — what do they need?",
+   "Sales keeps getting ambushed on our EOL; build them talking points and objection handling"
+  ],
+  "chars": 12458
+ },
+ {
+  "dir": "eol-message",
+  "name": "eol-message",
+  "desc": "Write a right-sized EOL announcement — brief notice through full phased comms — with rationale, customer impact, and next steps. Use when retiring a product, feature, or plan.",
+  "type": "component",
+  "theme": "eol-transition",
+  "est": "20-40 min",
+  "best_for": [
+   "Announcing a product, feature, or plan retirement without creating a support incident",
+   "Sizing the announcement to the change — a notice, not an opus, when the change is small",
+   "Handling the hard case: retiring something with no replacement"
+  ],
+  "scenarios": [
+   "We're sunsetting our legacy module in December and I need to tell 800 accounts",
+   "We're discontinuing a hardware line with service contracts and channel partners — what do we send?"
+  ],
+  "chars": 17651
+ },
+ {
+  "dir": "eol-process",
+  "name": "eol-process",
+  "desc": "Run a product sunset end to end — decide, align, plan, prepare, announce, close. Use when you need the whole EOL process, not just one artifact.",
+  "type": "workflow",
+  "theme": "eol-transition",
+  "est": "30-60 min to plan; weeks to quarters to execute",
+  "best_for": [
+   "Running a full product sunset from decision through post-EOL review",
+   "Knowing what has to happen before you can announce — and in what order",
+   "Rescuing a sunset already in motion by finding which phase got skipped"
+  ],
+  "scenarios": [
+   "We've decided to retire a product and I own the whole thing — walk me through it end to end",
+   "We announced an EOL and it's going badly; what did we skip and what do we do now?"
+  ],
+  "chars": 21241
+ },
+ {
+  "dir": "eol-readiness-advisor",
+  "name": "eol-readiness-advisor",
+  "desc": "Run a go/no-go assessment for retiring a product or feature, then right-size the effort. Use when someone says \\\"we should probably kill this\\\" and nobody has made the call.",
+  "type": "interactive",
+  "theme": "eol-transition",
+  "est": "15-25 min",
+  "best_for": [
+   "Deciding whether a declining product should actually be retired — or held, harvested, or fixed",
+   "Right-sizing an EOL effort so a feature deprecation doesn't get a flagship playbook",
+   "Naming the obligations and landmines that make a sunset harder than it looks"
+  ],
+  "scenarios": [
+   "Leadership keeps saying we should kill this module but nobody will make the call — help me assess it",
+   "We're retiring a hardware line with service contracts and channel partners; how big does this effort need to be?"
+  ],
+  "chars": 21542
+ },
+ {
+  "dir": "eol-stakeholder-sequence",
+  "name": "eol-stakeholder-sequence",
+  "desc": "Plan who to talk to about a sunset, in what order, and what each conversation must cover. Use when an EOL decision is made and you want the landmines found before the announcement.",
+  "type": "component",
+  "theme": "eol-transition",
+  "est": "20-35 min",
+  "best_for": [
+   "Sequencing EOL conversations so each one informs the next",
+   "Knowing what to ask for and what to commit to at every stop",
+   "Finding the objection that would have blown up six months after the announcement"
+  ],
+  "scenarios": [
+   "We're retiring a product and I don't know who to talk to first or what to bring them",
+   "Last sunset blew up because Sales had promised things we didn't know about — sequence this one properly"
+  ],
+  "chars": 12287
+ },
+ {
+  "dir": "epic-breakdown-advisor",
+  "name": "epic-breakdown-advisor",
+  "desc": "Break down epics into user stories with Humanizing Work split patterns. Use when a backlog item is too large to estimate, sequence, or deliver safely.",
+  "type": "interactive",
+  "theme": "pm-artifacts",
+  "est": "20-30 min",
+  "best_for": [
+   "Splitting epics into smaller vertical slices",
+   "Choosing the right story split pattern for a large backlog item",
+   "Turning vague feature blobs into sprint-sized stories"
+  ],
+  "scenarios": [
+   "Break this onboarding epic into smaller user stories",
+   "Help me split a large reporting feature before sprint planning",
+   "Which story-splitting pattern should I use for this admin workflow epic?"
+  ],
+  "chars": 24075
+ },
+ {
+  "dir": "epic-hypothesis",
+  "name": "epic-hypothesis",
+  "desc": "Frame an epic as a testable hypothesis with target user, expected outcome, and validation method. Use when defining a major initiative before roadmap, discovery, or delivery planning.",
+  "type": "component",
+  "theme": "pm-artifacts",
+  "est": "15-20 min",
+  "best_for": [
+   "Framing a major initiative as something that can be proven wrong",
+   "Forcing an outcome and a validation method before build starts",
+   "Giving a team a shared bet to test instead of a scope to deliver"
+  ],
+  "scenarios": [
+   "Leadership approved a big initiative and nobody can say what would prove it wrong",
+   "I need to frame this epic as a bet with a real validation method, not a delivery plan"
+  ],
+  "chars": 12605
+ },
+ {
+  "dir": "executive-onboarding-playbook",
+  "name": "executive-onboarding-playbook",
+  "desc": "Plan a VP or CPO 30-60-90 day diagnostic onboarding path. Use when entering a new executive product role and avoiding premature change.",
+  "type": "workflow",
+  "theme": "career-leadership",
+  "est": "20-30 min",
+  "best_for": [
+   "Starting a new VP or CPO role in the first 90 days",
+   "Evaluating a CPO offer — what to ask before you accept",
+   "Diagnosing an organization you've just inherited"
+  ],
+  "scenarios": [
+   "I just accepted a VP of Product role starting next month — help me plan my first 90 days",
+   "I'm evaluating a CPO offer and want to know what questions to ask the hiring CEO",
+   "I'm two months into a new role and want to validate what I've learned before I start acting"
+  ],
+  "chars": 19380
+ },
+ {
+  "dir": "feature-investment-advisor",
+  "name": "feature-investment-advisor",
+  "desc": "Evaluate feature investments using revenue impact, cost structure, ROI, and strategy. Use when deciding whether a feature deserves investment.",
+  "type": "interactive",
+  "theme": "finance-metrics",
+  "est": "15-25 min",
+  "best_for": [
+   "Assessing whether a feature should be built now",
+   "Comparing ROI and strategic value of feature ideas",
+   "Pressure-testing roadmap requests with financial logic"
+  ],
+  "scenarios": [
+   "Should we build SSO for mid-market customers this quarter?",
+   "Evaluate whether an AI assistant feature is worth the investment",
+   "Help me decide if this roadmap request has enough ROI to build"
+  ],
+  "chars": 22402
+ },
+ {
+  "dir": "finance-based-pricing-advisor",
+  "name": "finance-based-pricing-advisor",
+  "desc": "Evaluate pricing changes using ARPU, conversion, churn risk, NRR, and payback. Use when deciding whether a pricing move should ship.",
+  "type": "interactive",
+  "theme": "finance-metrics",
+  "est": "20-30 min",
+  "best_for": [
+   "Evaluating price increases, discounts, or new packaging",
+   "Estimating churn and conversion risk before a pricing change",
+   "Making a go/no-go call on monetization changes"
+  ],
+  "scenarios": [
+   "Should we raise prices 15% for new customers next quarter?",
+   "Evaluate a new premium tier for our SaaS product",
+   "Help me assess whether an annual discount will improve revenue"
+  ],
+  "chars": 23725
+ },
+ {
+  "dir": "finance-metrics-quickref",
+  "name": "finance-metrics-quickref",
+  "desc": "Look up SaaS finance metrics, formulas, and benchmarks fast. Use when you need a quick metric definition, formula, or benchmark during analysis.",
+  "type": "component",
+  "theme": "finance-metrics",
+  "est": "5-10 min",
+  "best_for": [
+   "Quick metric lookups during product or finance reviews",
+   "Checking formulas and benchmarks without reading a long explainer",
+   "Refreshing decision rules for common SaaS metrics"
+  ],
+  "scenarios": [
+   "What is the formula for NRR and what is a good benchmark?",
+   "Give me a quick reference for CAC payback and Rule of 40",
+   "I need a fast SaaS metrics cheat sheet for a business review"
+  ],
+  "chars": 16338
+ },
+ {
+  "dir": "incoming-request-advisor",
+  "name": "incoming-request-advisor",
+  "desc": "Decode an incoming message into a structured breakdown separating the literal ask from the job-to-be-done. Use when a loaded Slack ping, email, mandate, or escalation needs a reply.",
+  "type": "interactive",
+  "theme": "stakeholder-comms",
+  "est": "5-10 min",
+  "best_for": [
+   "Triaging a loaded exec escalation before you fire back a reply",
+   "Decoding a vague feature request into the outcome underneath it",
+   "Reading power, stake, and subtext in a request from someone senior"
+  ],
+  "scenarios": [
+   "My VP just Slacked me 'can we get the dashboard redesign into next sprint?' and I need to read what's really going on",
+   "I got a long escalation email from a frustrated customer-success lead and I don't know how to respond",
+   "A stakeholder sent a mandate that sounds like a build order and I want the job-to-be-done first"
+  ],
+  "chars": 13163
+ },
+ {
+  "dir": "intel-discipline-advisor",
+  "name": "intel-discipline-advisor",
+  "desc": "Triage a competitive or market question into the right intelligence disciplines, cadence, and executing skill. Use when you know something needs researching but not which channel to run.",
+  "type": "interactive",
+  "theme": "market-intelligence",
+  "est": "5-10 min",
+  "best_for": [
+   "Picking the two or three collection disciplines a specific decision actually needs",
+   "Setting up a watch cadence that matches how fast the evidence really changes",
+   "Learning the decision-to-discipline mapping instead of running everything on everything"
+  ],
+  "scenarios": [
+   "I think a competitor is up to something but I don't know where to look first",
+   "I have four hours this quarter for competitive intel — where do they go?"
+  ],
+  "chars": 12328
+ },
+ {
+  "dir": "intelligence-collection-disciplines",
+  "name": "intelligence-collection-disciplines",
+  "desc": "Run competitive research like an intelligence agency: eight collection disciplines (OSINT to MASINT), signal-to-inference chains, and fusion. Use when one-source research isn't enough.",
+  "type": "component",
+  "theme": "market-intelligence",
+  "est": "reference skill; a single-discipline pass takes 30-60 min",
+  "best_for": [
+   "Choosing which collection channels to run for a competitive or market question",
+   "Turning raw public signals (patents, job posts, filings, web diffs) into defensible inferences",
+   "Cross-validating a suspected competitor move across independent evidence channels"
+  ],
+  "scenarios": [
+   "I think a competitor is building a platform play — how do I confirm it before their launch?",
+   "My TAM slide got shredded — where do I find data that survives scrutiny?"
+  ],
+  "chars": 26249
+ },
+ {
+  "dir": "jobs-to-be-done",
+  "name": "jobs-to-be-done",
+  "desc": "Uncover customer jobs, pains, and gains in a structured JTBD format. Use when clarifying unmet needs, repositioning a product, or improving discovery and messaging.",
+  "type": "component",
+  "theme": "discovery-research",
+  "est": "20-30 min",
+  "best_for": [
+   "Clarifying what customers actually hire your product to do",
+   "Repositioning a product around unmet needs rather than features",
+   "Turning fuzzy user feedback into structured jobs, pains, and gains"
+  ],
+  "scenarios": [
+   "Customers keep asking for features that don't fit our roadmap — what job are they hiring us for?",
+   "We're repositioning and need to understand the unmet needs behind the switching behavior"
+  ],
+  "chars": 13907
+ },
+ {
+  "dir": "lean-ux-canvas",
+  "name": "lean-ux-canvas",
+  "desc": "Guide teams through Lean UX Canvas v2. Use when framing a business problem, surfacing assumptions, and defining what to learn next.",
+  "type": "interactive",
+  "theme": "validation-experiments",
+  "est": "30-45 min",
+  "best_for": [
+   "Framing a business problem before solutioning",
+   "Surfacing assumptions in a cross-functional workshop",
+   "Turning a vague initiative into hypotheses and learning goals"
+  ],
+  "scenarios": [
+   "Help me run a Lean UX Canvas workshop for onboarding drop-off",
+   "Use Lean UX Canvas to frame a new AI product idea",
+   "We have a business problem but too many assumptions. Run a Lean UX Canvas session."
+  ],
+  "chars": 24763
+ },
+ {
+  "dir": "lifecycle-play-advisor",
+  "name": "lifecycle-play-advisor",
+  "desc": "Diagnose where a product sits in its lifecycle and which play fits — extend, replace, or retire. Use when a product is fading and you need the call, not just the worry.",
+  "type": "interactive",
+  "theme": "product-lifecycle",
+  "est": "15-25 min",
+  "best_for": [
+   "Settling an extend-versus-replace-versus-retire argument with a diagnosis instead of volume",
+   "Checking whether a product is really in decline or just badly distributed",
+   "Finding the cheapest play that actually addresses the pressure"
+  ],
+  "scenarios": [
+   "Revenue's been flat for a year and half the team wants a rewrite and half wants to kill it",
+   "Leadership says this product is dying — is it, and what should we actually do about it?"
+  ],
+  "chars": 17414
+ },
+ {
+  "dir": "market-landscape-scan",
+  "name": "market-landscape-scan",
+  "desc": "Map a market's segments, players, substitutes, and whitespace with cited evidence. Use when entering or re-evaluating a market before sizing, positioning, or picking competitors to study.",
+  "type": "workflow",
+  "theme": "market-intelligence",
+  "est": "20-40 min per run",
+  "best_for": [
+   "Mapping who plays in a market before committing to enter or re-position",
+   "Scoping a new product line with a defensible view of segments and substitutes",
+   "Producing the landscape view that feeds TAM/SAM/SOM sizing and competitor deep-dives"
+  ],
+  "scenarios": [
+   "We're considering a move into contract-analytics tooling — map that market for me",
+   "My exec team keeps citing an analyst quadrant; show me how buyers actually segment this space"
+  ],
+  "chars": 10201
+ },
+ {
+  "dir": "opportunity-solution-tree",
+  "name": "opportunity-solution-tree",
+  "desc": "Build an Opportunity Solution Tree from outcomes to opportunities, solutions, and tests. Use when a stakeholder request needs problem framing before you decide what to build.",
+  "type": "interactive",
+  "theme": "discovery-research",
+  "est": "30-45 min",
+  "best_for": [
+   "Turning a stakeholder feature request back into a problem worth solving",
+   "Connecting a desired outcome to opportunities, solutions, and tests",
+   "Showing why one solution was chosen over the alternatives"
+  ],
+  "scenarios": [
+   "A stakeholder asked for a specific feature and I want to reframe it as a problem first",
+   "I need to show leadership why we picked this solution over the three alternatives"
+  ],
+  "chars": 17977
+ },
+ {
+  "dir": "organic-growth-advisor",
+  "name": "organic-growth-advisor",
+  "desc": "Identify which organic growth path to pursue — new segments, geographies, channels, or products. Use when diagnosing where a growth constraint lives and which McKinsey growth level to act on next.",
+  "type": "interactive",
+  "theme": "strategy-positioning",
+  "est": "15-25 min",
+  "best_for": [
+   "Choosing which organic growth motion to pursue when multiple seem viable",
+   "Diagnosing whether the constraint is in reach, access, market context, or product value",
+   "Setting up an AI-assisted growth experiment with the right starting hypothesis"
+  ],
+  "scenarios": [
+   "We need to grow but aren't sure if we should go after new customer segments or new geographies",
+   "Help me figure out which McKinsey growth level we should focus on",
+   "We have strong product-market fit but growth is stalling. Where should we look?",
+   "Which organic growth path fits our current situation?"
+  ],
+  "chars": 20923
+ },
+ {
+  "dir": "pestel-analysis",
+  "name": "pestel-analysis",
+  "desc": "Analyze political, economic, social, technological, environmental, and legal forces. Use when external market shifts could materially affect a product, roadmap, or strategy.",
+  "type": "component",
+  "theme": "market-intelligence",
+  "est": "30-45 min",
+  "best_for": [
+   "Scanning external forces before committing to a strategy or roadmap",
+   "Naming the macro assumptions your plan quietly depends on",
+   "Preparing the environmental context for a strategy review"
+  ],
+  "scenarios": [
+   "We're setting next year's strategy and haven't looked at external forces in a while",
+   "New regulation is coming and I need to map what else could shift underneath us"
+  ],
+  "chars": 14430
+ },
+ {
+  "dir": "pestel-delta-monitor",
+  "name": "pestel-delta-monitor",
+  "desc": "Quarterly re-scan of a prior PESTEL analysis. Use when checking which macro factors moved, which assumptions broke, and what's new — turning PESTEL from a workshop artifact into a radar.",
+  "type": "workflow",
+  "theme": "market-intelligence",
+  "est": "15-30 min per run",
+  "best_for": [
+   "Keeping a PESTEL analysis alive on a quarterly cadence instead of letting it rot in a deck",
+   "Catching which macro assumptions your strategy quietly depends on — and which just broke",
+   "Feeding regulatory and macro shifts into roadmap and OKR conversations with citations"
+  ],
+  "scenarios": [
+   "Here's the PESTEL we did in Q1 — what's moved since?",
+   "A new regulation just passed in our space; re-run the macro scan against our baseline"
+  ],
+  "chars": 9845
+ },
+ {
+  "dir": "pm-skill-creator",
+  "name": "pm-skill-creator",
+  "desc": "Design a new PM skill through guided conversation. Use when you have raw content or an idea and want to shape it into a compliant skill.",
+  "type": "interactive",
+  "theme": "meta-authoring",
+  "est": "10-15 min",
+  "best_for": [
+   "Turning a rough idea or framework into a structured PM skill",
+   "Deciding whether raw content should be a component, interactive, or workflow skill",
+   "Getting from blank page to a complete SKILL.md draft through guided conversation"
+  ],
+  "scenarios": [
+   "I have notes from a workshop and want to turn them into a skill",
+   "Help me create a new skill — I know the topic but not the structure",
+   "I have a PM framework I want to formalize as a repo skill"
+  ],
+  "chars": 16801
+ },
+ {
+  "dir": "pol-probe-advisor",
+  "name": "pol-probe-advisor",
+  "desc": "Select the right Proof of Life (PoL) probe based on hypothesis, risk, and resources. Use this to match the validation method to the real learning goal, not tooling comfort.",
+  "type": "interactive",
+  "theme": "validation-experiments",
+  "est": "15-20 min",
+  "best_for": [
+   "Choosing the cheapest useful validation method for a risky idea",
+   "Matching a hypothesis to the right Proof of Life probe",
+   "Avoiding overbuilding before learning the harsh truth"
+  ],
+  "scenarios": [
+   "Which Proof of Life probe should I use to test demand for this idea?",
+   "Help me pick the right validation method for an onboarding hypothesis",
+   "I have a risky AI concept. What PoL probe should I run first?"
+  ],
+  "chars": 21133
+ },
+ {
+  "dir": "pol-probe",
+  "name": "pol-probe",
+  "desc": "Define a Proof of Life probe to test a risky hypothesis cheaply. Use when you need harsh truth before building real product.",
+  "type": "component",
+  "theme": "validation-experiments",
+  "est": "15-25 min",
+  "best_for": [
+   "Documenting a lightweight validation artifact before build",
+   "Testing a narrow hypothesis without shipping production software",
+   "Reducing risk before spending engineering time"
+  ],
+  "scenarios": [
+   "Define a Proof of Life probe for a new workflow automation idea",
+   "Help me write a PoL probe for this pricing hypothesis",
+   "Create a low-cost validation probe before we build this feature"
+  ],
+  "chars": 10820
+ },
+ {
+  "dir": "porters-five-forces",
+  "name": "porters-five-forces",
+  "desc": "Read an industry's structure through Porter's Five Forces with documented signals per rating, ending at the profit pool. Use when weighing market entry or when margins erode and nobody can say why.",
+  "type": "workflow",
+  "theme": "market-intelligence",
+  "est": "25-40 min per run",
+  "best_for": [
+   "Pressure-testing a market-entry decision against the industry's actual structure",
+   "Explaining margin erosion structurally instead of blaming execution",
+   "Grounding strategy debates in rated forces with evidence, not vibes"
+  ],
+  "scenarios": [
+   "We're considering entering the clinical-data-management space — what does its structure do to everyone who plays?",
+   "Our margins keep compressing and every explanation is tactical; give me the structural read"
+  ],
+  "chars": 10720
+ },
+ {
+  "dir": "positioning-statement",
+  "name": "positioning-statement",
+  "desc": "Create a Geoffrey Moore-style positioning statement. Use when clarifying who you serve, what problem you solve, your category, and why you're different from alternatives.",
+  "type": "component",
+  "theme": "strategy-positioning",
+  "est": "10-15 min",
+  "best_for": [
+   "Defining your product's market position clearly for the first time",
+   "Differentiating from specific competitors in your messaging",
+   "Aligning your team on who you serve, what problem you solve, and why you're different"
+  ],
+  "scenarios": [
+   "I need to write a positioning statement for a new B2B SaaS product targeting mid-market HR teams",
+   "Our positioning feels generic and I need to sharpen it against two specific competitors"
+  ],
+  "chars": 10305
+ },
+ {
+  "dir": "positioning-workshop",
+  "name": "positioning-workshop",
+  "desc": "Run a positioning workshop that surfaces target customer, unmet need, category, benefits, and differentiation. Use when your product messaging feels fuzzy, generic, or misaligned.",
+  "type": "interactive",
+  "theme": "workshops-facilitation",
+  "est": "60-90 min",
+  "best_for": [
+   "Running a workshop to sharpen product positioning",
+   "Clarifying target customer, category, and differentiation",
+   "Fixing fuzzy or generic messaging before launch"
+  ],
+  "scenarios": [
+   "Help me run a positioning workshop for our B2B analytics product",
+   "Our messaging feels generic. Facilitate a positioning session.",
+   "We need to define who we serve and why we're different"
+  ],
+  "chars": 18297
+ },
+ {
+  "dir": "prd-development",
+  "name": "prd-development",
+  "desc": "Build a structured PRD that connects problem, users, solution, and success criteria. Use when turning discovery notes into an engineering-ready document for a major initiative.",
+  "type": "workflow",
+  "theme": "pm-artifacts",
+  "est": "60-120 min",
+  "best_for": [
+   "Writing a complete PRD from scratch",
+   "Structuring product requirements for an engineering handoff",
+   "Documenting a major new feature before development begins"
+  ],
+  "scenarios": [
+   "I need a PRD for a new AI-powered recommendation feature in our e-commerce platform",
+   "I've completed a discovery sprint and need to turn the findings into a PRD my engineers can act on"
+  ],
+  "chars": 24771
+ },
+ {
+  "dir": "press-release",
+  "name": "press-release",
+  "desc": "Write an Amazon-style press release that defines customer value before building. Use when aligning stakeholders on a new product, feature, or strategic bet.",
+  "type": "component",
+  "theme": "pm-artifacts",
+  "est": "30-45 min",
+  "best_for": [
+   "Defining customer value before a line of spec gets written",
+   "Aligning stakeholders on what a launch actually promises",
+   "Killing a weak idea early by trying to write its announcement"
+  ],
+  "scenarios": [
+   "We're about to build something big and I want to test whether the value is real",
+   "Stakeholders disagree about what this launch promises customers — write it as news"
+  ],
+  "chars": 11683
+ },
+ {
+  "dir": "pricing-packaging-tracker",
+  "name": "pricing-packaging-tracker",
+  "desc": "Track competitor pricing and packaging as a diffable time series. Use when monitoring tiers, gates, limits, and price moves on a monthly or quarterly cadence.",
+  "type": "workflow",
+  "theme": "market-intelligence",
+  "est": "15-30 min per run",
+  "best_for": [
+   "Keeping battle-card pricing sections current without manual screenshot archaeology",
+   "Catching packaging restructures — the earliest public signal of a strategy shift",
+   "Building the pricing time series that grounds your own pricing decisions"
+  ],
+  "scenarios": [
+   "Baseline the pricing pages of our four main competitors, then track monthly",
+   "Did anyone in our space change pricing or packaging this quarter?"
+  ],
+  "chars": 9293
+ },
+ {
+  "dir": "prioritization-advisor",
+  "name": "prioritization-advisor",
+  "desc": "Choose a prioritization framework based on stage, team context, and stakeholder needs. Use when deciding between RICE, ICE, value/effort, or another scoring approach.",
+  "type": "interactive",
+  "theme": "strategy-positioning",
+  "est": "15-25 min",
+  "best_for": [
+   "Choosing the right prioritization framework for a team or stage",
+   "Deciding between RICE, ICE, value/effort, and similar models",
+   "Reducing debate about how to prioritize competing work"
+  ],
+  "scenarios": [
+   "Which prioritization framework should my startup use right now?",
+   "Help me choose between RICE and value/effort for roadmap planning",
+   "We keep arguing about prioritization. Recommend a framework."
+  ],
+  "chars": 16961
+ },
+ {
+  "dir": "problem-framing-canvas",
+  "name": "problem-framing-canvas",
+  "desc": "Guide teams through MITRE's Problem Framing Canvas. Use when you need a clearer problem statement before jumping to solutions.",
+  "type": "interactive",
+  "theme": "discovery-research",
+  "est": "30-45 min",
+  "best_for": [
+   "Clarifying a messy problem before solutioning",
+   "Surfacing assumptions and overlooked stakeholders",
+   "Creating a bias-resistant problem statement in a workshop"
+  ],
+  "scenarios": [
+   "Run a Problem Framing Canvas for our mobile retention issue",
+   "Help me reframe this stakeholder request before we build anything",
+   "We need a clearer problem statement for onboarding drop-off"
+  ],
+  "chars": 17956
+ },
+ {
+  "dir": "problem-statement",
+  "name": "problem-statement",
+  "desc": "Write a user-centered problem statement with who is blocked, what they are trying to do, why it matters, and how it feels. Use when framing discovery, prioritization, or a PRD.",
+  "type": "component",
+  "theme": "discovery-research",
+  "est": "10-20 min",
+  "best_for": [
+   "Framing a problem before anyone proposes a solution",
+   "Getting a team to agree on who is blocked and why it matters",
+   "Turning a vague complaint into something a team can act on"
+  ],
+  "scenarios": [
+   "The team keeps jumping to solutions and we've never written down the actual problem",
+   "I need a crisp problem statement for a PRD that a skeptical exec will read"
+  ],
+  "chars": 10925
+ },
+ {
+  "dir": "product-lifecycle-plays",
+  "name": "product-lifecycle-plays",
+  "desc": "Map a product's lifecycle stage and choose between extension, replacement, and retirement plays. Use when a product is maturing or declining and the next move isn't obvious.",
+  "type": "component",
+  "theme": "product-lifecycle",
+  "est": "25-45 min",
+  "best_for": [
+   "Deciding whether a fading product should be extended, replaced, or retired",
+   "Diagnosing whether a product has actually crossed from mature into decline",
+   "Running the play decision across a whole product line, not one product at a time"
+  ],
+  "scenarios": [
+   "Revenue is flattening on our flagship and people are arguing about a rewrite versus a refresh",
+   "We have four aging SKUs and no consistent way to decide what happens to each"
+  ],
+  "chars": 16854
+ },
+ {
+  "dir": "product-sense-interview-answer",
+  "name": "product-sense-interview-answer",
+  "desc": "Structure a spoken PM product-sense answer with assumptions, segmentation, pain-point prioritization, and MVP tradeoffs. Use when practicing design, improve, or build-next interview questions.",
+  "type": "component",
+  "theme": "career-leadership",
+  "est": "20-30 min",
+  "best_for": [
+   "Practicing product design and product improvement interview questions",
+   "Coaching candidates who jump to solutions too quickly",
+   "Turning messy ideation into a crisp spoken interview answer"
+  ],
+  "scenarios": [
+   "How would you improve YouTube?",
+   "Design a product for travelers with flight anxiety",
+   "What would you build next for DoorDash?"
+  ],
+  "chars": 11839
+ },
+ {
+  "dir": "product-strategy-session",
+  "name": "product-strategy-session",
+  "desc": "Run an end-to-end product strategy session across positioning, discovery, and roadmap planning. Use when a team needs validated direction before committing to execution.",
+  "type": "workflow",
+  "theme": "strategy-positioning",
+  "est": "2-4 weeks",
+  "best_for": [
+   "Running a full strategy arc from positioning through roadmap",
+   "Giving a team validated direction instead of a feature list",
+   "Aligning leadership on where the product is going and why"
+  ],
+  "scenarios": [
+   "Our team has a backlog but no direction and leadership wants a strategy",
+   "We need to go from positioning through discovery to a roadmap people believe"
+  ],
+  "chars": 16670
+ },
+ {
+  "dir": "proto-persona",
+  "name": "proto-persona",
+  "desc": "Create a proto-persona from current research, market signals, and team knowledge. Use when you need a working customer profile before deeper validation.",
+  "type": "component",
+  "theme": "discovery-research",
+  "est": "15-25 min",
+  "best_for": [
+   "Getting a working customer profile before you can afford real research",
+   "Making team assumptions about users explicit and challengeable",
+   "Setting up a persona you intend to validate, not defend"
+  ],
+  "scenarios": [
+   "We have no research budget yet but need a working customer profile to start",
+   "Everyone on the team pictures a different user and it's causing arguments"
+  ],
+  "chars": 13113
+ },
+ {
+  "dir": "recommendation-canvas",
+  "name": "recommendation-canvas",
+  "desc": "Evaluate an AI product idea across outcomes, hypotheses, risks, and positioning. Use when deciding whether an AI solution deserves investment or recommendation.",
+  "type": "component",
+  "theme": "validation-experiments",
+  "est": "30-45 min",
+  "best_for": [
+   "Deciding whether an AI product idea deserves real investment",
+   "Surfacing the risks and hypotheses behind an AI feature request",
+   "Comparing AI solution options on outcomes rather than novelty"
+  ],
+  "scenarios": [
+   "Leadership wants an AI feature and I need to evaluate whether it's worth building",
+   "I have three AI solution options and need to compare them on outcomes and risk"
+  ],
+  "chars": 14965
+ },
+ {
+  "dir": "roadmap-planning",
+  "name": "roadmap-planning",
+  "desc": "Plan a strategic roadmap across prioritization, epic definition, stakeholder alignment, and sequencing. Use when turning strategy into a release plan that teams can execute.",
+  "type": "workflow",
+  "theme": "strategy-positioning",
+  "est": "45-90 min",
+  "best_for": [
+   "Building a strategic roadmap that survives exec review",
+   "Prioritizing competing initiatives across multiple teams",
+   "Planning and sequencing work for the next quarter or half-year"
+  ],
+  "scenarios": [
+   "I have 15 competing initiatives and need to build a Q2 roadmap my exec team will actually approve",
+   "I'm planning our 6-month product roadmap and need to sequence work across 3 teams"
+  ],
+  "chars": 18972
+ },
+ {
+  "dir": "saas-economics-efficiency-metrics",
+  "name": "saas-economics-efficiency-metrics",
+  "desc": "Evaluate SaaS unit economics and capital efficiency. Use when deciding whether the business can scale efficiently or needs correction.",
+  "type": "component",
+  "theme": "finance-metrics",
+  "est": "10-15 min",
+  "best_for": [
+   "Checking whether a SaaS model is financially viable",
+   "Reviewing CAC, LTV, payback, burn, and Rule of 40 together",
+   "Preparing efficiency analysis for a board or leadership review"
+  ],
+  "scenarios": [
+   "Evaluate our SaaS unit economics before we scale paid acquisition",
+   "Help me analyze CAC payback, LTV, and burn for our product",
+   "I need a SaaS efficiency check for our board deck"
+  ],
+  "chars": 25726
+ },
+ {
+  "dir": "saas-revenue-growth-metrics",
+  "name": "saas-revenue-growth-metrics",
+  "desc": "Calculate SaaS revenue, retention, and growth metrics. Use when diagnosing momentum, churn, expansion, or product-market-fit signals.",
+  "type": "component",
+  "theme": "finance-metrics",
+  "est": "10-15 min",
+  "best_for": [
+   "Understanding your key revenue and retention metrics",
+   "Calculating MRR, ARR, churn, and NRR correctly",
+   "Building a metrics dashboard for your SaaS product"
+  ],
+  "scenarios": [
+   "I need to calculate and interpret our MRR, churn rate, and NRR for a board deck",
+   "Help me understand the difference between gross and net revenue retention and how to improve it"
+  ],
+  "chars": 23026
+ },
+ {
+  "dir": "skill-authoring-workflow",
+  "name": "skill-authoring-workflow",
+  "desc": "Turn raw PM content into a compliant, publish-ready skill. Use when creating or updating a repo skill without breaking standards.",
+  "type": "workflow",
+  "theme": "meta-authoring",
+  "est": "45-90 min",
+  "best_for": [
+   "Creating a new repo skill from notes or source material",
+   "Updating an existing skill while keeping standards intact",
+   "Running the full authoring and validation workflow before commit"
+  ],
+  "scenarios": [
+   "Help me turn these workshop notes into a new PM skill",
+   "I need to update an existing skill without breaking the repo standards",
+   "What workflow should I use to author a new skill in this repo?"
+  ],
+  "chars": 7907
+ },
+ {
+  "dir": "stakeholder-engagement-advisor",
+  "name": "stakeholder-engagement-advisor",
+  "desc": "Plan engagement for a specific stakeholder. Use when preparing an outreach, navigating resistance, or aligning a critical relationship before a key milestone.",
+  "type": "interactive",
+  "theme": "stakeholder-comms",
+  "est": "15-25 min",
+  "best_for": [
+   "Preparing to engage a powerful executive sponsor whose support is critical but whose motivations are unclear",
+   "Planning outreach to a resistant or skeptical stakeholder who could block your roadmap",
+   "Navigating first contact with a newly identified stakeholder mid-initiative",
+   "Designing inclusive engagement for a Q1 (high-impact, low-power) user community that needs more voice",
+   "Aligning cross-functional engagement strategy before a high-stakes roadmap review or launch"
+  ],
+  "scenarios": [
+   "Help me plan how to engage [stakeholder] before my roadmap review",
+   "I have a resistant stakeholder — how do I approach them?",
+   "I need to bring a new executive sponsor up to speed quickly",
+   "How do I engage frontline users who've been excluded from our feedback loops?",
+   "Help me prepare a 1:1 with someone who could block this initiative"
+  ],
+  "chars": 17402
+ },
+ {
+  "dir": "stakeholder-identification",
+  "name": "stakeholder-identification",
+  "desc": "Map every stakeholder before engaging anyone. Use when launching an initiative, scoping discovery, or building an engagement plan from scratch.",
+  "type": "component",
+  "theme": "stakeholder-comms",
+  "est": "20-30 min",
+  "best_for": [
+   "Launching a new initiative where the stakeholder landscape is unmapped and influence networks are unknown",
+   "Scoping a discovery sprint to define who to research, interview, and recruit",
+   "Preparing a PRD stakeholder section with a validated, comprehensive list before writing requirements",
+   "Onboarding to a new product domain and needing to map allies, gatekeepers, and decision-makers quickly",
+   "Pressure-testing an existing stakeholder list for blind spots, bias, and missing edge-case populations"
+  ],
+  "scenarios": [
+   "Who are all the stakeholders for this initiative?",
+   "Are we missing anyone important in our stakeholder map?",
+   "Help me prepare the stakeholder section of my PRD",
+   "Who should we recruit for discovery research?"
+  ],
+  "chars": 12054
+ },
+ {
+  "dir": "stakeholder-mapping",
+  "name": "stakeholder-mapping",
+  "desc": "Prioritize stakeholders using two complementary grids. Use when setting engagement strategy and surfacing whose voice needs elevating after stakeholder identification.",
+  "type": "component",
+  "theme": "stakeholder-comms",
+  "est": "25-40 min",
+  "best_for": [
+   "After stakeholder identification, when you need to decide who gets which level of engagement",
+   "Preparing an engagement plan before a roadmap review where executives and impacted user groups have conflicting authority",
+   "Surfacing high-impact, low-power user segments who deserve more voice in product decisions but lack org pull",
+   "Re-baselining stakeholder strategy after a reorg has shifted who holds decision authority",
+   "Planning a compliance or regulatory initiative where power to block sits separately from who bears the consequences"
+  ],
+  "scenarios": [
+   "Who should I prioritize engaging on this initiative?",
+   "How do I handle stakeholders with conflicting priorities?",
+   "Help me figure out whose voice is missing from our roadmap decisions",
+   "I need a stakeholder engagement strategy before our quarterly review"
+  ],
+  "chars": 13931
+ },
+ {
+  "dir": "storyboard",
+  "name": "storyboard",
+  "desc": "Create a six-frame storyboard that shows a user's journey from problem to solution. Use when you need a fast narrative for alignment, concept reviews, or demos.",
+  "type": "component",
+  "theme": "pm-artifacts",
+  "est": "20-30 min",
+  "best_for": [
+   "Showing a user's journey from problem to solution in six frames",
+   "Getting fast alignment without building anything",
+   "Turning an abstract concept into something people can react to"
+  ],
+  "scenarios": [
+   "I need to pitch a concept next week and slides aren't landing",
+   "The team can't agree on the experience — show me the journey frame by frame"
+  ],
+  "chars": 12155
+ },
+ {
+  "dir": "swot-analysis",
+  "name": "swot-analysis",
+  "desc": "Build an evidence-cited SWOT of one company — yours or a competitor's — from public sources, ending with the S-O/W-T crossings. Use for strategy reviews, board prep, or competitor depth.",
+  "type": "workflow",
+  "theme": "market-intelligence",
+  "est": "20-35 min per run",
+  "best_for": [
+   "Strategy reviews and board prep that need a defensible read on one company's position",
+   "Competitor depth after a snapshot has identified who matters",
+   "Partnership or acquisition evaluation grounded in evidence, not impressions"
+  ],
+  "scenarios": [
+   "SWOT our biggest competitor before the strategy offsite — from public evidence",
+   "We're evaluating a partnership with [company]; what does the public record say about their position?"
+  ],
+  "chars": 10156
+ },
+ {
+  "dir": "tam-sam-som-calculator",
+  "name": "tam-sam-som-calculator",
+  "desc": "Calculate TAM, SAM, and SOM with explicit assumptions, methods, and caveats. Use when sizing a market for a product idea, business case, or executive review.",
+  "type": "interactive",
+  "theme": "market-intelligence",
+  "est": "20-40 min",
+  "best_for": [
+   "Sizing a market for a business case an executive will question",
+   "Making your market assumptions explicit and attackable",
+   "Replacing a top-down guess with a defensible bottom-up estimate"
+  ],
+  "scenarios": [
+   "I need market sizing for a business case our CFO will pick apart",
+   "Our TAM number came from a slide nobody can source — rebuild it properly"
+  ],
+  "chars": 19010
+ },
+ {
+  "dir": "user-story-mapping-workshop",
+  "name": "user-story-mapping-workshop",
+  "desc": "Run a user story mapping workshop with adaptive questions and a structured map output. Use when you need backbone activities, tasks, and release slices for a workflow.",
+  "type": "interactive",
+  "theme": "workshops-facilitation",
+  "est": "60-120 min",
+  "best_for": [
+   "Running a facilitated story mapping session with a real team",
+   "Building a backbone, tasks, and release slices collaboratively",
+   "Getting a shared view of the workflow before slicing an MVP"
+  ],
+  "scenarios": [
+   "I'm facilitating a mapping session tomorrow and need the structure and questions",
+   "The team needs a shared map of the workflow before we can scope an MVP"
+  ],
+  "chars": 16823
+ },
+ {
+  "dir": "user-story-mapping",
+  "name": "user-story-mapping",
+  "desc": "Create a user story map that lays out activities, steps, tasks, and release slices. Use when planning a workflow, backlog, or MVP around the user journey.",
+  "type": "component",
+  "theme": "pm-artifacts",
+  "est": "30-60 min",
+  "best_for": [
+   "Laying out activities, steps, and tasks across a user's workflow",
+   "Slicing a backlog into releases that each deliver something usable",
+   "Finding the gaps in a journey before they become production surprises"
+  ],
+  "scenarios": [
+   "We have a flat backlog and no sense of the user's actual workflow",
+   "I need to slice this into releases that each deliver something usable"
+  ],
+  "chars": 11388
+ },
+ {
+  "dir": "user-story-splitting",
+  "name": "user-story-splitting",
+  "desc": "Break a large story or epic into smaller deliverable stories using proven split patterns. Use when backlog items are too big for estimation, sequencing, or independent release.",
+  "type": "component",
+  "theme": "pm-artifacts",
+  "est": "15-25 min",
+  "best_for": [
+   "Breaking a story that's too big to estimate or finish in a sprint",
+   "Applying proven split patterns instead of splitting by component",
+   "Keeping each slice independently valuable and releasable"
+  ],
+  "scenarios": [
+   "This story is too big for a sprint and splitting by frontend/backend isn't working",
+   "Our backlog items keep carrying over — I need real split patterns"
+  ],
+  "chars": 12776
+ },
+ {
+  "dir": "user-story",
+  "name": "user-story",
+  "desc": "Create user stories with Mike Cohn format and Gherkin acceptance criteria. Use when turning user needs into development-ready work with clear outcomes and testable conditions.",
+  "type": "component",
+  "theme": "pm-artifacts",
+  "est": "5-10 min",
+  "best_for": [
+   "Writing user stories with proper acceptance criteria",
+   "Converting requirements into development-ready stories",
+   "Establishing story quality standards across your team"
+  ],
+  "scenarios": [
+   "I need to write a user story for a new notification system in our B2B SaaS app",
+   "Convert this PRD requirement into a properly formatted user story with Gherkin acceptance criteria"
+  ],
+  "chars": 11407
+ },
+ {
+  "dir": "voice-of-customer-miner",
+  "name": "voice-of-customer-miner",
+  "desc": "Mine public reviews, app stores, and forums for unmet needs, competitor weaknesses, and switching triggers — with quoted evidence. Use when you want customer voice without waiting on interviews.",
+  "type": "workflow",
+  "theme": "market-intelligence",
+  "est": "20-35 min per run",
+  "best_for": [
+   "Finding what users actually complain about and wish for — yours and competitors' — from the public record",
+   "Arming battle cards with competitor weaknesses in customers' own words",
+   "Seeding discovery interviews and opportunity trees with evidence-backed hypotheses"
+  ],
+  "scenarios": [
+   "Mine the reviews of our top two competitors — what are their customers angriest about?",
+   "Before the interview cycle starts, what does the public web say our segment's unmet needs are?"
+  ],
+  "chars": 9829
+ },
+ {
+  "dir": "vp-cpo-readiness-advisor",
+  "name": "vp-cpo-readiness-advisor",
+  "desc": "Guide the transition to VP or CPO across preparing, interviewing, landing, and recalibrating. Use when executive product scope is changing fast.",
+  "type": "interactive",
+  "theme": "career-leadership",
+  "est": "15-20 min",
+  "best_for": [
+   "Preparing for the Director-to-VP or VP-to-CPO transition",
+   "Evaluating a VP or CPO role before you accept it",
+   "Recalibrating when something isn't working in an executive product role"
+  ],
+  "scenarios": [
+   "I'm a Director preparing for VP roles and want to understand what actually changes",
+   "I have a CPO offer I'm evaluating — what are the right questions to ask the CEO?",
+   "I've been a VP for 18 months and my executive peer relationships aren't working"
+  ],
+  "chars": 25583
+ },
+ {
+  "dir": "workshop-facilitation",
+  "name": "workshop-facilitation",
+  "desc": "Facilitate workshop sessions in a one-step, multi-turn flow. Use when an interactive skill needs consistent pacing, options, and progress tracking.",
+  "type": "interactive",
+  "theme": "workshops-facilitation",
+  "est": "varies by workshop",
+  "best_for": [
+   "Adding structured facilitation to any PM workshop or guided session",
+   "Running interactive sessions with numbered recommendations and progress tracking",
+   "Ensuring your workshops stay on track and end with actionable choices"
+  ],
+  "scenarios": [
+   "I want to run a structured positioning workshop with my product team — set up the facilitation protocol",
+   "Help me facilitate a discovery sprint kickoff with clear questions, options, and progress labels"
+  ],
+  "chars": 5955
+ }
+]

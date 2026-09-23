@@ -1,0 +1,46 @@
+# ---- 系统与编辑器 ----
+Thumbs.db
+desktop.ini
+.DS_Store
+.vscode/
+.idea/
+*.swp
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+
+# ---- Excel / Office 临时锁文件 ----
+~$*.xlsx
+~$*.docx
+~$*.pptx
+*.tmp
+
+# ---- 密钥与令牌（绝不入库）----
+.env
+.env.*
+*.key
+*.pem
+token*.txt
+*_token_tmp
+.secrets/
+
+# ---- 项目运行时产物 ----
+projects/**/node_modules/
+projects/**/.next/
+projects/**/dist/
+projects/**/build/
+projects/**/__pycache__/
+projects/**/*.log
+projects/**/.env*
+
+# ---- 大文件（模型/数据集不入库）----
+*.ckpt
+*.safetensors
+*.bin
+*.pt
+*.onnx
