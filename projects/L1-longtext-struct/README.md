@@ -42,10 +42,16 @@
 ```bash
 # 1) 建环境
 uv venv --python 3.11 .venv
-uv pip install --python .venv/Scripts/python.exe -r requirements.txt
+# 精确复现（推荐）：用锁定的版本，已验证 29 个测试全过
+uv pip install --python .venv/Scripts/python.exe -r requirements.lock.txt
+# 或宽松安装（只约束主版本，跨机兼容性更好）
+# uv pip install --python .venv/Scripts/python.exe -r requirements.txt
 
 # 2) 配密钥（只放环境变量，不进仓库）
-export SIYU_API_KEY=...        # 或复制 .env.example 为 .env
+#    2026-09-27 实测：stepfun 可用且快，默认用它
+export LLM_PROVIDER=stepfun
+export HERMES_CUSTOM_STEPFUN_API_KEY=...
+# 或复制 .env.example 为 .env 后填入
 
 # 3) 离线单测（不花 API 费用）
 .venv/Scripts/python.exe -m pytest tests -q

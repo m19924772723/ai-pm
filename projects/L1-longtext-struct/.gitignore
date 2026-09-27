@@ -1,5 +1,6 @@
 # ---- 项目本地临时文件 ----
 .venv/
+.venv-*/            # 复现验证用的临时环境
 __pycache__/
 *.py[cod]
 .pytest_cache/
