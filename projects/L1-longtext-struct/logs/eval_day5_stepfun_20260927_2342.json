@@ -1,0 +1,215 @@
+{
+  "summary": {
+    "run_at": "2026-09-27 23:42:25",
+    "provider": {
+      "name": "stepfun",
+      "base_url": "https://api.stepfun.com/v1",
+      "api_mode": "chat_completions",
+      "model": "step-3.7-flash",
+      "key_env": "HERMES_CUSTOM_STEPFUN_API_KEY"
+    },
+    "sample_count": 4,
+    "metric_格式合规率": 0.75,
+    "metric_要点覆盖率": 0.1538,
+    "metric_幻觉率": 0.0,
+    "counts": {
+      "format_ok": 3,
+      "evidence_total": 13,
+      "evidence_issues": 0,
+      "gold_total": 13,
+      "gold_hit": 2
+    },
+    "duration_s": 48.8,
+    "caveat": "样本量小（见 tests/eval_set.json 的 current_count），数字只反映当前链路是否可用，不构成上线结论。"
+  },
+  "rows": [
+    {
+      "id": "S01",
+      "template": "summary",
+      "ok": true,
+      "error": "",
+      "schema_ok": true,
+      "schema_errors": [],
+      "elapsed_s": 11.31,
+      "evidence_total": 7,
+      "evidence_issues": 0,
+      "evidence_issue_detail": [],
+      "gold_total": 5,
+      "gold_hit": 1,
+      "gold_missed": [
+        "报告含进度、风险、下周计划",
+        "张三汇总技术进度",
+        "李四补充用户访谈记录",
+        "开发完成 60%"
+      ],
+      "data": {
+        "title": "原文未提供",
+        "one_sentence_summary": "学院要求各项目组10月8日前提交含进度、风险、下周计划的中期报告，当前项目已完成60%开发。",
+        "key_points": [
+          {
+            "point": "项目组需在10月8日前提交中期报告",
+            "evidence": "学院要求各项目组在10月8日前提交中期报告"
+          },
+          {
+            "point": "中期报告需包含目前进度、风险和下周计划",
+            "evidence": "报告须包含目前进度、风险和下周计划"
+          },
+          {
+            "point": "张三负责汇总技术进度，李四负责补充用户访谈记录",
+            "evidence": "张三负责汇总技术进度，李四负责补充用户访谈记录"
+          },
+          {
+            "point": "当前项目已完成60%的开发",
+            "evidence": "项目当前已完成60%的开发"
+          }
+        ],
+        "tags": [
+          "中期报告",
+          "项目进度",
+          "任务分工",
+          "学院要求"
+        ],
+        "todos": [
+          {
+            "action": "提交中期报告",
+            "owner": "各项目组",
+            "deadline": "10月8日前",
+            "evidence": "学院要求各项目组在10月8日前提交中期报告"
+          },
+          {
+            "action": "汇总技术进度",
+            "owner": "张三",
+            "deadline": "未指定",
+            "evidence": "张三负责汇总技术进度"
+          },
+          {
+            "action": "补充用户访谈记录",
+            "owner": "李四",
+            "deadline": "未指定",
+            "evidence": "李四负责补充用户访谈记录"
+          }
+        ],
+        "uncertainties": [
+          "中期报告的具体提交格式未明确",
+          "项目风险的具体填报要求未说明"
+        ]
+      },
+      "raw": "{\n  \"title\": \"原文未提供\",\n  \"one_sentence_summary\": \"学院要求各项目组10月8日前提交含进度、风险、下周计划的中期报告，当前项目已完成60%开发。\",\n  \"key_points\": [\n    {\"point\": \"项目组需在10月8日前提交中期报告\", \"evidence\": \"学院要求各项目组在10月8日前提交中期报告\"},\n    {\"point\": \"中期报告需包含目前进度、风险和下周计划\", \"evidence\": \"报告须包含目前进度、风险和下周计划\"},\n    {\"point\": \"张三负责汇总技术进度，李四负责补充用户访谈记录\", \"evidence\": \"张三负责汇总技术进度，李四负责补充用户访谈记录\"},\n    {\"point\": \"当前项目已完成60%的开发\", \"evidence\": \"项目当前已完成60%的开发\"}\n  ],\n  \"tags\": [\"中期报告\", \"项目进度\", \"任务分工\", \"学院要求\"],\n  \"todos\": [\n    {\"action\": \"提交中期报告\", \"owner\": \"各项目组\", \"deadline\": \"10月8日前\", \"evidence\": \"学院要求各项目组在10月8日前提交中期报告\"},\n    {\"action\": \"汇总技术进度\", \"owner\": \"张三\", \"deadline\": \"未指定\", \"evidence\": \"张三负责汇总技术进度\"},\n    {\"action\": \"补充用户访谈记录\", \"owner\": \"李四\", \"deadline\": \"未指定\", \"evidence\": \"李四负责补充用户访谈记录\"}\n  ],\n  \"uncertainties\": [\"中期报告的具体提交格式未明确\", \"项目风险的具体填报要求未说明\"]\n}"
+    },
+    {
+      "id": "S02",
+      "template": "summary",
+      "ok": true,
+      "error": "",
+      "schema_ok": true,
+      "schema_errors": [],
+      "elapsed_s": 7.8,
+      "evidence_total": 4,
+      "evidence_issues": 0,
+      "evidence_issue_detail": [],
+      "gold_total": 3,
+      "gold_hit": 1,
+      "gold_missed": [
+        "原型文档只是表达方式",
+        "判断力是稀缺资源"
+      ],
+      "data": {
+        "title": "原文未提供",
+        "one_sentence_summary": "产品经理核心能力是判断做什么与不做什么，而非画原型写文档，只会上传下达的会被流程替代。",
+        "key_points": [
+          {
+            "point": "产品经理核心能力是判断做什么和不做什么",
+            "evidence": "产品经理的核心能力是判断做什么和不做什么"
+          },
+          {
+            "point": "原型和文档只是产品经理的表达方式",
+            "evidence": "原型和文档只是表达方式"
+          },
+          {
+            "point": "判断力是产品经理的稀缺资源",
+            "evidence": "判断力才是稀缺资源"
+          },
+          {
+            "point": "只会上传下达的产品经理会被流程替代",
+            "evidence": "一个只会上传下达的产品经理，很快会被流程替代"
+          }
+        ],
+        "tags": [
+          "产品经理",
+          "核心能力",
+          "判断力",
+          "职业发展"
+        ],
+        "todos": [],
+        "uncertainties": []
+      },
+      "raw": "{\n  \"title\": \"原文未提供\",\n  \"one_sentence_summary\": \"产品经理核心能力是判断做什么与不做什么，而非画原型写文档，只会上传下达的会被流程替代。\",\n  \"key_points\": [\n    {\"point\": \"产品经理核心能力是判断做什么和不做什么\", \"evidence\": \"产品经理的核心能力是判断做什么和不做什么\"},\n    {\"point\": \"原型和文档只是产品经理的表达方式\", \"evidence\": \"原型和文档只是表达方式\"},\n    {\"point\": \"判断力是产品经理的稀缺资源\", \"evidence\": \"判断力才是稀缺资源\"},\n    {\"point\": \"只会上传下达的产品经理会被流程替代\", \"evidence\": \"一个只会上传下达的产品经理，很快会被流程替代\"}\n  ],\n  \"tags\": [\"产品经理\", \"核心能力\", \"判断力\", \"职业发展\"],\n  \"todos\": [],\n  \"uncertainties\": []\n}"
+    },
+    {
+      "id": "S03",
+      "template": "todos",
+      "ok": true,
+      "error": "",
+      "schema_ok": true,
+      "schema_errors": [],
+      "elapsed_s": 8.52,
+      "evidence_total": 2,
+      "evidence_issues": 0,
+      "evidence_issue_detail": [],
+      "gold_total": 2,
+      "gold_hit": 0,
+      "gold_missed": [
+        "王五 9 月 30 日前完成流失用户访谈，覆盖至少 10 人",
+        "赵六下周五前给出缩短 30% 的引导方案"
+      ],
+      "data": {
+        "title": "原文未提供",
+        "todos": [
+          {
+            "action": "完成流失用户访谈",
+            "owner": "王五",
+            "deadline": "9月30日前",
+            "deliverable": "至少覆盖10人的流失用户访谈成果",
+            "priority": "unspecified",
+            "evidence": "王五需要在9月30日前完成流失用户访谈，至少覆盖10人"
+          },
+          {
+            "action": "给出缩短30%的新手引导方案",
+            "owner": "赵六",
+            "deadline": "下周五前",
+            "deliverable": "缩短30%的新手引导方案",
+            "priority": "unspecified",
+            "evidence": "赵六负责在下周五前给出一版缩短30%的引导方案"
+          }
+        ],
+        "not_todos": [
+          "本季度用户留存明显下滑",
+          "根本原因是新手引导太长",
+          "团队士气需要关注"
+        ]
+      },
+      "raw": "{\n  \"title\": \"原文未提供\",\n  \"todos\": [\n    {\n      \"action\": \"完成流失用户访谈\",\n      \"owner\": \"王五\",\n      \"deadline\": \"9月30日前\",\n      \"deliverable\": \"至少覆盖10人的流失用户访谈成果\",\n      \"priority\": \"unspecified\",\n      \"evidence\": \"王五需要在9月30日前完成流失用户访谈，至少覆盖10人\"\n    },\n    {\n      \"action\": \"给出缩短30%的新手引导方案\",\n      \"owner\": \"赵六\",\n      \"deadline\": \"下周五前\",\n      \"deliverable\": \"缩短30%的新手引导方案\",\n      \"priority\": \"unspecified\",\n      \"evidence\": \"赵六负责在下周五前给出一版缩短30%的引导方案\"\n    }\n  ],\n  \"not_todos\": [\n    \"本季度用户留存明显下滑\",\n    \"根本原因是新手引导太长\",\n    \"团队士气需要关注\"\n  ]\n}"
+    },
+    {
+      "id": "S04",
+      "template": "archive",
+      "ok": false,
+      "error": "JSON 解析失败: JSON 括号不配对，输出可能被截断",
+      "schema_ok": false,
+      "schema_errors": [],
+      "elapsed_s": 21.17,
+      "evidence_total": 0,
+      "evidence_issues": 0,
+      "evidence_issue_detail": [],
+      "gold_total": 3,
+      "gold_hit": 0,
+      "gold_missed": [
+        "9 月 20 日上线，覆盖 2000 名用户",
+        "延迟从 1.2 秒降到 0.8 秒",
+        "延迟下降归因于缓存尚未验证"
+      ],
+      "data": null,
+      "raw": "{\n  \"title\": \"原文未提供\",\n  \"source_type\": \"report\",\n  \"topic\": \"灰度测试性能效果与原因说明\",\n  \"summary\": \"本次9月20日上线的灰度测试覆盖2000名用户，测试期间接口平均延迟从1.2秒降至"
+    }
+  ]
+}

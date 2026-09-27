@@ -1,0 +1,13 @@
+# ---- 项目本地临时文件 ----
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# ---- 密钥与本地数据（绝不提交）----
+.env
+data/sample_inputs/upload_*
+
+# ---- 说明 ----
+# logs/ 下的评测结果（eval_*.json / rescore_*.json）是有价值的证据，**要提交**，
+# 因此这里不排除 logs/。运行控制台输出 *.txt 体积小、可追溯，也一并保留。

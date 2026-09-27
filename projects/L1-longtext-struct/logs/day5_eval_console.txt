@@ -1,0 +1,14 @@
+[S01] summary … OK
+[S02] summary … OK
+[S03] todos … OK
+[S04] archive … FAIL(JSON 解析失败: JSON 括号不配对，输出可能被截断)
+
+=== 指标 ===
+sample_count: 4
+metric_格式合规率: 0.75
+metric_要点覆盖率: 0.1538
+metric_幻觉率: 0.0
+duration_s: 48.8
+
+明细已写入: D:\code\hermes\ai_pm\projects\L1-longtext-struct\logs\eval_day5_stepfun_20260927_2342.json
+exit=0

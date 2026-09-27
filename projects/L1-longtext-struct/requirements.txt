@@ -1,0 +1,7 @@
+# L1 依赖（Python 3.11）
+streamlit>=1.40
+trafilatura>=1.12
+pymupdf>=1.24
+httpx>=0.28
+jsonschema>=4.23
+pytest>=8.3

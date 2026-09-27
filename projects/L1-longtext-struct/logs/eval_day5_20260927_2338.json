@@ -1,0 +1,112 @@
+{
+  "summary": {
+    "run_at": "2026-09-27 23:38:18",
+    "provider": {
+      "name": "siyu",
+      "base_url": "https://siyu.site",
+      "api_mode": "anthropic_messages",
+      "model": "deepseek-v4-flash",
+      "key_env": "SIYU_API_KEY"
+    },
+    "sample_count": 4,
+    "metric_格式合规率": 0.0,
+    "metric_要点覆盖率": 0.0,
+    "metric_幻觉率": 0,
+    "counts": {
+      "format_ok": 0,
+      "evidence_total": 0,
+      "evidence_issues": 0,
+      "gold_total": 13,
+      "gold_hit": 0
+    },
+    "duration_s": 93.4,
+    "caveat": "样本量小（见 tests/eval_set.json 的 current_count），数字只反映当前链路是否可用，不构成上线结论。"
+  },
+  "rows": [
+    {
+      "id": "S01",
+      "template": "summary",
+      "ok": false,
+      "error": "siyu HTTP 403: {\"code\":\"SUBSCRIPTION_NOT_FOUND\",\"message\":\"No active subscription found for this group\"}",
+      "schema_ok": false,
+      "schema_errors": [],
+      "elapsed_s": 22.98,
+      "evidence_total": 0,
+      "evidence_issues": 0,
+      "evidence_issue_detail": [],
+      "gold_total": 5,
+      "gold_hit": 0,
+      "gold_missed": [
+        "10 月 8 日前提交中期报告",
+        "报告含进度、风险、下周计划",
+        "张三汇总技术进度",
+        "李四补充用户访谈记录",
+        "开发完成 60%"
+      ],
+      "data": null,
+      "raw": ""
+    },
+    {
+      "id": "S02",
+      "template": "summary",
+      "ok": false,
+      "error": "siyu HTTP 403: {\"code\":\"SUBSCRIPTION_NOT_FOUND\",\"message\":\"No active subscription found for this group\"}",
+      "schema_ok": false,
+      "schema_errors": [],
+      "elapsed_s": 23.86,
+      "evidence_total": 0,
+      "evidence_issues": 0,
+      "evidence_issue_detail": [],
+      "gold_total": 3,
+      "gold_hit": 0,
+      "gold_missed": [
+        "产品经理核心能力是判断做什么和不做什么",
+        "原型文档只是表达方式",
+        "判断力是稀缺资源"
+      ],
+      "data": null,
+      "raw": ""
+    },
+    {
+      "id": "S03",
+      "template": "todos",
+      "ok": false,
+      "error": "siyu HTTP 403: {\"code\":\"SUBSCRIPTION_NOT_FOUND\",\"message\":\"No active subscription found for this group\"}",
+      "schema_ok": false,
+      "schema_errors": [],
+      "elapsed_s": 23.69,
+      "evidence_total": 0,
+      "evidence_issues": 0,
+      "evidence_issue_detail": [],
+      "gold_total": 2,
+      "gold_hit": 0,
+      "gold_missed": [
+        "王五 9 月 30 日前完成流失用户访谈，覆盖至少 10 人",
+        "赵六下周五前给出缩短 30% 的引导方案"
+      ],
+      "data": null,
+      "raw": ""
+    },
+    {
+      "id": "S04",
+      "template": "archive",
+      "ok": false,
+      "error": "siyu HTTP 403: {\"code\":\"SUBSCRIPTION_NOT_FOUND\",\"message\":\"No active subscription found for this group\"}",
+      "schema_ok": false,
+      "schema_errors": [],
+      "elapsed_s": 22.9,
+      "evidence_total": 0,
+      "evidence_issues": 0,
+      "evidence_issue_detail": [],
+      "gold_total": 3,
+      "gold_hit": 0,
+      "gold_missed": [
+        "9 月 20 日上线，覆盖 2000 名用户",
+        "延迟从 1.2 秒降到 0.8 秒",
+        "延迟下降归因于缓存尚未验证"
+      ],
+      "data": null,
+      "raw": ""
+    }
+  ]
+}

@@ -1,0 +1,407 @@
+{
+  "summary": {
+    "run_at": "2026-09-27 23:45:30",
+    "provider": {
+      "name": "stepfun",
+      "base_url": "https://api.stepfun.com/v1",
+      "api_mode": "chat_completions",
+      "model": "step-3.7-flash",
+      "key_env": "HERMES_CUSTOM_STEPFUN_API_KEY"
+    },
+    "sample_count": 4,
+    "metric_格式合规率": 1.0,
+    "metric_要点覆盖率": 0.5385,
+    "metric_幻觉率": 0.0,
+    "counts": {
+      "format_ok": 4,
+      "evidence_total": 14,
+      "evidence_issues": 0,
+      "gold_total": 13,
+      "gold_hit": 7
+    },
+    "duration_s": 61.4,
+    "caveat": "样本量小（见 tests/eval_set.json 的 current_count），数字只反映当前链路是否可用，不构成上线结论。"
+  },
+  "rows": [
+    {
+      "id": "S01",
+      "template": "summary",
+      "ok": true,
+      "error": "",
+      "schema_ok": true,
+      "schema_errors": [],
+      "elapsed_s": 8.5,
+      "evidence_total": 5,
+      "evidence_issues": 0,
+      "evidence_issue_detail": [],
+      "finish_reason": "stop",
+      "truncated": false,
+      "usage": {
+        "cached_tokens": 448,
+        "prompt_tokens": 494,
+        "completion_tokens": 1582,
+        "total_tokens": 2076,
+        "prompt_tokens_details": {
+          "cached_tokens": 448
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        }
+      },
+      "warnings": [],
+      "gold_total": 5,
+      "gold_hit": 3,
+      "gold_missed": [
+        "张三汇总技术进度",
+        "李四补充用户访谈记录"
+      ],
+      "gold_detail": {
+        "10 月 8 日前提交中期报告": {
+          "ratio": 1.0,
+          "hit": [
+            "10",
+            "日前提交中期报告"
+          ],
+          "miss": []
+        },
+        "报告含进度、风险、下周计划": {
+          "ratio": 0.67,
+          "hit": [
+            "风险",
+            "下周计划"
+          ],
+          "miss": [
+            "报告含进度"
+          ]
+        },
+        "张三汇总技术进度": {
+          "ratio": 0.0,
+          "hit": [],
+          "miss": [
+            "张三汇总技术进度"
+          ]
+        },
+        "李四补充用户访谈记录": {
+          "ratio": 0.0,
+          "hit": [],
+          "miss": [
+            "李四补充用户访谈记录"
+          ]
+        },
+        "开发完成 60%": {
+          "ratio": 1.0,
+          "hit": [
+            "开发完成",
+            "60%"
+          ],
+          "miss": []
+        }
+      },
+      "data": {
+        "title": "原文未提供",
+        "one_sentence_summary": "学院要求各项目组10月8日前提交含进度、风险、下周计划的中期报告，当前项目开发完成60%，张三、李四分管技术进度与用户访谈汇总。",
+        "key_points": [
+          {
+            "point": "项目当前已完成60%的开发",
+            "evidence": "项目当前已完成 60% 的开发。"
+          },
+          {
+            "point": "中期报告需包含进度、风险和下周计划",
+            "evidence": "报告须包含目前进度、风险和下周计划。"
+          },
+          {
+            "point": "张三负责汇总技术进度，李四负责补充用户访谈记录",
+            "evidence": "张三负责汇总技术进度，李四负责补充用户访谈记录。"
+          },
+          {
+            "point": "各项目组需在10月8日前提交中期报告",
+            "evidence": "学院要求各项目组在 10 月 8 日前提交中期报告。"
+          }
+        ],
+        "tags": [
+          "中期报告",
+          "项目进度",
+          "任务分工",
+          "提交截止"
+        ],
+        "todos": [
+          {
+            "action": "提交中期报告",
+            "owner": "各项目组",
+            "deadline": "10月8日前",
+            "evidence": "学院要求各项目组在 10 月 8 日前提交中期报告。"
+          }
+        ],
+        "uncertainties": []
+      },
+      "raw": "{\n  \"title\": \"原文未提供\",\n  \"one_sentence_summary\": \"学院要求各项目组10月8日前提交含进度、风险、下周计划的中期报告，当前项目开发完成60%，张三、李四分管技术进度与用户访谈汇总。\",\n  \"key_points\": [\n    {\"point\": \"项目当前已完成60%的开发\", \"evidence\": \"项目当前已完成 60% 的开发。\"},\n    {\"point\": \"中期报告需包含进度、风险和下周计划\", \"evidence\": \"报告须包含目前进度、风险和下周计划。\"},\n    {\"point\": \"张三负责汇总技术进度，李四负责补充用户访谈记录\", \"evidence\": \"张三负责汇总技术进度，李四负责补充用户访谈记录。\"},\n    {\"point\": \"各项目组需在10月8日前提交中期报告\", \"evidence\": \"学院要求各项目组在 10 月 8 日前提交中期报告。\"}\n  ],\n  \"tags\": [\"中期报告\", \"项目进度\", \"任务分工\", \"提交截止\"],\n  \"todos\": [\n    {\"action\": \"提交中期报告\", \"owner\": \"各项目组\", \"deadline\": \"10月8日前\", \"evidence\": \"学院要求各项目组在 10 月 8 日前提交中期报告。\"}\n  ],\n  \"uncertainties\": []\n}"
+    },
+    {
+      "id": "S02",
+      "template": "summary",
+      "ok": true,
+      "error": "",
+      "schema_ok": true,
+      "schema_errors": [],
+      "elapsed_s": 18.92,
+      "evidence_total": 5,
+      "evidence_issues": 0,
+      "evidence_issue_detail": [],
+      "finish_reason": "stop",
+      "truncated": false,
+      "usage": {
+        "cached_tokens": 448,
+        "prompt_tokens": 493,
+        "completion_tokens": 3421,
+        "total_tokens": 3914,
+        "prompt_tokens_details": {
+          "cached_tokens": 448
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        }
+      },
+      "warnings": [],
+      "gold_total": 3,
+      "gold_hit": 0,
+      "gold_missed": [
+        "产品经理核心能力是判断做什么和不做什么",
+        "原型文档只是表达方式",
+        "判断力是稀缺资源"
+      ],
+      "gold_detail": {
+        "产品经理核心能力是判断做什么和不做什么": {
+          "ratio": 0.0,
+          "hit": [],
+          "miss": [
+            "产品经理核心能力是判断做什么和不做什么"
+          ]
+        },
+        "原型文档只是表达方式": {
+          "ratio": 0.0,
+          "hit": [],
+          "miss": [
+            "原型文档只是表达方式"
+          ]
+        },
+        "判断力是稀缺资源": {
+          "ratio": 0.0,
+          "hit": [],
+          "miss": [
+            "判断力是稀缺资源"
+          ]
+        }
+      },
+      "data": {
+        "title": "原文未提供",
+        "one_sentence_summary": "很多人误以为产品经理核心工作是画原型写文档，实际上其核心能力是判断做与不做，判断力稀缺，只会上传下达的会被流程替代。",
+        "key_points": [
+          {
+            "point": "很多人误以为产品经理核心工作是画原型和写文档",
+            "evidence": "很多人以为产品经理的工作是画原型和写文档"
+          },
+          {
+            "point": "产品经理的核心能力是判断做什么和不做什么",
+            "evidence": "产品经理的核心能力是判断做什么和不做什么"
+          },
+          {
+            "point": "原型和文档只是产品经理工作的表达方式",
+            "evidence": "原型和文档只是表达方式"
+          },
+          {
+            "point": "判断力是产品经理领域的稀缺资源",
+            "evidence": "判断力才是稀缺资源"
+          },
+          {
+            "point": "只会上传下达的产品经理很快会被流程替代",
+            "evidence": "一个只会上传下达的产品经理，很快会被流程替代"
+          }
+        ],
+        "tags": [
+          "产品经理",
+          "核心能力",
+          "判断力",
+          "职业发展"
+        ],
+        "todos": [],
+        "uncertainties": [
+          "原文未明确‘很快被流程替代’的具体时间与判定标准",
+          "原文未说明‘只会上传下达’的具体行为界定"
+        ]
+      },
+      "raw": "{\n  \"title\": \"原文未提供\",\n  \"one_sentence_summary\": \"很多人误以为产品经理核心工作是画原型写文档，实际上其核心能力是判断做与不做，判断力稀缺，只会上传下达的会被流程替代。\",\n  \"key_points\": [\n    {\"point\": \"很多人误以为产品经理核心工作是画原型和写文档\", \"evidence\": \"很多人以为产品经理的工作是画原型和写文档\"},\n    {\"point\": \"产品经理的核心能力是判断做什么和不做什么\", \"evidence\": \"产品经理的核心能力是判断做什么和不做什么\"},\n    {\"point\": \"原型和文档只是产品经理工作的表达方式\", \"evidence\": \"原型和文档只是表达方式\"},\n    {\"point\": \"判断力是产品经理领域的稀缺资源\", \"evidence\": \"判断力才是稀缺资源\"},\n    {\"point\": \"只会上传下达的产品经理很快会被流程替代\", \"evidence\": \"一个只会上传下达的产品经理，很快会被流程替代\"}\n  ],\n  \"tags\": [\"产品经理\", \"核心能力\", \"判断力\", \"职业发展\"],\n  \"todos\": [],\n  \"uncertainties\": [\"原文未明确‘很快被流程替代’的具体时间与判定标准\", \"原文未说明‘只会上传下达’的具体行为界定\"]\n}"
+    },
+    {
+      "id": "S03",
+      "template": "todos",
+      "ok": true,
+      "error": "",
+      "schema_ok": true,
+      "schema_errors": [],
+      "elapsed_s": 20.92,
+      "evidence_total": 2,
+      "evidence_issues": 0,
+      "evidence_issue_detail": [],
+      "finish_reason": "stop",
+      "truncated": false,
+      "usage": {
+        "cached_tokens": 448,
+        "prompt_tokens": 494,
+        "completion_tokens": 1798,
+        "total_tokens": 2292,
+        "prompt_tokens_details": {
+          "cached_tokens": 448
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        }
+      },
+      "warnings": [],
+      "gold_total": 2,
+      "gold_hit": 2,
+      "gold_missed": [],
+      "gold_detail": {
+        "王五 9 月 30 日前完成流失用户访谈，覆盖至少 10 人": {
+          "ratio": 1.0,
+          "hit": [
+            "王五",
+            "30",
+            "日前完成流失用户访谈",
+            "覆盖至少",
+            "10"
+          ],
+          "miss": []
+        },
+        "赵六下周五前给出缩短 30% 的引导方案": {
+          "ratio": 0.67,
+          "hit": [
+            "30%",
+            "的引导方案"
+          ],
+          "miss": [
+            "赵六下周五前给出缩短"
+          ]
+        }
+      },
+      "data": {
+        "title": "原文未提供",
+        "todos": [
+          {
+            "action": "完成流失用户访谈，覆盖至少10人",
+            "owner": "王五",
+            "deadline": "9月30日前",
+            "deliverable": "覆盖至少10人的流失用户访谈成果",
+            "priority": "unspecified",
+            "evidence": "王五需要在9月30日前完成流失用户访谈，至少覆盖10人"
+          },
+          {
+            "action": "给出缩短30%的新手引导方案",
+            "owner": "赵六",
+            "deadline": "下周五前",
+            "deliverable": "缩短30%的新手引导方案",
+            "priority": "unspecified",
+            "evidence": "赵六负责在下周五前给出一版缩短30%的引导方案"
+          }
+        ],
+        "not_todos": [
+          "本季度用户留存明显下滑",
+          "认为新手引导太长是用户留存下滑的根本原因",
+          "团队士气需要关注"
+        ]
+      },
+      "raw": "{\n  \"title\": \"原文未提供\",\n  \"todos\": [\n    {\n      \"action\": \"完成流失用户访谈，覆盖至少10人\",\n      \"owner\": \"王五\",\n      \"deadline\": \"9月30日前\",\n      \"deliverable\": \"覆盖至少10人的流失用户访谈成果\",\n      \"priority\": \"unspecified\",\n      \"evidence\": \"王五需要在9月30日前完成流失用户访谈，至少覆盖10人\"\n    },\n    {\n      \"action\": \"给出缩短30%的新手引导方案\",\n      \"owner\": \"赵六\",\n      \"deadline\": \"下周五前\",\n      \"deliverable\": \"缩短30%的新手引导方案\",\n      \"priority\": \"unspecified\",\n      \"evidence\": \"赵六负责在下周五前给出一版缩短30%的引导方案\"\n    }\n  ],\n  \"not_todos\": [\n    \"本季度用户留存明显下滑\",\n    \"认为新手引导太长是用户留存下滑的根本原因\",\n    \"团队士气需要关注\"\n  ]\n}"
+    },
+    {
+      "id": "S04",
+      "template": "archive",
+      "ok": true,
+      "error": "",
+      "schema_ok": true,
+      "schema_errors": [],
+      "elapsed_s": 13.0,
+      "evidence_total": 2,
+      "evidence_issues": 0,
+      "evidence_issue_detail": [],
+      "finish_reason": "stop",
+      "truncated": false,
+      "usage": {
+        "cached_tokens": 448,
+        "prompt_tokens": 478,
+        "completion_tokens": 2316,
+        "total_tokens": 2794,
+        "prompt_tokens_details": {
+          "cached_tokens": 448
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        }
+      },
+      "warnings": [],
+      "gold_total": 3,
+      "gold_hit": 2,
+      "gold_missed": [
+        "延迟下降归因于缓存尚未验证"
+      ],
+      "gold_detail": {
+        "9 月 20 日上线，覆盖 2000 名用户": {
+          "ratio": 1.0,
+          "hit": [
+            "20",
+            "日上线",
+            "覆盖",
+            "2000",
+            "名用户"
+          ],
+          "miss": []
+        },
+        "延迟从 1.2 秒降到 0.8 秒": {
+          "ratio": 1.0,
+          "hit": [
+            "延迟从",
+            "1.2",
+            "秒降到",
+            "0.8"
+          ],
+          "miss": []
+        },
+        "延迟下降归因于缓存尚未验证": {
+          "ratio": 0.0,
+          "hit": [],
+          "miss": [
+            "延迟下降归因于缓存尚未验证"
+          ]
+        }
+      },
+      "data": {
+        "title": "原文未提供",
+        "source_type": "unknown",
+        "topic": "灰度测试接口延迟变化及原因分析",
+        "summary": "本次灰度测试于9月20日上线，覆盖2000名用户，测试期间接口平均延迟从1.2秒降至0.8秒，延迟下降原因暂未通过对照实验验证。",
+        "claims": [
+          {
+            "claim": "延迟下降主要来自缓存命中率提升",
+            "evidence": "我们认为延迟下降主要来自缓存命中率提升"
+          }
+        ],
+        "facts": [
+          {
+            "fact": "灰度测试于9月20日上线，覆盖2000名用户，测试期间接口平均延迟从1.2秒降至0.8秒",
+            "evidence": "本次灰度测试于9月20日上线，覆盖2000名用户。测试期间接口平均延迟从1.2秒降到0.8秒。"
+          }
+        ],
+        "keywords": [
+          "灰度测试",
+          "接口延迟",
+          "缓存命中率",
+          "性能优化",
+          "对照实验"
+        ],
+        "follow_up_questions": [
+          "缓存命中率提升是否为接口延迟下降的唯一原因？",
+          "针对延迟下降原因的对照实验计划何时开展？"
+        ]
+      },
+      "raw": "{\n  \"title\": \"原文未提供\",\n  \"source_type\": \"unknown\",\n  \"topic\": \"灰度测试接口延迟变化及原因分析\",\n  \"summary\": \"本次灰度测试于9月20日上线，覆盖2000名用户，测试期间接口平均延迟从1.2秒降至0.8秒，延迟下降原因暂未通过对照实验验证。\",\n  \"claims\": [\n    {\n      \"claim\": \"延迟下降主要来自缓存命中率提升\",\n      \"evidence\": \"我们认为延迟下降主要来自缓存命中率提升\"\n    }\n  ],\n  \"facts\": [\n    {\n      \"fact\": \"灰度测试于9月20日上线，覆盖2000名用户，测试期间接口平均延迟从1.2秒降至0.8秒\",\n      \"evidence\": \"本次灰度测试于9月20日上线，覆盖2000名用户。测试期间接口平均延迟从1.2秒降到0.8秒。\"\n    }\n  ],\n  \"keywords\": [\"灰度测试\", \"接口延迟\", \"缓存命中率\", \"性能优化\", \"对照实验\"],\n  \"follow_up_questions\": [\"缓存命中率提升是否为接口延迟下降的唯一原因？\", \"针对延迟下降原因的对照实验计划何时开展？\"]\n}"
+    }
+  ]
+}
