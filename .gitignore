@@ -69,3 +69,6 @@ projects/**/.env*
 *.bin
 *.pt
 *.onnx
+
+# ---- 外部参考库（references/ 下是 junction，实体在 D:\code\<仓库名>，绝不入库）----
+references/hello-agents/

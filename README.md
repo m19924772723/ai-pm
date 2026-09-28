@@ -15,6 +15,7 @@
 | [`achievements/`](achievements/) | ★ **成果归档**——按日期分类，日期内按英文成果词继续分类 |
 | [`soft/`](soft/) | AI 产品经理软件清单：按需求、设计、开发、评测、部署、安全和求职分类 |
 | [`docs/`](docs/) | 方法论文档：学习路线、简历打造、面试准备、项目说明书 |
+| [`references/`](references/) | 本地外部参考库（junction 挂载，不入 git）：目前挂着 `hello-agents` AI Agent 开发母本，索引见 [`docs/hello-agents-学习索引.md`](docs/hello-agents-学习索引.md) |
 | [`plans/`](plans/) | 计划表（Excel）：日周月计划、求职计划、产品项目清单、工具栈 |
 | [`projects/`](projects/) | 实际做的产品项目代码（L1 / L2 / L3） |
 | [`data/`](data/) | 技能库索引等数据 |
