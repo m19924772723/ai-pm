@@ -1,0 +1,35 @@
+{
+  "run_at": "2026-09-28 13:48:59",
+  "attempted": 4,
+  "succeeded": 2,
+  "失败率": 0.5,
+  "rows": [
+    {
+      "url": "https://www.woshipm.com/pmd/2595761.html",
+      "ok": true,
+      "method": "trafilatura",
+      "len": 2776,
+      "title": "产品经理，你真的理解俞军的产品价值公式吗？ – 人人都是产品经理",
+      "warnings": []
+    },
+    {
+      "url": "https://www.promptingguide.ai/zh/introduction/basics",
+      "ok": true,
+      "method": "trafilatura",
+      "len": 1838,
+      "title": "Prompt Engineering Guide",
+      "warnings": []
+    },
+    {
+      "url": "https://36kr.com/",
+      "ok": false,
+      "error": "正文提取结果过短，建议手动粘贴"
+    },
+    {
+      "url": "https://www.zhihu.com/",
+      "ok": false,
+      "error": "正文提取结果过短，建议手动粘贴"
+    }
+  ],
+  "note": "首轮真实 URL 抓取数据点；样本含一个故意失败的 403，失败率不代表真实场景"
+}

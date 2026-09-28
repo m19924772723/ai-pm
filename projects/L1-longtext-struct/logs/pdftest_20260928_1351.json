@@ -1,0 +1,23 @@
+{
+  "run_at": "2026-09-28 13:51:33.631298",
+  "rows": [
+    {
+      "case": "text_pdf",
+      "ok": true,
+      "pages": 1,
+      "len": 112,
+      "title": "L1 项目 PDF 提取测试文档。",
+      "warnings": []
+    },
+    {
+      "case": "scan_sim",
+      "ok": false,
+      "error": "PDF 无文本层（可能是扫描件）；L1 不做 OCR，请手动粘贴正文"
+    },
+    {
+      "case": "missing",
+      "ok": false,
+      "error": "无法打开 PDF: FileNotFoundError"
+    }
+  ]
+}
