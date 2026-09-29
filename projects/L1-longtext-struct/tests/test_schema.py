@@ -168,6 +168,48 @@ def test_to_markdown_todos_empty_message():
     assert "没有明确待办" in to_markdown(r)
 
 
+def test_to_markdown_todos_full_render():
+    r = StructResult(ok=True, template="todos", data={
+        "title": "周会纪要",
+        "todos": [{
+            "action": "完成流失用户访谈", "owner": "王五",
+            "deadline": "9 月 30 日前", "deliverable": "10 人访谈记录",
+            "priority": "high", "evidence": "王五需要在 9 月 30 日前完成流失用户访谈",
+        }],
+        "not_todos": ["团队士气需要关注"],
+    })
+    md = to_markdown(r)
+    assert "# 周会纪要" in md
+    assert "完成流失用户访谈" in md
+    assert "王五" in md and "9 月 30 日前" in md and "10 人访谈记录" in md
+    assert "high" in md
+    assert "不算待办的内容" in md and "团队士气需要关注" in md
+
+
+def test_to_markdown_archive_full_render():
+    r = StructResult(ok=True, template="archive", data={
+        "title": "灰度测试报告", "source_type": "report", "topic": "接口延迟",
+        "summary": "延迟从 1.2 秒降到 0.8 秒",
+        "claims": [{"claim": "下降来自缓存", "evidence": "我们认为延迟下降主要来自缓存"}],
+        "facts": [{"fact": "9 月 20 日上线", "evidence": "灰度测试于 9 月 20 日上线"}],
+        "keywords": ["灰度测试", "缓存", "延迟"],
+        "follow_up_questions": ["对照实验何时开展？"],
+    })
+    md = to_markdown(r)
+    assert "# 灰度测试报告" in md
+    assert "report" in md and "接口延迟" in md
+    assert "## 主张" in md and "下降来自缓存" in md
+    assert "## 事实" in md and "9 月 20 日上线" in md
+    assert "缓存" in md and "对照实验何时开展？" in md
+
+
+def test_to_markdown_warnings_appended():
+    r = StructResult(ok=True, template="summary", data={
+        "title": "t", "one_sentence_summary": "s", "key_points": [], "tags": [],
+        "todos": [], "uncertainties": []}, warnings=["输入超长已截断"])
+    assert "警告" in to_markdown(r) and "输入超长已截断" in to_markdown(r)
+
+
 def test_to_markdown_failure():
     r = StructResult(ok=False, template="summary", error="boom")
     assert "生成失败" in to_markdown(r)

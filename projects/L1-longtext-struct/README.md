@@ -12,7 +12,7 @@
 | 能力 | 状态 |
 |---|---|
 | 文本 → 结构化 JSON（摘要模板） | ✅ 已真实调通 |
-| JSON 一次解析 + Schema 校验 | ✅ 33 个离线单测通过 |
+| JSON 一次解析 + Schema 校验 | ✅ 36 个离线单测通过 |
 | 证据回溯检查（幻觉第一道防线） | ✅ 已实现 |
 | 待办模板 / 归档模板 | ✅ 已实现并跑通评测 |
 | 截断检测（finish_reason / 括号配对） | ✅ 已实现，修掉了 4096 token 截断问题 |
@@ -73,6 +73,9 @@ L1-longtext-struct/
 ├── app.py                  # Streamlit 界面（输入 3 种 + 3 模板 + 展示导出）
 ├── pipeline.py             # 核心链路：文本 → 结构化 JSON（与界面解耦）
 ├── scripts_verify.py       # 一次真实调用，验证链路
+├── scripts_demo.py         # 三模板端到端（真实文章 → 3 份 Markdown）
+├── scripts_urltest.py      # 真实 URL 抓取验证
+├── scripts_pdftest.py      # PDF 三条路径验证
 ├── run_eval.py             # 跑评测集，算 3 个指标，写 logs/
 ├── prompts/templates.py    # 3 套提示词（与 docs/L1提示词初稿.md 保持一致）
 ├── utils/llm.py            # 模型调用封装（密钥只从环境变量读）

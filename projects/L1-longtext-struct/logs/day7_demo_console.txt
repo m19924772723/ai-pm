@@ -1,0 +1,9 @@
+抓取: https://www.woshipm.com/pmd/2595761.html
+  方法=trafilatura 标题='产品经理，你真的理解俞军的产品价值公式吗？ – 人人都是产品经理' 正文=2776 字
+[summary] 调用中 … OK 41.6s schema=True ev_issues=0
+[todos] 调用中 … OK 44.9s schema=True ev_issues=3
+[archive] 调用中 … OK 33.2s schema=True ev_issues=0
+
+三模板接线: 3/3 成功 | 证据: demo_20260929_1251.json
+Markdown 渲染: demo_markdown_20260929_1251.md
+exit=0
