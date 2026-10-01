@@ -79,6 +79,9 @@ def score_gold(gold: list[str], result_text: str, threshold: float = 0.6) -> dic
     text = _norm(result_text)
     zh_res = re.sub(r"[^\u4e00-\u9fa5]", "", text)
     res_shingles = {zh_res[i:i + 2] for i in range(len(zh_res) - 1)}
+    # 英文词从**原始**结果文本提取：_norm 会去掉空格把短语黏成一个词（"API spec"→"apispec"），
+    # 在归一化文本上按 [A-Za-z]{3,} 提取会漏掉单词边界。之前只收中文二元组是第一个 bug，这里是第二个。
+    res_shingles |= {w.lower() for w in re.findall(r"[A-Za-z]{3,}", result_text)}
     hit_points, miss_points, det = [], [], {}
 
     for g in gold:
@@ -143,8 +146,9 @@ def main() -> int:
     fmt_ok = sum(1 for r in rows if r["ok"] and r["schema_ok"])
     ev_total = sum(r["evidence_total"] for r in rows)
     ev_bad = sum(r["evidence_issues"] for r in rows)
-    gold_total = sum(r["gold_total"] for r in rows)
-    gold_hit = sum(r["gold_hit"] for r in rows)
+    # 覆盖率只统计非 behavior 样本（S19 的 gold 描述的是系统行为，不是内容要点）
+    gold_total = sum(r["gold_total"] for r in rows if r["id"] != "S19")
+    gold_hit = sum(r["gold_hit"] for r in rows if r["id"] != "S19")
 
     summary = {
         "run_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),

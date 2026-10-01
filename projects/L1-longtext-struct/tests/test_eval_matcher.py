@@ -70,3 +70,21 @@ def test_s04_paraphrase_is_below_threshold():
         {"summary": "延迟下降原因暂未通过对照实验验证"}, ensure_ascii=False)
     res = score_gold([gold], model_text)
     assert res["hit_points"] == [], "若这里通过，说明匹配器已升级为语义级，请更新文档数字"
+
+
+def test_english_gold_matches_english_result():
+    """回归：英文结果文本必须能命中英文 gold（修复前 res_shingles 只收中文）。"""
+    gold = "Alice finalizes API spec by Friday"
+    model_text = json.dumps({"todos": [{
+        "action": "finalize the API spec", "owner": "Alice",
+        "deadline": "by Friday", "priority": "unspecified"}]}, ensure_ascii=False)
+    res = score_gold([gold], model_text)
+    assert res["hit_points"] == [gold], res["detail"]
+
+
+def test_english_numbers_still_required():
+    gold = "answer faithfulness improved from 68% to 81%"
+    model_text = json.dumps({"summary": "faithfulness went from 50% to 55%"}, ensure_ascii=False)
+    res = score_gold([gold], model_text)
+    assert res["hit_points"] == [], "数字没变还判中就是 bug"
+    assert res["detail"][gold]["reason"] == "数字缺失"

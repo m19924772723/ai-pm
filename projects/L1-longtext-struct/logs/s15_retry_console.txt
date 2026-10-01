@@ -1,0 +1,4 @@
+S15 input len: 467
+attempt1: ok=True err= elapsed=46.3s finish='stop' schema=True
+key_points: 5
+exit=0

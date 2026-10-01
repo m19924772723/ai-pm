@@ -1,0 +1,795 @@
+{
+  "source_file": "eval_eval20_20261001_1449.json",
+  "matcher_v1_逐字": 0.6667,
+  "matcher_v2_二元组重叠": 0.7821,
+  "counts": {
+    "gold_total": 78,
+    "v1_hit": 52,
+    "v2_hit": 61
+  },
+  "caveat": "两个匹配器都是字面级近似，不是语义判定；真实覆盖率以第 4 周人工核对为准。",
+  "rows": [
+    {
+      "id": "S01",
+      "template": "summary",
+      "old_hit": 5,
+      "new_hit": 5,
+      "point_total": 5,
+      "new_missed": [],
+      "detail": {
+        "10 月 8 日前提交中期报告": {
+          "ratio": 1.0,
+          "reason": "逐字命中"
+        },
+        "报告含进度、风险、下周计划": {
+          "ratio": 0.9,
+          "hard_miss": [],
+          "shingle_miss": [
+            "告含"
+          ],
+          "reason": "通过"
+        },
+        "张三汇总技术进度": {
+          "ratio": 0.857,
+          "hard_miss": [],
+          "shingle_miss": [
+            "三汇"
+          ],
+          "reason": "通过"
+        },
+        "李四补充用户访谈记录": {
+          "ratio": 0.889,
+          "hard_miss": [],
+          "shingle_miss": [
+            "四补"
+          ],
+          "reason": "通过"
+        },
+        "开发完成 60%": {
+          "ratio": 0.667,
+          "hard_miss": [],
+          "shingle_miss": [
+            "发完"
+          ],
+          "reason": "通过"
+        }
+      }
+    },
+    {
+      "id": "S02",
+      "template": "summary",
+      "old_hit": 2,
+      "new_hit": 2,
+      "point_total": 3,
+      "new_missed": [
+        "判断力是稀缺资源"
+      ],
+      "detail": {
+        "产品经理核心能力是判断做什么和不做什么": {
+          "ratio": 1.0,
+          "reason": "逐字命中"
+        },
+        "原型文档只是表达方式": {
+          "ratio": 0.889,
+          "hard_miss": [],
+          "shingle_miss": [
+            "型文"
+          ],
+          "reason": "通过"
+        },
+        "判断力是稀缺资源": {
+          "ratio": 0.429,
+          "hard_miss": [],
+          "shingle_miss": [
+            "是稀",
+            "稀缺",
+            "缺资",
+            "资源"
+          ],
+          "reason": "重叠不足"
+        }
+      }
+    },
+    {
+      "id": "S03",
+      "template": "todos",
+      "old_hit": 2,
+      "new_hit": 2,
+      "point_total": 2,
+      "new_missed": [],
+      "detail": {
+        "王五 9 月 30 日前完成流失用户访谈，覆盖至少 10 人": {
+          "ratio": 0.824,
+          "hard_miss": [],
+          "shingle_miss": [
+            "少人",
+            "盖至",
+            "谈覆"
+          ],
+          "reason": "通过"
+        },
+        "赵六下周五前给出缩短 30% 的引导方案": {
+          "ratio": 1.0,
+          "hard_miss": [],
+          "shingle_miss": [],
+          "reason": "通过"
+        }
+      }
+    },
+    {
+      "id": "S04",
+      "template": "archive",
+      "old_hit": 2,
+      "new_hit": 2,
+      "point_total": 3,
+      "new_missed": [
+        "延迟下降归因于缓存尚未验证"
+      ],
+      "detail": {
+        "9 月 20 日上线，覆盖 2000 名用户": {
+          "ratio": 1.0,
+          "reason": "逐字命中"
+        },
+        "延迟从 1.2 秒降到 0.8 秒": {
+          "ratio": 1.0,
+          "reason": "逐字命中"
+        },
+        "延迟下降归因于缓存尚未验证": {
+          "ratio": 0.5,
+          "hard_miss": [],
+          "shingle_miss": [
+            "于缓",
+            "因于",
+            "存尚",
+            "归因",
+            "未验"
+          ],
+          "reason": "重叠不足"
+        }
+      }
+    },
+    {
+      "id": "S05",
+      "template": "summary",
+      "old_hit": 2,
+      "new_hit": 2,
+      "point_total": 5,
+      "new_missed": [
+        "体验差大于迁移成本时用户做出使用新产品的决定",
+        "绝对价值没有意义，相对价值才是竞争筹码",
+        "降低迁移成本的手段分为内在动力与外部刺激"
+      ],
+      "detail": {
+        "产品价值 =（新体验 - 旧体验）- 迁移成本": {
+          "ratio": 1.0,
+          "hard_miss": [],
+          "shingle_miss": [],
+          "reason": "通过"
+        },
+        "存量市场竞争是用户迁移/产品替换的竞争": {
+          "ratio": 1.0,
+          "hard_miss": [],
+          "shingle_miss": [],
+          "reason": "通过"
+        },
+        "体验差大于迁移成本时用户做出使用新产品的决定": {
+          "ratio": 0.429,
+          "hard_miss": [],
+          "shingle_miss": [
+            "于迁",
+            "使用",
+            "做出",
+            "决定",
+            "出使"
+          ],
+          "reason": "重叠不足"
+        },
+        "绝对价值没有意义，相对价值才是竞争筹码": {
+          "ratio": 0.267,
+          "hard_miss": [],
+          "shingle_miss": [
+            "义相",
+            "争筹",
+            "值才",
+            "值没",
+            "意义"
+          ],
+          "reason": "重叠不足"
+        },
+        "降低迁移成本的手段分为内在动力与外部刺激": {
+          "ratio": 0.368,
+          "hard_miss": [],
+          "shingle_miss": [
+            "与外",
+            "为内",
+            "内在",
+            "分为",
+            "刺激"
+          ],
+          "reason": "重叠不足"
+        }
+      }
+    },
+    {
+      "id": "S06",
+      "template": "archive",
+      "old_hit": 3,
+      "new_hit": 3,
+      "point_total": 5,
+      "new_missed": [
+        "提示词质量与提供的信息数量和完善度有关",
+        "标准提示词格式为问题或指令，可组织为问答格式"
+      ],
+      "detail": {
+        "提示词质量与提供的信息数量和完善度有关": {
+          "ratio": 0.389,
+          "hard_miss": [],
+          "shingle_miss": [
+            "与提",
+            "供的",
+            "和完",
+            "善度",
+            "完善"
+          ],
+          "reason": "重叠不足"
+        },
+        "提示工程是设计有效提示词以指导模型执行期望任务的方法": {
+          "ratio": 0.958,
+          "hard_miss": [],
+          "shingle_miss": [
+            "是设"
+          ],
+          "reason": "通过"
+        },
+        "零样本提示是直接给出指令而不提供示例": {
+          "ratio": 0.706,
+          "hard_miss": [],
+          "shingle_miss": [
+            "令而",
+            "供示",
+            "出指",
+            "接给",
+            "而不"
+          ],
+          "reason": "通过"
+        },
+        "少样本提示通过提供示例（示范）赋能上下文学习": {
+          "ratio": 0.632,
+          "hard_miss": [],
+          "shingle_miss": [
+            "例示",
+            "供示",
+            "示通",
+            "能上",
+            "范赋"
+          ],
+          "reason": "通过"
+        },
+        "标准提示词格式为问题或指令，可组织为问答格式": {
+          "ratio": 0.389,
+          "hard_miss": [],
+          "shingle_miss": [
+            "为问",
+            "令可",
+            "准提",
+            "可组",
+            "式为"
+          ],
+          "reason": "重叠不足"
+        }
+      }
+    },
+    {
+      "id": "S07",
+      "template": "summary",
+      "old_hit": 4,
+      "new_hit": 4,
+      "point_total": 4,
+      "new_missed": [],
+      "detail": {
+        "每天开窗通风 15 分钟可降低尘螨浓度": {
+          "ratio": 0.929,
+          "hard_miss": [],
+          "shingle_miss": [
+            "低尘"
+          ],
+          "reason": "通过"
+        },
+        "过敏人群外出戴口罩、回家清洗鼻腔": {
+          "ratio": 0.857,
+          "hard_miss": [],
+          "shingle_miss": [
+            "出戴",
+            "家清"
+          ],
+          "reason": "通过"
+        },
+        "症状超一周应就医": {
+          "ratio": 0.714,
+          "hard_miss": [],
+          "shingle_miss": [
+            "应就",
+            "状超"
+          ],
+          "reason": "通过"
+        },
+        "不建议长期自行服用抗组胺药": {
+          "ratio": 0.75,
+          "hard_miss": [],
+          "shingle_miss": [
+            "期自",
+            "行服",
+            "议长"
+          ],
+          "reason": "通过"
+        }
+      }
+    },
+    {
+      "id": "S08",
+      "template": "todos",
+      "old_hit": 4,
+      "new_hit": 4,
+      "point_total": 4,
+      "new_missed": [],
+      "detail": {
+        "校办 10 月 20 日前完成招标文件编制": {
+          "ratio": 1.0,
+          "hard_miss": [],
+          "shingle_miss": [],
+          "reason": "通过"
+        },
+        "信息中心 11 月 1 日前提交流程清单": {
+          "ratio": 1.0,
+          "hard_miss": [],
+          "shingle_miss": [],
+          "reason": "通过"
+        },
+        "教务处 10 月 30 日前组织供应商演示": {
+          "ratio": 0.917,
+          "hard_miss": [],
+          "shingle_miss": [
+            "织供"
+          ],
+          "reason": "通过"
+        },
+        "财务处确认预算冻结期 4 周": {
+          "ratio": 1.0,
+          "hard_miss": [],
+          "shingle_miss": [],
+          "reason": "通过"
+        }
+      }
+    },
+    {
+      "id": "S09",
+      "template": "summary",
+      "old_hit": 1,
+      "new_hit": 5,
+      "point_total": 5,
+      "new_missed": [],
+      "detail": {
+        "GA release of Atlas v2.0 on October 12": {
+          "ratio": 1.0,
+          "reason": "逐字命中"
+        },
+        "cold-start latency reduced by 40%": {
+          "ratio": 0.75,
+          "hard_miss": [],
+          "shingle_miss": [
+            "reduced"
+          ],
+          "reason": "通过"
+        },
+        "offline mode added": {
+          "ratio": 0.667,
+          "hard_miss": [],
+          "shingle_miss": [
+            "added"
+          ],
+          "reason": "通过"
+        },
+        "pricing unchanged until December 31": {
+          "ratio": 1.0,
+          "hard_miss": [],
+          "shingle_miss": [],
+          "reason": "通过"
+        },
+        "team leads update onboarding docs before October 10": {
+          "ratio": 1.0,
+          "hard_miss": [],
+          "shingle_miss": [],
+          "reason": "通过"
+        }
+      }
+    },
+    {
+      "id": "S10",
+      "template": "todos",
+      "old_hit": 0,
+      "new_hit": 2,
+      "point_total": 2,
+      "new_missed": [],
+      "detail": {
+        "Alice finalizes API spec by Friday": {
+          "ratio": 0.8,
+          "hard_miss": [],
+          "shingle_miss": [
+            "finalizes"
+          ],
+          "reason": "通过"
+        },
+        "Bob fixes login timeout bug before sprint review next Wednesday": {
+          "ratio": 0.9,
+          "hard_miss": [],
+          "shingle_miss": [
+            "fixes"
+          ],
+          "reason": "通过"
+        }
+      }
+    },
+    {
+      "id": "S11",
+      "template": "archive",
+      "old_hit": 1,
+      "new_hit": 3,
+      "point_total": 5,
+      "new_missed": [
+        "dense retriever plus re-ranking is the best configuration",
+        "dataset released under CC-BY"
+      ],
+      "detail": {
+        "1,200 product-support queries evaluated": {
+          "ratio": 0.75,
+          "hard_miss": [],
+          "shingle_miss": [
+            "evaluated"
+          ],
+          "reason": "通过"
+        },
+        "answer faithfulness improved from 68% to 81%": {
+          "ratio": 0.75,
+          "hard_miss": [],
+          "shingle_miss": [
+            "improved"
+          ],
+          "reason": "通过"
+        },
+        "dense retriever plus re-ranking is the best configuration": {
+          "ratio": 0.143,
+          "hard_miss": [],
+          "shingle_miss": [
+            "best",
+            "configuration",
+            "dense",
+            "plus",
+            "ranking"
+          ],
+          "reason": "重叠不足"
+        },
+        "pipelines degrade on out-of-domain queries": {
+          "ratio": 1.0,
+          "reason": "逐字命中"
+        },
+        "dataset released under CC-BY": {
+          "ratio": 0.333,
+          "hard_miss": [],
+          "shingle_miss": [
+            "dataset",
+            "released"
+          ],
+          "reason": "重叠不足"
+        }
+      }
+    },
+    {
+      "id": "S12",
+      "template": "summary",
+      "old_hit": 2,
+      "new_hit": 3,
+      "point_total": 4,
+      "new_missed": [
+        "新端点支持 streaming 和 batch"
+      ],
+      "detail": {
+        "API v1 端点 2027 年 1 月 1 日停用": {
+          "ratio": 1.0,
+          "hard_miss": [],
+          "shingle_miss": [],
+          "reason": "通过"
+        },
+        "客户须迁移到 /v2/batch": {
+          "ratio": 0.667,
+          "hard_miss": [],
+          "shingle_miss": [
+            "户须",
+            "须迁"
+          ],
+          "reason": "通过"
+        },
+        "新端点支持 streaming 和 batch": {
+          "ratio": 0.286,
+          "hard_miss": [],
+          "shingle_miss": [
+            "streaming",
+            "持和",
+            "支持",
+            "新端",
+            "点支"
+          ],
+          "reason": "重叠不足"
+        },
+        "旧端点迁移期间保持可用": {
+          "ratio": 0.8,
+          "hard_miss": [],
+          "shingle_miss": [
+            "点迁",
+            "间保"
+          ],
+          "reason": "通过"
+        }
+      }
+    },
+    {
+      "id": "S13",
+      "template": "todos",
+      "old_hit": 3,
+      "new_hit": 3,
+      "point_total": 4,
+      "new_missed": [
+        "10 月 8 日执行数据库迁移，停机 2 小时"
+      ],
+      "detail": {
+        "10 月 8 日执行数据库迁移，停机 2 小时": {
+          "ratio": 0.333,
+          "hard_miss": [
+            "8"
+          ],
+          "shingle_miss": [
+            "停机",
+            "库迁",
+            "执行",
+            "据库",
+            "日执"
+          ],
+          "reason": "数字缺失"
+        },
+        "数据组 10 月 5 日前完成备份校验": {
+          "ratio": 0.909,
+          "hard_miss": [],
+          "shingle_miss": [
+            "成备"
+          ],
+          "reason": "通过"
+        },
+        "安全组 10 月 7 日前复核权限白名单": {
+          "ratio": 1.0,
+          "hard_miss": [],
+          "shingle_miss": [],
+          "reason": "通过"
+        },
+        "业务线负责人迁移前 24 小时确认 rollback 方案": {
+          "ratio": 0.933,
+          "hard_miss": [],
+          "shingle_miss": [
+            "认方"
+          ],
+          "reason": "通过"
+        }
+      }
+    },
+    {
+      "id": "S14",
+      "template": "archive",
+      "old_hit": 5,
+      "new_hit": 5,
+      "point_total": 5,
+      "new_missed": [],
+      "detail": {
+        "9 月新增用户 5100，环比 +21.4%": {
+          "ratio": 0.833,
+          "hard_miss": [],
+          "shingle_miss": [
+            "户环"
+          ],
+          "reason": "通过"
+        },
+        "次周留存 33%，提升 2 个百分点": {
+          "ratio": 1.0,
+          "hard_miss": [],
+          "shingle_miss": [],
+          "reason": "通过"
+        },
+        "月收入 21.2 万，环比 +14.0%": {
+          "ratio": 1.0,
+          "hard_miss": [],
+          "shingle_miss": [],
+          "reason": "通过"
+        },
+        "10 月 15 日需完成合规备案": {
+          "ratio": 1.0,
+          "reason": "逐字命中"
+        },
+        "服务器迁移 10 月 8 日执行": {
+          "ratio": 0.875,
+          "hard_miss": [],
+          "shingle_miss": [
+            "移月"
+          ],
+          "reason": "通过"
+        }
+      }
+    },
+    {
+      "id": "S15",
+      "old_hit": 0,
+      "new_hit": 0,
+      "point_total": 5,
+      "note": "该样本调用失败，未计入"
+    },
+    {
+      "id": "S16",
+      "template": "todos",
+      "old_hit": 4,
+      "new_hit": 4,
+      "point_total": 4,
+      "new_missed": [],
+      "detail": {
+        "宣传组 10 月 25 日前完成海报和推文": {
+          "ratio": 0.917,
+          "hard_miss": [],
+          "shingle_miss": [
+            "和推"
+          ],
+          "reason": "通过"
+        },
+        "外联组 10 月 30 日前确认场地与赞助商": {
+          "ratio": 1.0,
+          "hard_miss": [],
+          "shingle_miss": [],
+          "reason": "通过"
+        },
+        "物资组 11 月 5 日前提交采购清单": {
+          "ratio": 0.909,
+          "hard_miss": [],
+          "shingle_miss": [
+            "前提"
+          ],
+          "reason": "通过"
+        },
+        "报名通道 11 月 1 日开放": {
+          "ratio": 1.0,
+          "reason": "逐字命中"
+        }
+      }
+    },
+    {
+      "id": "S17",
+      "template": "archive",
+      "old_hit": 4,
+      "new_hit": 4,
+      "point_total": 4,
+      "new_missed": [],
+      "detail": {
+        "2026-09-25 召开评审会": {
+          "ratio": 0.75,
+          "hard_miss": [],
+          "shingle_miss": [
+            "开评"
+          ],
+          "reason": "通过"
+        },
+        "采用方案 B，保留搜索入口权重": {
+          "ratio": 1.0,
+          "reason": "逐字命中"
+        },
+        "参会 12 人": {
+          "ratio": 1.0,
+          "reason": "逐字命中"
+        },
+        "遗留：暗色对比度问题与埋点方案": {
+          "ratio": 0.692,
+          "hard_miss": [],
+          "shingle_miss": [
+            "与埋",
+            "度问",
+            "色对",
+            "题与"
+          ],
+          "reason": "通过"
+        }
+      }
+    },
+    {
+      "id": "S18",
+      "template": "summary",
+      "old_hit": 4,
+      "new_hit": 4,
+      "point_total": 4,
+      "new_missed": [],
+      "detail": {
+        "轻量分割网络，骨干 MobileNetV3，380 万参数": {
+          "ratio": 0.727,
+          "hard_miss": [],
+          "shingle_miss": [
+            "万参",
+            "干万",
+            "络骨"
+          ],
+          "reason": "通过"
+        },
+        "mIoU 从 61.4% 提升至 74.2%": {
+          "ratio": 1.0,
+          "reason": "逐字命中"
+        },
+        "单帧推理 42ms": {
+          "ratio": 1.0,
+          "reason": "逐字命中"
+        },
+        "极端光照下召回率下降 12%": {
+          "ratio": 1.0,
+          "reason": "逐字命中"
+        }
+      }
+    },
+    {
+      "id": "S19",
+      "template": "summary",
+      "old_hit": 1,
+      "new_hit": 1,
+      "point_total": 2,
+      "new_missed": [
+        "数字与主体名在截断片段内保留"
+      ],
+      "detail": {
+        "超过 24000 字应截断并给出警告": {
+          "ratio": 0.7,
+          "hard_miss": [],
+          "shingle_miss": [
+            "出警",
+            "字应",
+            "应截"
+          ],
+          "reason": "通过"
+        },
+        "数字与主体名在截断片段内保留": {
+          "ratio": 0.462,
+          "hard_miss": [],
+          "shingle_miss": [
+            "内保",
+            "名在",
+            "在截",
+            "字与",
+            "断片"
+          ],
+          "reason": "重叠不足"
+        }
+      }
+    },
+    {
+      "id": "S20",
+      "template": "todos",
+      "old_hit": 3,
+      "new_hit": 3,
+      "point_total": 3,
+      "new_missed": [],
+      "detail": {
+        "周一评审新版结算页": {
+          "ratio": 1.0,
+          "reason": "逐字命中"
+        },
+        "陈七周三前修复优惠券 bug": {
+          "ratio": 1.0,
+          "hard_miss": [],
+          "shingle_miss": [],
+          "reason": "通过"
+        },
+        "周五输出 A/B 实验复盘报告": {
+          "ratio": 1.0,
+          "reason": "逐字命中"
+        }
+      }
+    }
+  ]
+}
