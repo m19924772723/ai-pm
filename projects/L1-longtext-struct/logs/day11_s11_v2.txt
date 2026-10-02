@@ -1,0 +1,4 @@
+S11 v2: ok=True schema=True ev_issues=0 elapsed=41.5s
+summary: 本文评估1200条产品支持查询上的retrieval-augmented generation流水线，最优配置结合dense retriever与re-rank
+claims: 2 | facts: 3 | keywords: ['retrieval-augmented generation', '产品支持查询', 'dense retriever', 're-ranking model', '答案忠实度', 'out-of-domain queries', 'knowledge base']
+exit=0

@@ -1,0 +1,50 @@
+{
+  "ok": true,
+  "schema_ok": true,
+  "ev_issues": [],
+  "data": {
+    "title": "原文未提供",
+    "source_type": "paper",
+    "topic": "retrieval-augmented generation在客户支持查询场景的评估",
+    "summary": "本文评估1200条产品支持查询上的retrieval-augmented generation流水线，最优配置结合dense retriever与re-ranking model，将答案忠实度从68%提升至81%，但out-of-domain查询时所有流水线性能下降，归因于knowledge base覆盖不足，同时发布CC-BY许可的评估数据集。",
+    "claims": [
+      {
+        "claim": "dense retriever结合re-ranking model可提升retrieval-augmented generation流水线的答案忠实度",
+        "evidence": "The best configuration combines a dense retriever with a re-ranking model, improving answer faithfulness from 68% to 81% over the baseline."
+      },
+      {
+        "claim": "所有retrieval-augmented generation流水线在out-of-domain查询上性能下降，原因是knowledge base覆盖不足",
+        "evidence": "all pipelines degrade on out-of-domain queries, which we attribute to sparse coverage in the knowledge base."
+      }
+    ],
+    "facts": [
+      {
+        "fact": "本次评估针对1200条产品支持查询开展",
+        "evidence": "We evaluate retrieval-augmented generation pipelines on 1,200 product-support queries."
+      },
+      {
+        "fact": "最优配置将答案忠实度从68%提升至81%",
+        "evidence": "improving answer faithfulness from 68% to 81% over the baseline."
+      },
+      {
+        "fact": "评估数据集以CC-BY许可发布",
+        "evidence": "We release the evaluation dataset under CC-BY license."
+      }
+    ],
+    "keywords": [
+      "retrieval-augmented generation",
+      "产品支持查询",
+      "dense retriever",
+      "re-ranking model",
+      "答案忠实度",
+      "out-of-domain queries",
+      "knowledge base"
+    ],
+    "follow_up_questions": [
+      "不同retrieval-augmented generation流水线在out-of-domain查询上的具体性能下降幅度是多少？",
+      "提升knowledge base覆盖以改善out-of-domain查询性能的具体方案有哪些？",
+      "该评估数据集的具体获取渠道和内容构成是什么？"
+    ]
+  },
+  "elapsed_s": 41.47
+}

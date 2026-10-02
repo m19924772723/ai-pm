@@ -32,6 +32,7 @@ achievements/
 | `2026-09-29` | `Templates/` | 三模板接线端到端、evidence 严格化 A/B、精读材料 |
 | `2026-10-01` | `Evaluation/` | 20 条评测集建成、首轮全量评测、匹配器双 bug 修复 |
 | `2026-10-02` | `EvidenceFix/` | S09 英文 schema + S17 证据规则定案（完整连续子串） |
+| `2026-10-03` | `LanguagePolicy/` | 输出语言固定中文策略 + S11 验证 |
 
 ## 两类文件的边界
 
