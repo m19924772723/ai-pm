@@ -1,0 +1,5 @@
+S09 [summary] ok=True schema=True ev_issues=0 elapsed=19.0s finish='stop'
+S17 [archive] ok=True schema=True ev_issues=1 elapsed=17.6s finish='stop'
+  ev: ["/facts/0/evidence: evidence 未在原文找到 ('参会 12 人，无人反对。遗留问题：暗色模式下对比度不足，数')"]
+written
+exit=0

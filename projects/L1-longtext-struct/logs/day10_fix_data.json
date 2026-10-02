@@ -1,0 +1,90 @@
+{
+  "run_at": "2026-10-02 10:22:13",
+  "S09": {
+    "ok": true,
+    "schema_ok": true,
+    "schema_errors": [],
+    "ev_issues": [],
+    "elapsed_s": 18.98,
+    "data": {
+      "title": "原文未提供",
+      "one_sentence_summary": "Atlas v2.0将于10月12日GA发布，冷启动延迟降40%新增离线模式，现有客户定价不变至12月31日，团队负责人需10月10日前更新入职文档。",
+      "key_points": [
+        {
+          "point": "Atlas v2.0将于10月12日发布GA版本",
+          "evidence": "We are announcing the GA release of Atlas v2.0 on October 12."
+        },
+        {
+          "point": "新版本冷启动延迟降低40%，新增离线模式",
+          "evidence": "The new version reduces cold-start latency by 40% and adds offline mode."
+        },
+        {
+          "point": "现有客户定价维持不变至12月31日",
+          "evidence": "The pricing remains unchanged for existing customers until December 31."
+        },
+        {
+          "point": "团队负责人需在10月10日前更新入职文档",
+          "evidence": "Team leads should update their onboarding docs before October 10."
+        }
+      ],
+      "tags": [
+        "Atlas v2.0",
+        "GA发布",
+        "冷启动优化",
+        "离线模式",
+        "定价政策"
+      ],
+      "todos": [
+        {
+          "action": "更新入职文档",
+          "owner": "Team leads",
+          "deadline": "October 10",
+          "evidence": "Team leads should update their onboarding docs before October 10."
+        }
+      ],
+      "uncertainties": []
+    },
+    "raw": "{\n  \"title\": \"原文未提供\",\n  \"one_sentence_summary\": \"Atlas v2.0将于10月12日GA发布，冷启动延迟降40%新增离线模式，现有客户定价不变至12月31日，团队负责人需10月10日前更新入职文档。\",\n  \"key_points\": [\n    {\"point\": \"Atlas v2.0将于10月12日发布GA版本\", \"evidence\": \"We are announcing the GA release of Atlas v2.0 on October 12.\"},\n    {\"point\": \"新版本冷启动延迟降低40%，新增离线模式\", \"evidence\": \"The new version reduces cold-start latency by 40% and adds offline mode.\"},\n    {\"point\": \"现有客户定价维持不变至12月31日\", \"evidence\": \"The pricing remains unchanged for existing customers until December 31.\"},\n    {\"point\": \"团队负责人需在10月10日前更新入职文档\", \"evidence\": \"Team leads should update their onboarding docs before October 10.\"}\n  ],\n  \"tags\": [\"Atlas v2.0\", \"GA发布\", \"冷启动优化\", \"离线模式\", \"定价政策\"],\n  \"todos\": [\n    {\"action\": \"更新入职文档\", \"owner\": \"Team leads\", \"deadline\": \"October 10\", \"evidence\": \"Team leads should update their onboarding docs before October 10.\"}\n  ],\n  \"uncertainties\": []\n}"
+  },
+  "S17": {
+    "ok": true,
+    "schema_ok": true,
+    "schema_errors": [],
+    "ev_issues": [
+      "/facts/0/evidence: evidence 未在原文找到 ('参会 12 人，无人反对。遗留问题：暗色模式下对比度不足，数')"
+    ],
+    "elapsed_s": 17.6,
+    "data": {
+      "title": "2026-09-25 评审会纪要",
+      "source_type": "meeting_note",
+      "topic": "新用户首页改版方案评审",
+      "summary": "2026年9月25日召开新用户首页改版方案评审会，确定采用方案B并保留搜索入口权重，遗留暗色模式对比度不足、数据埋点方案需下周二前补齐两项问题。",
+      "claims": [
+        {
+          "claim": "新用户首页改版方案采用方案B，保留搜索入口权重",
+          "evidence": "结论：采用方案 B，保留搜索入口权重"
+        }
+      ],
+      "facts": [
+        {
+          "fact": "2026-09-25召开新用户首页改版评审会，参会12人，无人反对，遗留暗色模式对比度不足问题，数据埋点方案需下周二前补齐",
+          "evidence": "参会 12 人，无人反对。遗留问题：暗色模式下对比度不足，数据埋点方案下周二前补齐"
+        }
+      ],
+      "keywords": [
+        "评审会纪要",
+        "新用户首页改版",
+        "方案B",
+        "搜索入口",
+        "暗色模式",
+        "数据埋点"
+      ],
+      "follow_up_questions": [
+        "暗色模式对比度不足的具体优化方案是什么？",
+        "数据埋点方案的具体内容包含哪些项？",
+        "方案B的具体设计细节有哪些？"
+      ]
+    },
+    "raw": "{\n  \"title\": \"2026-09-25 评审会纪要\",\n  \"source_type\": \"meeting_note\",\n  \"topic\": \"新用户首页改版方案评审\",\n  \"summary\": \"2026年9月25日召开新用户首页改版方案评审会，确定采用方案B并保留搜索入口权重，遗留暗色模式对比度不足、数据埋点方案需下周二前补齐两项问题。\",\n  \"claims\": [\n    {\n      \"claim\": \"新用户首页改版方案采用方案B，保留搜索入口权重\",\n      \"evidence\": \"结论：采用方案 B，保留搜索入口权重\"\n    }\n  ],\n  \"facts\": [\n    {\n      \"fact\": \"2026-09-25召开新用户首页改版评审会，参会12人，无人反对，遗留暗色模式对比度不足问题，数据埋点方案需下周二前补齐\",\n      \"evidence\": \"参会 12 人，无人反对。遗留问题：暗色模式下对比度不足，数据埋点方案下周二前补齐\"\n    }\n  ],\n  \"keywords\": [\"评审会纪要\", \"新用户首页改版\", \"方案B\", \"搜索入口\", \"暗色模式\", \"数据埋点\"],\n  \"follow_up_questions\": [\n    \"暗色模式对比度不足的具体优化方案是什么？\",\n    \"数据埋点方案的具体内容包含哪些项？\",\n    \"方案B的具体设计细节有哪些？\"\n  ]\n}"
+  }
+}
