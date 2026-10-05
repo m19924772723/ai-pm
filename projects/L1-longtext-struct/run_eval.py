@@ -29,6 +29,7 @@ sys.path.insert(0, str(ROOT))
 from pipeline import structure  # noqa: E402
 from tests import eval_set_meta  # noqa: E402
 from utils.llm import provider_info, resolve_provider  # noqa: E402
+import time as _time
 
 
 def _norm(s: str) -> str:
@@ -123,7 +124,17 @@ def main() -> int:
     rows, t_start = [], time.time()
     for s in samples:
         print(f"[{s['id']}] {s['template']} … ", end="", flush=True)
-        r = structure(s["input"], template=s["template"], provider=args.provider)
+        # 瞬态 API 故障（stepfun 偶发"返回空内容"）不应污染评测结果：失败重试一次
+        r = None
+        for attempt in range(1, 3):
+            r = structure(s["input"], template=s["template"], provider=args.provider)
+            if r.ok:
+                break
+            retriable = "返回空内容" in (r.error or "") or "网络" in (r.error or "")
+            if not retriable:
+                break
+            print(f"retry{attempt}… ", end="", flush=True)
+            _time.sleep(5)
         n_ev = count_evidence(r.data) if r.data else 0
         issues = r.evidence_issues if r.ok else []
         sc = score_gold(s["gold_points"], json.dumps(r.data or {}, ensure_ascii=False)) if r.ok \

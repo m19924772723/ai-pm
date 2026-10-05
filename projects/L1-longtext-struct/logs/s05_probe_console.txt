@@ -1,0 +1,6 @@
+S05 len: 2776
+stepfun a1: ok=False err=stepfun 返回空内容 46.3s schema=False
+stepfun a2: ok=False err=JSON 解析失败: JSON 括号不配对，输出可能被截断；根因是输出被截断（见 warnings），不是模型不会写 J 47.9s schema=False
+deepseek a1: ok=True err= 22.2s schema=True
+  key_points: 5 | ev_issues: 0
+exit=0

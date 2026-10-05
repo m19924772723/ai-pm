@@ -1,0 +1,30 @@
+[S01] summary … OK
+[S02] summary … OK
+[S03] todos … OK
+[S04] archive … OK
+[S05] summary … retry1… retry2… FAIL(stepfun 返回空内容)
+[S06] archive … OK
+[S07] summary … OK
+[S08] todos … OK
+[S09] summary … OK
+[S10] todos … OK
+[S11] archive … OK
+[S12] summary … OK
+[S13] todos … OK
+[S14] archive … OK
+[S15] summary … OK
+[S16] todos … OK
+[S17] archive … OK
+[S18] summary … OK
+[S19] summary … OK
+[S20] todos … OK
+
+=== 指标 ===
+sample_count: 20
+metric_格式合规率: 0.95
+metric_要点覆盖率: 0.9079
+metric_幻觉率: 0.0105
+duration_s: 446.2
+
+明细已写入: D:\code\hermes\ai_pm\projects\L1-longtext-struct\logs\eval_eval20_v4_20261002_1059.json
+exit=0
