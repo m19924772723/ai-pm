@@ -213,3 +213,24 @@ def test_to_markdown_warnings_appended():
 def test_to_markdown_failure():
     r = StructResult(ok=False, template="summary", error="boom")
     assert "生成失败" in to_markdown(r)
+
+
+# ---------- 跨端点故障转移（不触网部分） ----------
+
+def test_provider_candidates_explicit_only_when_fallback_off():
+    from pipeline import _provider_candidates
+    assert _provider_candidates("stepfun", allow_fallback=False) == ["stepfun"]
+
+
+def test_provider_candidates_explicit_first_then_others():
+    from pipeline import _provider_candidates
+    cands = _provider_candidates("siyu", allow_fallback=True)
+    assert cands[0] == "siyu", "显式指定的端点必须排第一"
+    assert "stepfun" in cands, "兜底列表应含默认顺序里的可用端点"
+    assert len(cands) == len(set(cands)), "不应重复"
+
+
+def test_provider_candidates_no_explicit_uses_order():
+    from pipeline import _provider_candidates
+    cands = _provider_candidates(None, allow_fallback=True)
+    assert cands and cands == list(dict.fromkeys(cands))

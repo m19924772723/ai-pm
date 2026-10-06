@@ -1,0 +1,11 @@
+=== 场景A：显式用失效端点 siyu（403 订阅失效），开 fallback ===
+ok=True 实际使用=stepfun fallback_from=['siyu'] 26.2s
+  warning: 主端点失败已自动转移：siyu（siyu HTTP 403: {"code":"SUBSCRIPTION_NOT） → 改用 stepfun
+  key_points: 5 | schema: True | ev_issues: 0
+
+=== 场景B：显式用失效端点 siyu，关 fallback（应直接失败） ===
+ok=False error=全部端点失败（1 个）：siyu: siyu 网络错误: ConnectError
+fallback_from=['siyu']
+
+written
+exit=0

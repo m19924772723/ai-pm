@@ -35,14 +35,35 @@ class StructResult:
     finish_reason: str = ""
     usage: dict[str, Any] = field(default_factory=dict)
     truncated: bool = False
+    fallback_from: list[str] = field(default_factory=list)  # 失败后自动转移的端点及原因
 
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)
 
 
+def _provider_candidates(explicit: str | None, allow_fallback: bool) -> list[str]:
+    """返回按顺序尝试的端点列表。
+
+    - 显式指定 provider 时把它排第一；关掉 fallback 则只试它。
+    - 开 fallback 时按 DEFAULT_ORDER 追加其它**有密钥**的端点兜底。
+    """
+    from utils.llm import DEFAULT_ORDER, available_providers
+
+    avail = available_providers()
+    first = [explicit] if explicit else []
+    if not allow_fallback:
+        return first or avail[:1]
+    tail = [p for p in DEFAULT_ORDER if p not in first and p in avail]
+    return first + tail
+
+
 def structure(text: str, template: str = "summary", provider: str | None = None,
-              max_tokens: int = MAX_TOKENS) -> StructResult:
-    """把长文结构化为指定模板的 JSON。"""
+              max_tokens: int = MAX_TOKENS, allow_fallback: bool = True) -> StructResult:
+    """把长文结构化为指定模板的 JSON。
+
+    allow_fallback=True（默认）：某个端点失败（空响应/超时/HTTP 错误/订阅失效）时，
+    自动按 DEFAULT_ORDER 尝试下一个可用端点，并在 warnings 里说明转移过程。
+    """
     warnings: list[str] = []
     src = (text or "").strip()
     if len(src) < 50:
@@ -52,19 +73,44 @@ def structure(text: str, template: str = "summary", provider: str | None = None,
         warnings.append(f"输入 {len(src)} 字超过 {MAX_CHARS} 字，已截断（分块策略待迭代）")
         src = src[:MAX_CHARS]
 
-    try:
-        info = provider_info(provider)
-    except LLMError as e:
-        return StructResult(ok=False, template=template, error=str(e))
-
     user_prompt = build_user_prompt(template, src)
+    candidates = _provider_candidates(provider, allow_fallback)
+    if not candidates:
+        return StructResult(ok=False, template=template,
+                            error="没有可用端点：请检查环境变量里的密钥")
+
+    attempts: list[tuple[str, str]] = []
+    meta = None
+    info: dict[str, Any] = {}
+    used = ""
     t0 = time.time()
-    try:
-        meta = call_llm_meta(SYSTEM_PROMPT, user_prompt, provider=provider, max_tokens=max_tokens)
-    except LLMError as e:
-        return StructResult(ok=False, template=template, error=str(e), provider=info,
-                            elapsed_s=round(time.time() - t0, 2))
+    for prov in candidates:
+        try:
+            info = provider_info(prov)
+        except LLMError as e:
+            attempts.append((prov, str(e)))
+            continue
+        try:
+            meta = call_llm_meta(SYSTEM_PROMPT, user_prompt, provider=prov, max_tokens=max_tokens)
+            used = prov
+            break
+        except LLMError as e:
+            attempts.append((prov, str(e)))
+            meta = None
+
+    if meta is None:
+        detail = "；".join(f"{p}: {e[:80]}" for p, e in attempts) or "未知错误"
+        return StructResult(ok=False, template=template,
+                            error=f"全部端点失败（{len(attempts)} 个）：{detail}",
+                            provider=info, elapsed_s=round(time.time() - t0, 2),
+                            warnings=warnings, fallback_from=[p for p, _ in attempts])
+
     elapsed = round(time.time() - t0, 2)
+    fallback_from = [p for p, _ in attempts]
+    if fallback_from:
+        detail = "、".join(f"{p}（{e[:40]}）" for p, e in attempts)
+        warnings.append(f"主端点失败已自动转移：{detail} → 改用 {used}")
+    info = provider_info(used)
 
     raw = meta["text"]
     finish_reason = meta.get("finish_reason", "") or ""
@@ -83,7 +129,7 @@ def structure(text: str, template: str = "summary", provider: str | None = None,
             err += "；根因是输出被截断（见 warnings），不是模型不会写 JSON"
         return StructResult(ok=False, template=template, raw=raw, error=err, provider=info,
                             elapsed_s=elapsed, warnings=warnings, finish_reason=finish_reason,
-                            usage=usage, truncated=truncated)
+                            usage=usage, truncated=truncated, fallback_from=fallback_from)
 
     ok_schema, schema_errors = schema_utils.validate(data, template)
     evidence_issues = schema_utils.check_evidence(data, src)
@@ -91,7 +137,8 @@ def structure(text: str, template: str = "summary", provider: str | None = None,
     return StructResult(ok=True, template=template, data=data, raw=raw, provider=info,
                         elapsed_s=elapsed, schema_ok=ok_schema, schema_errors=schema_errors,
                         evidence_issues=evidence_issues, warnings=warnings,
-                        finish_reason=finish_reason, usage=usage, truncated=truncated)
+                        finish_reason=finish_reason, usage=usage, truncated=truncated,
+                        fallback_from=fallback_from)
 
 
 def _unbalanced(text: str) -> bool:
