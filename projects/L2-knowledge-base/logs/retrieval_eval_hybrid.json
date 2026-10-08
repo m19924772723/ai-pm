@@ -1,0 +1,159 @@
+{
+  "mode": "hybrid",
+  "recall@5": 0.9,
+  "mrr": 0.5183,
+  "rows": [
+    {
+      "q": "跨端点故障转移是做什么的",
+      "gold": [
+        "log/2026-10-06.md"
+      ],
+      "top": [
+        "log/2026-10-06.md",
+        "log/2026-10-06.md",
+        "log/2026-10-04.md",
+        "docs/进度快照-2026-10-07.md",
+        "docs/L1评测方法.md"
+      ],
+      "recall@5": true,
+      "mrr": 1.0
+    },
+    {
+      "q": "为什么要做跨端点故障转移",
+      "gold": [
+        "log/2026-10-06.md"
+      ],
+      "top": [
+        "log/2026-10-06.md",
+        "log/2026-10-06.md",
+        "log/2026-10-04.md",
+        "docs/L1评测方法.md",
+        "docs/进度快照-2026-10-07.md"
+      ],
+      "recall@5": true,
+      "mrr": 1.0
+    },
+    {
+      "q": "L1 的幻觉率是多少",
+      "gold": [
+        "docs/L1-1项目说明.md",
+        "docs/L1评测方法.md"
+      ],
+      "top": [
+        "log/2026-10-04.md",
+        "docs/L1提示词初稿.md",
+        "log/2026-10-01.md",
+        "docs/进度快照-2026-10-07.md",
+        "docs/L1评测方法.md"
+      ],
+      "recall@5": true,
+      "mrr": 0.2
+    },
+    {
+      "q": "评测集是怎么构建的",
+      "gold": [
+        "docs/L1评测方法.md"
+      ],
+      "top": [
+        "docs/面试准备参考文档.md",
+        "docs/进度快照-2026-10-07.md",
+        "docs/L1评测方法.md",
+        "docs/L1技术选型草稿.md",
+        "log/2026-10-06.md"
+      ],
+      "recall@5": true,
+      "mrr": 0.3333333333333333
+    },
+    {
+      "q": "分块策略为什么要保留字符偏移",
+      "gold": [
+        "docs/L2-1项目预研.md"
+      ],
+      "top": [
+        "docs/L2-1项目预研.md",
+        "docs/L1-1项目启动说明书.md",
+        "docs/L1-1项目启动说明书.md",
+        "docs/L1评测方法.md",
+        "docs/面试准备参考文档.md"
+      ],
+      "recall@5": true,
+      "mrr": 1.0
+    },
+    {
+      "q": "向量数据库用 Chroma 还是 FAISS",
+      "gold": [
+        "docs/L2-1项目预研.md"
+      ],
+      "top": [
+        "docs/L2-1项目预研.md",
+        "docs/L1技术选型草稿.md",
+        "log/2026-09-25.md",
+        "docs/L1技术选型草稿.md",
+        "log/2026-10-07.md"
+      ],
+      "recall@5": true,
+      "mrr": 1.0
+    },
+    {
+      "q": "部署方案是什么",
+      "gold": [
+        "docs/L1部署上线方案.md"
+      ],
+      "top": [
+        "docs/L1-1项目启动说明书.md",
+        "docs/L1评测方法.md",
+        "docs/L1复盘.md",
+        "docs/进度快照-2026-10-07.md",
+        "docs/L1部署上线方案.md"
+      ],
+      "recall@5": true,
+      "mrr": 0.2
+    },
+    {
+      "q": "简历里的经历怎么写法",
+      "gold": [
+        "docs/简历骨架.md"
+      ],
+      "top": [
+        "docs/L1评测方法.md",
+        "docs/产品经理学习之路.md",
+        "log/README.md",
+        "docs/简历打造参考文档.md",
+        "docs/简历骨架.md"
+      ],
+      "recall@5": true,
+      "mrr": 0.2
+    },
+    {
+      "q": "Day 5 完成了什么",
+      "gold": [
+        "log/2026-09-27.md"
+      ],
+      "top": [
+        "log/2026-09-26.md",
+        "log/2026-10-07.md",
+        "log/2026-09-23.md",
+        "log/2026-09-28.md",
+        "docs/第一个项目执行计划.md"
+      ],
+      "recall@5": false,
+      "mrr": 0.0
+    },
+    {
+      "q": "面试怎么练习",
+      "gold": [
+        "docs/面试准备参考文档.md"
+      ],
+      "top": [
+        "log/README.md",
+        "docs/L1-1项目启动说明书.md",
+        "docs/待做项目清单.md",
+        "docs/面试准备参考文档.md",
+        "docs/面试准备参考文档.md"
+      ],
+      "recall@5": true,
+      "mrr": 0.25
+    }
+  ],
+  "elapsed_s": 34.3
+}
