@@ -1,0 +1,18 @@
+{
+  "question": "分块为什么要保留字符偏移？",
+  "answer": "资料中没有",
+  "unanswerable": false,
+  "citations": [],
+  "chunks_used": 5,
+  "provider": "tuoji",
+  "fallback_from": [
+    "stepfun",
+    "deepseek"
+  ],
+  "warnings": [
+    "主端点失败已自动转移：stepfun、deepseek → 改用 tuoji"
+  ],
+  "elapsed_s": 40.22,
+  "quote_issues": [],
+  "raw": "{\"answer\": \"资料中没有\", \"unanswerable\": false, \"citations\": []}"
+}

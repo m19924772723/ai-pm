@@ -1,0 +1,34 @@
+{
+  "question": "L1 的幻觉率是多少？",
+  "answer": "L1 的幻觉率是 1.05%[5]。首轮 20 条评测数据中，幻觉率同样为 1.05%[2]。",
+  "unanswerable": false,
+  "citations": [
+    {
+      "chunk_id": "chunk_4",
+      "doc_id": "docs/进度快照-2026-10-07.md",
+      "heading_path": "PM 任务进度快照：Day 1 → Day 15（2026-09-23 ~ 2026-10-07） > 三、L1 项目终态（实测）",
+      "quote": "幻觉率 **1.05%**（严格口径）",
+      "char_start": 2108,
+      "char_end": 2518
+    },
+    {
+      "chunk_id": "chunk_1",
+      "doc_id": "log/2026-10-01.md",
+      "heading_path": "2026-10-01（周四）Day 8/9 · W1/W2 启动包 → L1 第 4 周任务提前 > 收获 · 面试素材",
+      "quote": "格式合规率 90%、幻觉率 1.05%、覆盖率 78%（匹配器口径）",
+      "char_start": 2294,
+      "char_end": 2533
+    }
+  ],
+  "chunks_used": 5,
+  "provider": "deepseek",
+  "fallback_from": [
+    "stepfun"
+  ],
+  "warnings": [
+    "主端点失败已自动转移：stepfun → 改用 deepseek"
+  ],
+  "elapsed_s": 38.46,
+  "quote_issues": [],
+  "raw": "{\"answer\": \"L1 的幻觉率是 1.05%[5]。首轮 20 条评测数据中，幻觉率同样为 1.05%[2]。\", \"unanswerable\": false, \"citations\": [{\"chunk_id\": \"5\", \"quote\": \"幻觉率 **1.05%**（严格口径）\"}, {\"chunk_id\": \"2\", \"quote\": \"格式合规率 90%、幻觉率 1.05%、覆盖率 78%（匹配器口径）\"}]}"
+}

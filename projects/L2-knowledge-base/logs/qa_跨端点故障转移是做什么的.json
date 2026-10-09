@@ -1,0 +1,59 @@
+{
+  "question": "跨端点故障转移是做什么的？为什么需要它？",
+  "answer": "跨端点故障转移是在调用结构化流水线时，主端点失败后自动按候选顺序尝试下一个可用端点的机制：`pipeline.structure(..., allow_fallback=True)` 默认开启，主端点失败自动按 `DEFAULT_ORDER` 试下一个可用端点，并用 `warnings` 说明转移过程、结果里带 `fallback_from`[1]。需要它是因为单个端点会失效或不稳定：例如显式指定 siyu（403 订阅失效）时，开 fallback 会自动改用 stepfun 并通过 schema[1]；又如 stepfun 对 2776 字长文不稳定而 deepseek 一次通过，被定位为端点兼容性问题而非产品 bug，因此新增 pipeline 故障转移待办[4]。同时它必须保留可观测性，记录“从谁来、为什么走”，原则是“服务可用 + 状态可见”，不能沉默降级[3]。",
+  "unanswerable": false,
+  "citations": [
+    {
+      "chunk_id": "chunk_0",
+      "doc_id": "log/2026-10-06.md",
+      "heading_path": "2026-10-06（周二）Day 14 · L1 收尾 > 实际完成",
+      "quote": "主端点失败自动按 `DEFAULT_ORDER` 试下一个可用端点",
+      "char_start": 182,
+      "char_end": 671
+    },
+    {
+      "chunk_id": "chunk_0",
+      "doc_id": "log/2026-10-06.md",
+      "heading_path": "2026-10-06（周二）Day 14 · L1 收尾 > 实际完成",
+      "quote": "显式指定 siyu（403 订阅失效）→ **自动改用 stepfun，5 要点、schema 通过、0 证据问题**",
+      "char_start": 182,
+      "char_end": 671
+    },
+    {
+      "chunk_id": "chunk_3",
+      "doc_id": "log/2026-10-04.md",
+      "heading_path": "2026-10-04（周日）Day 12 · 用户不在家周 > 实际完成",
+      "quote": "stepfun 对 2776 字长文当前不稳定（空响应+截断），**deepseek 一次通过**",
+      "char_start": 152,
+      "char_end": 400
+    },
+    {
+      "chunk_id": "chunk_3",
+      "doc_id": "log/2026-10-04.md",
+      "heading_path": "2026-10-04（周日）Day 12 · 用户不在家周 > 实际完成",
+      "quote": "端点兼容性问题，非产品 bug → 新增待办：pipeline 加故障转移",
+      "char_start": 152,
+      "char_end": 400
+    },
+    {
+      "chunk_id": "chunk_2",
+      "doc_id": "log/2026-10-06.md",
+      "heading_path": "2026-10-06（周二）Day 14 · L1 收尾 > 踩坑日志",
+      "quote": "降级设计的原则是\"服务可用 + 状态可见\"，不能沉默降级",
+      "char_start": 731,
+      "char_end": 1238
+    }
+  ],
+  "chunks_used": 5,
+  "provider": "tuoji",
+  "fallback_from": [
+    "stepfun",
+    "deepseek"
+  ],
+  "warnings": [
+    "主端点失败已自动转移：stepfun、deepseek → 改用 tuoji"
+  ],
+  "elapsed_s": 53.06,
+  "quote_issues": [],
+  "raw": "{\"answer\":\"跨端点故障转移是在调用结构化流水线时，主端点失败后自动按候选顺序尝试下一个可用端点的机制：`pipeline.structure(..., allow_fallback=True)` 默认开启，主端点失败自动按 `DEFAULT_ORDER` 试下一个可用端点，并用 `warnings` 说明转移过程、结果里带 `fallback_from`[1]。需要它是因为单个端点会失效或不稳定：例如显式指定 siyu（403 订阅失效）时，开 fallback 会自动改用 stepfun 并通过 schema[1]；又如 stepfun 对 2776 字长文不稳定而 deepseek 一次通过，被定位为端点兼容性问题而非产品 bug，因此新增 pipeline 故障转移待办[4]。同时它必须保留可观测性，记录“从谁来、为什么走”，原则是“服务可用 + 状态可见”，不能沉默降级[3]。\",\"unanswerable\":false,\"citations\":[{\"chunk_id\":\"1\",\"quote\":\"主端点失败自动按 `DEFAULT_ORDER` 试下一个可用端点\"},{\"chunk_id\":\"1\",\"quote\":\"显式指定 siyu（403 订阅失效）→ **自动改用 stepfun，5 要点、schema 通过、0 证据问题**\"},{\"chunk_id\":\"4\",\"quote\":\"stepfun 对 2776 字长文当前不稳定（空响应+截断），**deepseek 一次通过**\"},{\"chunk_id\":\"4\",\"quote\":\"端点兼容性问题，非产品 bug → 新增待办：pipeline 加故障转移\"},{\"chunk_id\":\"3\",\"quote\":\"降级设计的原则是\\\"服务可用 + 状态可见\\\"，不能沉默降级\"}]}"
+}
