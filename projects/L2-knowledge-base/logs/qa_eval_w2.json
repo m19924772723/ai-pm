@@ -1,0 +1,195 @@
+{
+  "citation_accuracy": 0.6,
+  "refusal_accuracy": 1.0,
+  "rows": [
+    {
+      "q": "跨端点故障转移是做什么的？",
+      "gold": [
+        "log/2026-10-06.md",
+        "docs/L1复盘.md"
+      ],
+      "cited": [
+        "log/2026-10-06.md"
+      ],
+      "ok": true,
+      "unanswerable": false
+    },
+    {
+      "q": "L1 的幻觉率是多少？",
+      "gold": [
+        "docs/进度快照-2026-10-07.md",
+        "docs/L1-1项目说明.md"
+      ],
+      "cited": [
+        "log/2026-10-01.md",
+        "log/2026-10-04.md",
+        "log/2026-10-09.md"
+      ],
+      "ok": false,
+      "unanswerable": false
+    },
+    {
+      "q": "评测集是怎么构建的？",
+      "gold": [
+        "docs/L1评测方法.md",
+        "log/2026-10-01.md"
+      ],
+      "cited": [
+        "docs/进度快照-2026-10-07.md",
+        "docs/面试准备参考文档.md",
+        "log/2026-10-01.md"
+      ],
+      "ok": true,
+      "unanswerable": false
+    },
+    {
+      "q": "分块为什么要保留字符偏移？",
+      "gold": [
+        "docs/L2-1项目预研.md",
+        "docs/L1复盘.md"
+      ],
+      "cited": [
+        "log/2026-10-08.md"
+      ],
+      "ok": false,
+      "unanswerable": false
+    },
+    {
+      "q": "向量数据库用 Chroma 还是 FAISS？",
+      "gold": [
+        "docs/L2-1项目预研.md"
+      ],
+      "cited": [
+        "docs/L2-1项目预研.md",
+        "log/2026-10-07.md"
+      ],
+      "ok": true,
+      "unanswerable": false
+    },
+    {
+      "q": "部署方案是什么？",
+      "gold": [
+        "docs/L1部署上线方案.md",
+        "log/2026-10-03.md"
+      ],
+      "cited": [
+        "docs/L1部署上线方案.md",
+        "docs/简历骨架.md"
+      ],
+      "ok": true,
+      "unanswerable": false
+    },
+    {
+      "q": "简历里的经历怎么写法？",
+      "gold": [
+        "docs/简历打造参考文档.md",
+        "docs/简历骨架.md"
+      ],
+      "cited": [
+        "docs/简历打造参考文档.md"
+      ],
+      "ok": true,
+      "unanswerable": false
+    },
+    {
+      "q": "面试怎么练习？",
+      "gold": [
+        "docs/面试准备参考文档.md"
+      ],
+      "cited": [
+        "docs/L1-1项目启动说明书.md",
+        "docs/hello-agents-学习索引.md",
+        "docs/待做项目清单.md",
+        "docs/面试准备参考文档.md",
+        "log/README.md"
+      ],
+      "ok": true,
+      "unanswerable": false
+    },
+    {
+      "q": "Day 5 完成了什么？",
+      "gold": [
+        "log/2026-09-27.md",
+        "log/2026-09-28.md"
+      ],
+      "cited": [],
+      "ok": false,
+      "unanswerable": true
+    },
+    {
+      "q": "L1 用的是什么技术栈？",
+      "gold": [
+        "docs/L1技术选型草稿.md",
+        "docs/L1-1项目启动说明书.md"
+      ],
+      "cited": [
+        "docs/L2-1项目预研.md"
+      ],
+      "ok": false,
+      "unanswerable": false
+    }
+  ],
+  "refusal_rows": [
+    {
+      "q": "今天中午吃什么好？",
+      "refused": true,
+      "unanswerable": true,
+      "answer_head": ""
+    },
+    {
+      "q": "我的女朋友叫什么名字？",
+      "refused": true,
+      "unanswerable": true,
+      "answer_head": "资料中没有"
+    },
+    {
+      "q": "张三去年的年终奖是多少？",
+      "refused": true,
+      "unanswerable": true,
+      "answer_head": ""
+    },
+    {
+      "q": "如何使用微信小程序做支付？",
+      "refused": true,
+      "unanswerable": true,
+      "answer_head": ""
+    },
+    {
+      "q": "英伟达最新的 GPU 型号有哪些？",
+      "refused": true,
+      "unanswerable": true,
+      "answer_head": ""
+    },
+    {
+      "q": "明天的天气怎么样？",
+      "refused": true,
+      "unanswerable": true,
+      "answer_head": ""
+    },
+    {
+      "q": "B 站的推荐算法原理是什么？",
+      "refused": true,
+      "unanswerable": true,
+      "answer_head": ""
+    },
+    {
+      "q": "我家楼下的修车店几点关门？",
+      "refused": true,
+      "unanswerable": true,
+      "answer_head": ""
+    },
+    {
+      "q": "如何写一篇 Nature 论文？",
+      "refused": true,
+      "unanswerable": true,
+      "answer_head": ""
+    },
+    {
+      "q": "社保断缴会有什么后果？",
+      "refused": true,
+      "unanswerable": true,
+      "answer_head": ""
+    }
+  ],
+  "elapsed_s": 373.7
+}

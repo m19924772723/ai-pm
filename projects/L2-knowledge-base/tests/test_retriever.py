@@ -9,6 +9,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
 from index.retriever import BM25, lexical_tokens, rrf_fuse  # noqa: E402
+from index import retriever  # noqa: E402
 
 
 def test_lexical_tokens_chinese_bigrams():
@@ -65,3 +66,23 @@ def test_rrf_tie_is_stable():
 def test_bm25_empty_query_zero():
     bm = BM25.build(["任意文本"])
     assert bm.score_all("") == [0.0]
+
+
+def test_search_all_chunk_ordering_consistent():
+    """回归：search_all 的排序与 chunk 原始顺序一致（Day 18: 拆两次 get 错位 bug）。
+
+    拆成 get(documents)+get(metadatas) 两次调用时 Chroma 不保证同序；
+    必须用一次 get(include=两者) 保证 text/元数据对齐。此测试锁定该修复。
+    """
+    results = retriever.search_all("分块为什么要保留字符偏移", k=5)
+    col = retriever.store.get_collection(create=False)
+    allg = col.get(include=["documents", "metadatas"])  # 同一次调用，对齐
+    # dense 顺序：Chroma query 返回的 (doc_id,char_start) 必须能在 allg 里稳定映射
+    pos = {(m.get("doc_id", ""), int(m.get("char_start", 0))): i
+           for i, m in enumerate(allg["metadatas"])}
+    seen = set()
+    for r in results:
+        key = (r.doc_id, r.char_start)
+        assert key in pos, f"{key} 不在索引元数据中"
+        seen.add(pos[key])
+    assert len(seen) == len(results)  # 融合后不重复

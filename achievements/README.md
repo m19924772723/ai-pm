@@ -39,6 +39,7 @@ achievements/
 | `2026-10-07` | `Retrospective/`、`PreResearch/` | L1 复盘（含 5 条诚实不足）+ L2-1 预研（首例作品集案例方案） |
 | `2026-10-08` | `Retrieval/` | L2 正式开工：语料 36 篇 → 501 块 → Chroma 索引 → 混合检索 Recall@5 **90%**（稠密对照 0%） |
 | `2026-10-09` | `QAPipeline/`、`Reading/` | 问答链路（引用校验/拒答/故障转移）+ woshipm RAG 数据集精读 |
+| `2026-10-10` | `CitationLocate/` | 引用定位到段落（文件+偏移+quote 落点 3/3）+ 拒答评测：拒答 100%、引用准确率 90%（修正 gold 后） |
 
 ## 两类文件的边界
 

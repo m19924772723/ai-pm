@@ -17,10 +17,12 @@ embedding 走内部中转站：`api.tuoji.top` + `nemotron-3-embed-1b`（2048 �
 
 ### 3) 重建索引（语料变了才需要）
 ```bash
+python -m scripts.build_index --check    # 先检查索引与语料是否同步！
 python -m scripts.build_index            # 增量（embedding 有磁盘缓存，秒级）
 python -m scripts.build_index --reset    # 清空重建
-python -m scripts.build_index --check    # 只检查索引与语料是否同步
 ```
+> ⚠️ **Day 18 踩坑**：语料每天在变（log/ + docs/ 新增），索引会过期。
+> 症状 = 检索"偶尔"漏掉新文档、问答引用错误。**评测/问答前先 `--check`，`in_sync: false` 就先重建**。
 
 ### 4) 检索
 ```bash

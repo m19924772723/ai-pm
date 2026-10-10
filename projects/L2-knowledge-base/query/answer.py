@@ -212,6 +212,40 @@ def answer(question: str, k: int = 5, provider: str | None = None,
     )
 
 
+def citation_locations(a: QAAnswer, docs_by_id: dict[str, object]) -> list[dict]:
+    """把答案的引用转成可定位的原文段落（界面高亮用）。
+
+    返回 [{chunk_id, doc_id, heading_path, quote, char_start, char_end,
+            source_text(整个原文)}]
+    若引用所在文档已不在语料（docs_by_id 缺），source_text 为空但保留偏移。
+    """
+    out = []
+    for c in a.citations:
+        doc = docs_by_id.get(c.get("doc_id", ""))
+        out.append({
+            "chunk_id": c.get("chunk_id", ""),
+            "doc_id": c.get("doc_id", ""),
+            "heading_path": c.get("heading_path", ""),
+            "quote": c.get("quote", ""),
+            "char_start": c.get("char_start", 0),
+            "char_end": c.get("char_end", 0),
+            "source_text": doc.text if doc else "",
+        })
+    return out
+
+
+def _is_refusal(a: "QAAnswer") -> bool:
+    """判定一次回答是否算"拒答"（评测用启发式）。
+
+    关键词启发式（诚实记录边界）：unanswerable=True 或答案含"资料中/没有/未找到/无法"。
+    无法识别"硬答编造"——那种情况交给引用校验与人工。
+    """
+    if a.unanswerable:
+        return True
+    ans = (a.answer or "").strip()
+    return any(k in ans for k in ("资料中", "没有", "未找到", "无法"))
+
+
 def answer_n(questions: list[str], k: int = 5, **kw) -> list[QAAnswer]:
     """批量问答（评测用）。"""
     return [answer(q, k=k, **kw) for q in questions]

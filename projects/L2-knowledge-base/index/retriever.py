@@ -94,10 +94,14 @@ def rrf_fuse(ranked: list[list[int]], k: int = 60) -> list[int]:
 # ---------- 完整检索 ----------
 
 def search_all(question: str, k: int = 5, dense: bool = True, lexical: bool = True) -> list[store.Hit]:
-    """embedding 排序 + BM25 排序 → RRF 融合 → 还原成 Hit（带原文偏移）。"""
+    """embedding 排序 + BM25 排序 → RRF 融合 → 还原成 Hit（带原文偏移）。
+
+    用一次 get 同时取 documents+metadatas —— Chroma 在**同一次调用内**保证数组对齐；
+    拆成两次独立 get 时返回顺序不保证一致，会导致文本与元数据错位（Day 18 定位的真实 bug）。
+    """
     col = store.get_collection(create=False)
-    allg = col.get(include=["metadatas"])
-    texts = store.get_collection(create=False).get(include=["documents"])["documents"]
+    allg = col.get(include=["documents", "metadatas"])
+    texts: list[str] = allg["documents"]
     metas: list = allg["metadatas"]
     n = len(texts)
 
