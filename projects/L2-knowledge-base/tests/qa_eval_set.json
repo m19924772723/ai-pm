@@ -1,5 +1,5 @@
 {
-  "built_at": "2026-10-12 14:44:07",
+  "built_at": "2026-10-12 15:12:35",
   "n_answerable": 20,
   "n_unanswerable": 10,
   "gold_status": "draft_manual",
@@ -27,7 +27,8 @@
       "type": "fact",
       "gold": [
         "docs/进度快照-2026-10-07.md",
-        "docs/L1-1项目说明.md"
+        "docs/L1-1项目说明.md",
+        "docs/L1-1项目启动说明书.md"
       ]
     },
     {
@@ -42,7 +43,9 @@
       "q": "L2 项目用什么向量数据库？",
       "type": "fact",
       "gold": [
-        "docs/L2-1项目预研.md"
+        "docs/L2-1项目预研.md",
+        "docs/L1技术选型草稿.md",
+        "log/2026-10-08.md"
       ]
     },
     {
@@ -65,7 +68,8 @@
       "type": "decision",
       "gold": [
         "docs/L2-1项目预研.md",
-        "log/2026-10-08.md"
+        "log/2026-10-08.md",
+        "projects/L2-knowledge-base/README.md"
       ]
     },
     {
@@ -82,7 +86,9 @@
       "type": "decision",
       "gold": [
         "docs/L2-1项目预研.md",
-        "docs/L1复盘.md"
+        "docs/L1复盘.md",
+        "docs/L1技术选型草稿.md",
+        "log/2026-09-25.md"
       ]
     },
     {
@@ -104,7 +110,9 @@
       "q": "L1 复盘总结出几条诚实不足？",
       "type": "review",
       "gold": [
-        "docs/L1复盘.md"
+        "docs/L1复盘.md",
+        "log/2026-10-07.md",
+        "docs/周复盘-2026-10-11.md"
       ]
     },
     {
@@ -112,21 +120,25 @@
       "type": "review",
       "gold": [
         "log/2026-09-27.md",
-        "log/2026-09-28.md"
+        "log/2026-09-28.md",
+        "projects/L2-knowledge-base/README.md",
+        "log/2026-10-08.md"
       ]
     },
     {
       "q": "Day 15 完成了什么？",
       "type": "review",
       "gold": [
-        "log/2026-10-07.md"
+        "log/2026-10-07.md",
+        "log/2026-10-06.md"
       ]
     },
     {
       "q": "本周（W3）复盘的满意度是几分？",
       "type": "review",
       "gold": [
-        "docs/周复盘-2026-10-11.md"
+        "docs/周复盘-2026-10-11.md",
+        "log/2026-10-11.md"
       ]
     },
     {

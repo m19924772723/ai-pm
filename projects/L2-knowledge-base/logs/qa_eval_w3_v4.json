@@ -1,0 +1,337 @@
+{
+  "citation_accuracy": 0.65,
+  "refusal_accuracy": 1.0,
+  "rows": [
+    {
+      "q": "跨端点故障转移是做什么的？",
+      "type": "fact",
+      "gold": [
+        "log/2026-10-06.md",
+        "docs/L1复盘.md"
+      ],
+      "cited": [
+        "log/2026-10-06.md"
+      ],
+      "ok": true,
+      "unanswerable": false
+    },
+    {
+      "q": "L1 的幻觉率是多少？",
+      "type": "fact",
+      "gold": [
+        "docs/进度快照-2026-10-07.md",
+        "docs/L1-1项目说明.md",
+        "log/2026-10-01.md",
+        "log/2026-10-04.md"
+      ],
+      "cited": [
+        "log/2026-10-04.md",
+        "log/2026-10-09.md"
+      ],
+      "ok": true,
+      "unanswerable": false
+    },
+    {
+      "q": "L1 的要点覆盖率是多少？",
+      "type": "fact",
+      "gold": [
+        "docs/进度快照-2026-10-07.md",
+        "docs/L1-1项目说明.md"
+      ],
+      "cited": [
+        "docs/L1-1项目启动说明书.md"
+      ],
+      "ok": false,
+      "unanswerable": false
+    },
+    {
+      "q": "L1 用了哪个界面框架？",
+      "type": "fact",
+      "gold": [
+        "docs/L1技术选型草稿.md",
+        "docs/L1-1项目启动说明书.md"
+      ],
+      "cited": [],
+      "ok": false,
+      "unanswerable": true
+    },
+    {
+      "q": "L2 项目用什么向量数据库？",
+      "type": "fact",
+      "gold": [
+        "docs/L2-1项目预研.md",
+        "docs/L1技术选型草稿.md",
+        "log/2026-10-08.md"
+      ],
+      "cited": [
+        "log/2026-10-08.md"
+      ],
+      "ok": true,
+      "unanswerable": false
+    },
+    {
+      "q": "L1 的评测集有多少条？",
+      "type": "fact",
+      "gold": [
+        "docs/L1评测方法.md",
+        "docs/进度快照-2026-10-07.md"
+      ],
+      "cited": [],
+      "ok": false,
+      "unanswerable": true
+    },
+    {
+      "q": "为什么 L2 不用 FAISS 用 Chroma？",
+      "type": "decision",
+      "gold": [
+        "docs/L2-1项目预研.md"
+      ],
+      "cited": [
+        "docs/L2-1项目预研.md"
+      ],
+      "ok": true,
+      "unanswerable": false
+    },
+    {
+      "q": "为什么做混合检索而不是纯向量？",
+      "type": "decision",
+      "gold": [
+        "docs/L2-1项目预研.md",
+        "log/2026-10-08.md",
+        "projects/L2-knowledge-base/README.md"
+      ],
+      "cited": [
+        "projects/L2-knowledge-base/README.md"
+      ],
+      "ok": true,
+      "unanswerable": false
+    },
+    {
+      "q": "分块策略为什么要保留字符偏移？",
+      "type": "decision",
+      "gold": [
+        "docs/L2-1项目预研.md",
+        "log/2026-10-08.md",
+        "docs/L1复盘.md"
+      ],
+      "cited": [
+        "log/2026-10-08.md",
+        "projects/L2-knowledge-base/README.md"
+      ],
+      "ok": true,
+      "unanswerable": false
+    },
+    {
+      "q": "L1 为什么不用长上下文硬喂？",
+      "type": "decision",
+      "gold": [
+        "docs/L2-1项目预研.md",
+        "docs/L1复盘.md"
+      ],
+      "cited": [
+        "docs/L1技术选型草稿.md",
+        "log/2026-09-25.md",
+        "log/2026-10-07.md"
+      ],
+      "ok": false,
+      "unanswerable": false
+    },
+    {
+      "q": "纯稠密检索和混合检索效果差多少？",
+      "type": "compare",
+      "gold": [
+        "docs/L2-1项目预研.md",
+        "log/2026-10-08.md"
+      ],
+      "cited": [
+        "docs/周复盘-2026-10-11.md",
+        "log/2026-10-08.md"
+      ],
+      "ok": true,
+      "unanswerable": false
+    },
+    {
+      "q": "Chroma 和 FAISS 各自优缺点？",
+      "type": "compare",
+      "gold": [
+        "docs/L2-1项目预研.md"
+      ],
+      "cited": [],
+      "ok": false,
+      "unanswerable": true
+    },
+    {
+      "q": "L1 复盘总结出几条诚实不足？",
+      "type": "review",
+      "gold": [
+        "docs/L1复盘.md",
+        "log/2026-10-07.md",
+        "docs/周复盘-2026-10-11.md"
+      ],
+      "cited": [
+        "log/2026-10-07.md"
+      ],
+      "ok": true,
+      "unanswerable": false
+    },
+    {
+      "q": "Day 5 完成了什么？",
+      "type": "review",
+      "gold": [
+        "log/2026-09-27.md",
+        "log/2026-09-28.md"
+      ],
+      "cited": [
+        "log/2026-10-08.md",
+        "log/2026-10-10.md",
+        "projects/L2-knowledge-base/README.md"
+      ],
+      "ok": false,
+      "unanswerable": false
+    },
+    {
+      "q": "Day 15 完成了什么？",
+      "type": "review",
+      "gold": [
+        "log/2026-10-07.md",
+        "log/2026-10-06.md"
+      ],
+      "cited": [
+        "log/2026-10-06.md"
+      ],
+      "ok": true,
+      "unanswerable": false
+    },
+    {
+      "q": "本周（W3）复盘的满意度是几分？",
+      "type": "review",
+      "gold": [
+        "docs/周复盘-2026-10-11.md",
+        "log/2026-10-11.md"
+      ],
+      "cited": [],
+      "ok": false,
+      "unanswerable": true
+    },
+    {
+      "q": "如何重建 L2 索引？",
+      "type": "operation",
+      "gold": [
+        "log/2026-10-08.md",
+        "log/2026-10-10.md",
+        "projects/L2-knowledge-base/README.md"
+      ],
+      "cited": [
+        "log/2026-10-12.md",
+        "projects/L2-knowledge-base/README.md"
+      ],
+      "ok": true,
+      "unanswerable": false
+    },
+    {
+      "q": "怎么验证索引和语料同步？",
+      "type": "operation",
+      "gold": [
+        "log/2026-10-10.md",
+        "log/2026-10-08.md",
+        "projects/L2-knowledge-base/README.md"
+      ],
+      "cited": [
+        "log/2026-10-12.md",
+        "projects/L2-knowledge-base/README.md"
+      ],
+      "ok": true,
+      "unanswerable": false
+    },
+    {
+      "q": "简历里的经历怎么写法？",
+      "type": "operation",
+      "gold": [
+        "docs/简历打造参考文档.md",
+        "docs/简历骨架.md"
+      ],
+      "cited": [
+        "docs/简历打造参考文档.md",
+        "log/README.md"
+      ],
+      "ok": true,
+      "unanswerable": false
+    },
+    {
+      "q": "面试怎么练习？",
+      "type": "operation",
+      "gold": [
+        "docs/面试准备参考文档.md"
+      ],
+      "cited": [
+        "docs/面试准备参考文档.md"
+      ],
+      "ok": true,
+      "unanswerable": false
+    }
+  ],
+  "refusal_rows": [
+    {
+      "q": "今天中午吃什么好？",
+      "refused": true,
+      "unanswerable": true,
+      "answer_head": ""
+    },
+    {
+      "q": "我的女朋友叫什么名字？",
+      "refused": true,
+      "unanswerable": true,
+      "answer_head": ""
+    },
+    {
+      "q": "张三去年的年终奖是多少？",
+      "refused": true,
+      "unanswerable": true,
+      "answer_head": ""
+    },
+    {
+      "q": "如何使用微信小程序做支付？",
+      "refused": true,
+      "unanswerable": true,
+      "answer_head": ""
+    },
+    {
+      "q": "英伟达最新的 GPU 型号有哪些？",
+      "refused": true,
+      "unanswerable": true,
+      "answer_head": ""
+    },
+    {
+      "q": "明天的天气怎么样？",
+      "refused": true,
+      "unanswerable": true,
+      "answer_head": ""
+    },
+    {
+      "q": "B 站的推荐算法原理是什么？",
+      "refused": true,
+      "unanswerable": true,
+      "answer_head": ""
+    },
+    {
+      "q": "我家楼下的修车店几点关门？",
+      "refused": true,
+      "unanswerable": true,
+      "answer_head": ""
+    },
+    {
+      "q": "如何写一篇 Nature 论文？",
+      "refused": true,
+      "unanswerable": true,
+      "answer_head": ""
+    },
+    {
+      "q": "社保断缴会有什么后果？",
+      "refused": true,
+      "unanswerable": true,
+      "answer_head": ""
+    }
+  ],
+  "elapsed_s": 653.4,
+  "gold_status": "draft_manual"
+}
