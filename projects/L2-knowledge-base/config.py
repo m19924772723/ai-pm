@@ -20,6 +20,7 @@ WORKSPACE = ROOT.parent.parent          # D:/code/hermes/ai_pm
 CORPUS_SOURCES: list[dict] = [
     {"name": "ai_pm/docs", "glob": "docs/*.md", "desc": "方法论与项目文档"},
     {"name": "ai_pm/log", "glob": "log/*.md", "desc": "每日过程日志"},
+    {"name": "README", "glob": "projects/L2-knowledge-base/README.md", "desc": "L2 项目用户手册（怎么建索引/跑评测）"},
 ]
 CORPUS_ROOT = WORKSPACE                 # 相对这个根目录解析上面的 glob
 

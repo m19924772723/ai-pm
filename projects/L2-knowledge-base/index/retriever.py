@@ -105,7 +105,8 @@ def search_all(question: str, k: int = 5, dense: bool = True, lexical: bool = Tr
     metas: list = allg["metadatas"]
     n = len(texts)
 
-    ranked: list[list[int]] = []
+    # dense 候选（Top-k 与全量排名都拿：候选用 top-k，RRF 用全量排名）
+    dense_order: list[int] = []
     if dense:
         hits = store.query(embed.embed_one(question), k=n)
         # 换算出块在 texts 里的位置（用 (doc_id,char_start) 对充当稳定键，text 可能重复）
@@ -113,15 +114,48 @@ def search_all(question: str, k: int = 5, dense: bool = True, lexical: bool = Tr
         for i, m in enumerate(metas):
             pos_of.setdefault((m.get("doc_id", ""), int(m.get("char_start", 0))), i)
         dense_order = [pos_of[(h.doc_id, h.char_start)] for h in hits]
-        ranked.append(dense_order)
+
+    # lexical 全量排名
+    lex_rank_all: list[int] = []
     if lexical:
         bm = BM25.build(texts)
         scores = bm.score_all(question)
-        ranked.append(sorted(range(n), key=lambda i: scores[i], reverse=True))
+        lex_rank_all = sorted(range(n), key=lambda i: scores[i], reverse=True)
 
-    fused = rrf_fuse(ranked, k=60)
+    # 候选池 = dense top-k ∪ lexical top-k（**lexical 强制保底**：
+    # nemotron embedding 对中文区分弱，词面强命中的块不能被不可靠的 dense 稀释出 top-k，
+    # Day 20 评测定位：含 build_index 命令的块 lex_rank=1 却 fused 掉到 19 没进 top-5）
+    cand = []
+    if dense_order:
+        cand += dense_order[:k]
+    if lex_rank_all:
+        cand += lex_rank_all[:k]
+    cand = list(dict.fromkeys(cand))  # 去重保序
+    cand_set = set(cand)
+
+    # RRF 在候选池内重算（候选池只有 ~2k 个块，词面强命中块在池内 rank 靠前，
+    # 不会再被"两榜都中等"的块挤出 top-k——这是与全库 RRF 的本质区别）
+    def _rank_within(full: list[int]) -> dict[int, int]:
+        r, pos = {}, 0
+        for idx_ in full:
+            if idx_ in cand_set:
+                r[idx_] = pos
+                pos += 1
+        return r
+
+    if dense_order or lex_rank_all:
+        dr = _rank_within(dense_order)
+        lr = _rank_within(lex_rank_all)
+        acc = {}
+        for idx_ in cand:
+            acc[idx_] = (1.0 / (60 + dr.get(idx_, 10 ** 9) + 1) +
+                         1.0 / (60 + lr.get(idx_, 10 ** 9) + 1))
+        cand = sorted(cand, key=lambda i: acc[i], reverse=True)[:k]
+    else:
+        cand = cand[:k]
+
     hits: list[store.Hit] = []
-    for idx_ in fused[:k]:
+    for idx_ in cand:
         m = metas[idx_]
         hits.append(store.Hit(
             chunk_id="", doc_id=m.get("doc_id", ""), text=texts[idx_], score=0.0,

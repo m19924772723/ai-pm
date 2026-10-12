@@ -86,3 +86,29 @@ def test_search_all_chunk_ordering_consistent():
         assert key in pos, f"{key} 不在索引元数据中"
         seen.add(pos[key])
     assert len(seen) == len(results)  # 融合后不重复
+
+
+def test_lexical_topk_always_in_results():
+    """回归（Day 20）：lexical 强命中的块必须进 top-k，不能被不可靠的 dense 稀释。
+
+    实测：含 build_index 命令的块对'如何重建 L2 索引？' BM25 排名第 1，
+    但 nemotron dense 认为无关排名 147，RRF 融合后掉到 19 没进 top-5 → 问答误拒答。
+    修复 = 候选池 dense top-k ∪ lexical top-k（lexical 强制保底）。
+    """
+    results = retriever.search_all("如何重建 L2 索引？", k=5)
+    col = retriever.store.get_collection(create=False)
+    allg = col.get(include=["documents", "metadatas"])
+    texts = allg["documents"]
+
+    # BM25 全量排名：找出含 build_index 命令的最相关块
+    bm = retriever.BM25.build(texts)
+    scores = bm.score_all("如何重建 L2 索引？")
+    hits = sorted(range(len(texts)), key=lambda i: scores[i], reverse=True)[:3]
+    relevant = [i for i in hits if "build_index" in texts[i]]
+    assert relevant, "评测语料里应有含 build_index 的块"
+
+    # 词面最相关的 build_index 块必须出现在 search_all 的 top-5 里
+    # （简化断言：结果的 doc_id 至少包含该块所在文档）
+    result_docs = {r.doc_id for r in results}
+    doc_of = {allg["metadatas"][i].get("doc_id") for i in relevant}
+    assert result_docs & doc_of, f"lexical 强命中块({doc_of})没进 top-5（结果 {result_docs}）"
