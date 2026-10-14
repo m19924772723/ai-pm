@@ -50,3 +50,16 @@ LLM_CANDIDATES = ("stepfun", "deepseek", "tuoji")
 def ensure_dirs() -> None:
     for d in (DATA_DIR, INDEX_DIR, CACHE_DIR):
         d.mkdir(parents=True, exist_ok=True)
+
+# ---------- 重排（rerank，Day 22 新增） ----------
+# bce-reranker-base_v1（本地 cross-encoder，零 API 成本）：补偿 nemotron 中文区分弱。
+# 模型默认从 huggingface hub 缓存目录发现（D 盘，不落 C 盘）；可用 L2_RERANK_MODEL_DIR 覆盖。
+# 目录不存在 → rerank.available()=False → 检索回退纯 RRF（行为同 Day 20 前）。
+RERANK_MODEL_DIR = os.environ.get("L2_RERANK_MODEL_DIR", "")
+if not RERANK_MODEL_DIR:
+    _hub = Path(r"D:/code/environment/cache/hf/hub/models--maidalun1020--bce-reranker-base_v1/snapshots")
+    _snaps = sorted(_hub.glob("*/")) if _hub.exists() else []
+    RERANK_MODEL_DIR = str(_snaps[0]) if _snaps else ""
+RERANK_POOL = int(os.environ.get("L2_RERANK_POOL", "40"))  # 候选池：每榜 top-N 并入，再重排
+RERANK_CACHE = DATA_DIR / "rerank_cache.json"             # 分数缓存（gitignore 的 data/ 下）
+

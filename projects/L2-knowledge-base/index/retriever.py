@@ -13,7 +13,8 @@ import math
 import re
 from dataclasses import dataclass, field
 
-from index import embed, store
+import config
+from index import embed, rerank as rerank_mod, store
 
 # ---------- 词面 token：中文二元组 + 英文小写词 ----------
 
@@ -93,8 +94,9 @@ def rrf_fuse(ranked: list[list[int]], k: int = 60) -> list[int]:
 
 # ---------- 完整检索 ----------
 
-def search_all(question: str, k: int = 5, dense: bool = True, lexical: bool = True) -> list[store.Hit]:
-    """embedding 排序 + BM25 排序 → RRF 融合 → 还原成 Hit（带原文偏移）。
+def search_all(question: str, k: int = 5, dense: bool = True, lexical: bool = True,
+            rerank: bool = True) -> list[store.Hit]:
+    """embedding 排序 + BM25 排序 → 候选池 →（可选）cross-encoder 重排 / RRF 融合 → 还原成 Hit（带原文偏移）。
 
     用一次 get 同时取 documents+metadatas —— Chroma 在**同一次调用内**保证数组对齐；
     拆成两次独立 get 时返回顺序不保证一致，会导致文本与元数据错位（Day 18 定位的真实 bug）。
@@ -122,37 +124,54 @@ def search_all(question: str, k: int = 5, dense: bool = True, lexical: bool = Tr
         scores = bm.score_all(question)
         lex_rank_all = sorted(range(n), key=lambda i: scores[i], reverse=True)
 
-    # 候选池 = dense top-k ∪ lexical top-k（**lexical 强制保底**：
-    # nemotron embedding 对中文区分弱，词面强命中的块不能被不可靠的 dense 稀释出 top-k，
+    # 候选池 = dense top-POOL ∪ lexical top-POOL（**lexical 强制保底**：
+    # nemotron embedding 对中文区分弱，词面强命中的块不能被不可靠的 dense 稀释出池，
     # Day 20 评测定位：含 build_index 命令的块 lex_rank=1 却 fused 掉到 19 没进 top-5）
+    # Day 22：POOL 从 k 扩到 40——池太小（≤10 块）时相关块在榜内排 6~30 直接出局，
+    # 重排无从谈起；实测 gold 块在 dense/lex 榜 top-40 内基本全覆盖。
+    pool = config.RERANK_POOL
     cand = []
     if dense_order:
-        cand += dense_order[:k]
+        cand += dense_order[:pool]
     if lex_rank_all:
-        cand += lex_rank_all[:k]
+        cand += lex_rank_all[:pool]
     cand = list(dict.fromkeys(cand))  # 去重保序
     cand_set = set(cand)
 
-    # RRF 在候选池内重算（候选池只有 ~2k 个块，词面强命中块在池内 rank 靠前，
-    # 不会再被"两榜都中等"的块挤出 top-k——这是与全库 RRF 的本质区别）
-    def _rank_within(full: list[int]) -> dict[int, int]:
-        r, pos = {}, 0
-        for idx_ in full:
-            if idx_ in cand_set:
-                r[idx_] = pos
-                pos += 1
-        return r
+    use_rerank = False
+    if rerank:
+        try:
+            use_rerank = rerank_mod.available()
+            if use_rerank:
+                # Day 22：cross-encoder 直接判 (question, chunk) 语义相关，
+                # 替代 RRF 的"排名信任"——两榜 top 都被日志块挤占时 RRF 无解。
+                sc = rerank_mod.rerank(question, [texts[i] for i in cand])
+                cand = [cand[j] for j in
+                        sorted(range(len(cand)), key=lambda j: sc[j], reverse=True)[:k]]
+        except Exception:
+            use_rerank = False  # 模型加载/推理失败 → 回退 RRF，不中断检索
 
-    if dense_order or lex_rank_all:
-        dr = _rank_within(dense_order)
-        lr = _rank_within(lex_rank_all)
-        acc = {}
-        for idx_ in cand:
-            acc[idx_] = (1.0 / (60 + dr.get(idx_, 10 ** 9) + 1) +
-                         1.0 / (60 + lr.get(idx_, 10 ** 9) + 1))
-        cand = sorted(cand, key=lambda i: acc[i], reverse=True)[:k]
-    else:
-        cand = cand[:k]
+    if not use_rerank:
+        # RRF 在候选池内重算（候选池只有 ~2k 个块，词面强命中块在池内 rank 靠前，
+        # 不会再被"两榜都中等"的块挤出 top-k——这是与全库 RRF 的本质区别）
+        def _rank_within(full: list[int]) -> dict[int, int]:
+            r, pos = {}, 0
+            for idx_ in full:
+                if idx_ in cand_set:
+                    r[idx_] = pos
+                    pos += 1
+            return r
+
+        if dense_order or lex_rank_all:
+            dr = _rank_within(dense_order)
+            lr = _rank_within(lex_rank_all)
+            acc = {}
+            for idx_ in cand:
+                acc[idx_] = (1.0 / (60 + dr.get(idx_, 10 ** 9) + 1) +
+                             1.0 / (60 + lr.get(idx_, 10 ** 9) + 1))
+            cand = sorted(cand, key=lambda i: acc[i], reverse=True)[:k]
+        else:
+            cand = cand[:k]
 
     hits: list[store.Hit] = []
     for idx_ in cand:
