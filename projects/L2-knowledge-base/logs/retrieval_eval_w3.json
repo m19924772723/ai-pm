@@ -1,6 +1,6 @@
 {
   "recall@5": 0.9,
-  "mrr": 0.5267,
+  "mrr": 0.5517,
   "context_relevance": 0.3,
   "rows": [
     {
@@ -53,8 +53,8 @@
         "docs/L1-1项目启动说明书.md",
         "docs/面试准备参考文档.md",
         "log/2026-10-09.md",
-        "log/2026-10-12.md",
-        "docs/L1-1项目说明.md"
+        "docs/L1-1项目说明.md",
+        "log/2026-10-05.md"
       ],
       "recall": true,
       "mrr": 1.0,
@@ -70,9 +70,9 @@
       "top": [
         "docs/L2失败分类-D7.md",
         "docs/L1评测方法.md",
+        "docs/woshipm精读-RAG落地复盘与检索优化.md",
         "log/2026-10-07.md",
-        "log/2026-10-12.md",
-        "docs/周复盘-2026-10-11.md"
+        "log/2026-10-12.md"
       ],
       "recall": false,
       "mrr": 0.0,
@@ -105,8 +105,8 @@
         "docs/进度快照-2026-10-07.md"
       ],
       "top": [
-        "log/2026-10-12.md",
         "log/2026-09-27.md",
+        "log/2026-10-12.md",
         "docs/L1-1项目启动说明书.md",
         "docs/L1评测方法.md",
         "docs/L1评测方法.md"
@@ -125,8 +125,8 @@
         "log/2026-09-25.md",
         "docs/L2-1项目预研.md",
         "log/2026-10-12.md",
-        "docs/周复盘-2026-10-11.md",
-        "log/2026-10-11.md"
+        "docs/woshipm精读-RAG落地复盘与检索优化.md",
+        "docs/woshipm精读-RAG落地复盘与检索优化.md"
       ],
       "recall": true,
       "mrr": 0.5,
@@ -184,7 +184,7 @@
         "log/2026-10-12.md",
         "docs/产品经理学习之路.md",
         "log/2026-09-25.md",
-        "docs/周复盘-2026-10-11.md"
+        "docs/woshipm精读-RAG落地复盘与检索优化.md"
       ],
       "recall": true,
       "mrr": 0.25,
@@ -198,14 +198,14 @@
         "log/2026-10-08.md"
       ],
       "top": [
-        "docs/简历骨架.md",
         "log/2026-10-08.md",
+        "docs/简历骨架.md",
         "log/2026-10-02.md",
         "docs/面试准备参考文档.md",
         "docs/周复盘-2026-10-11.md"
       ],
       "recall": true,
-      "mrr": 0.5,
+      "mrr": 1.0,
       "context": 0.2
     },
     {
@@ -216,10 +216,10 @@
       ],
       "top": [
         "log/2026-10-12.md",
-        "docs/L1-1项目说明.md",
-        "docs/周复盘-2026-10-11.md",
+        "docs/woshipm精读-RAG落地复盘与检索优化.md",
+        "docs/woshipm精读-RAG落地复盘与检索优化.md",
         "log/2026-10-12.md",
-        "docs/L1-1项目说明.md"
+        "log/2026-10-13.md"
       ],
       "recall": false,
       "mrr": 0.0,
@@ -257,8 +257,8 @@
         "log/2026-10-08.md",
         "log/2026-10-05.md",
         "log/2026-10-10.md",
-        "projects/L2-knowledge-base/README.md",
-        "docs/第一个项目执行计划.md"
+        "log/2026-10-10.md",
+        "projects/L2-knowledge-base/README.md"
       ],
       "recall": true,
       "mrr": 1.0,
@@ -310,10 +310,10 @@
       ],
       "top": [
         "log/2026-10-08.md",
-        "log/2026-10-12.md",
-        "projects/L2-knowledge-base/README.md",
         "log/2026-10-08.md",
-        "log/2026-10-11.md"
+        "log/2026-10-12.md",
+        "log/2026-10-12.md",
+        "projects/L2-knowledge-base/README.md"
       ],
       "recall": true,
       "mrr": 1.0,
@@ -331,8 +331,8 @@
         "docs/周复盘-2026-10-11.md",
         "log/2026-10-08.md",
         "log/2026-09-25.md",
-        "projects/L2-knowledge-base/README.md",
-        "log/2026-10-12.md"
+        "log/2026-10-12.md",
+        "projects/L2-knowledge-base/README.md"
       ],
       "recall": true,
       "mrr": 0.5,
@@ -364,9 +364,9 @@
       ],
       "top": [
         "docs/周复盘-2026-10-11.md",
+        "docs/L2-1项目预研.md",
         "log/README.md",
         "docs/woshipm精读-高质量RAG数据集.md",
-        "docs/L2-1项目预研.md",
         "docs/面试准备参考文档.md"
       ],
       "recall": true,
@@ -374,6 +374,6 @@
       "context": 0.2
     }
   ],
-  "elapsed_s": 8.0,
+  "elapsed_s": 4.1,
   "gold_status": "draft_manual"
 }
