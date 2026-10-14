@@ -8,6 +8,10 @@
 - 无答案 10 条：语料里确实不存在（测拒答正确率）
 - gold 状态：draft_manual（待用户抽查后改 reviewed）
 
+Day 22（2026-10-14）修订：语料 42→48 篇后原 gold（10-12 标注）偏窄，逐块审计为 9 题补录
+含答案的新增文档（log/2026-10-09/10-11/10-13/10-07、进度快照、周复盘、woshipm 精读、
+部署方案等）——补录标准 = 块文本确实给出该题答案；旧 gold 项不改。
+
 用法：python -m scripts.build_qa_evalset   # 生成 tests/qa_eval_set.json
 """
 from __future__ import annotations
@@ -27,36 +31,36 @@ ANSWERABLE: list[dict] = [
     {"q": "跨端点故障转移是做什么的？", "type": "fact",
      "gold": ["log/2026-10-06.md", "docs/L1复盘.md"]},
     {"q": "L1 的幻觉率是多少？", "type": "fact",
-     "gold": ["docs/进度快照-2026-10-07.md", "docs/L1-1项目说明.md", "log/2026-10-01.md", "log/2026-10-04.md"]},
+     "gold": ["docs/进度快照-2026-10-07.md", "docs/L1-1项目说明.md", "log/2026-10-01.md", "log/2026-10-04.md", "log/2026-10-09.md", "log/2026-10-11.md"]},
     {"q": "L1 的要点覆盖率是多少？", "type": "fact",
-     "gold": ["docs/进度快照-2026-10-07.md", "docs/L1-1项目说明.md", "docs/L1-1项目启动说明书.md"]},
+     "gold": ["docs/进度快照-2026-10-07.md", "docs/L1-1项目说明.md", "docs/L1-1项目启动说明书.md", "log/2026-10-04.md", "docs/L1评测方法.md"]},
     {"q": "L1 用了哪个界面框架？", "type": "fact",
-     "gold": ["docs/L1技术选型草稿.md", "docs/L1-1项目启动说明书.md"]},
+     "gold": ["docs/L1技术选型草稿.md", "docs/L1-1项目启动说明书.md", "docs/L1部署上线方案.md"]},
     {"q": "L2 项目用什么向量数据库？", "type": "fact",
          "gold": ["docs/L2-1项目预研.md", "docs/L1技术选型草稿.md", "log/2026-10-08.md"]},
     {"q": "L1 的评测集有多少条？", "type": "fact",
-     "gold": ["docs/L1评测方法.md", "docs/进度快照-2026-10-07.md"]},
+     "gold": ["docs/L1评测方法.md", "docs/进度快照-2026-10-07.md", "log/2026-10-04.md"]},
     # 决策类
     {"q": "为什么 L2 不用 FAISS 用 Chroma？", "type": "decision",
-     "gold": ["docs/L2-1项目预研.md"]},
+     "gold": ["docs/L2-1项目预研.md", "log/2026-10-07.md", "docs/woshipm精读-RAG落地复盘与检索优化.md", "log/2026-10-13.md"]},
     {"q": "为什么做混合检索而不是纯向量？", "type": "decision",
          "gold": ["docs/L2-1项目预研.md", "log/2026-10-08.md", "projects/L2-knowledge-base/README.md"]},
     {"q": "分块策略为什么要保留字符偏移？", "type": "decision",
      "gold": ["docs/L2-1项目预研.md", "log/2026-10-08.md", "docs/L1复盘.md"]},
     {"q": "L1 为什么不用长上下文硬喂？", "type": "decision",
-     "gold": ["docs/L2-1项目预研.md", "docs/L1复盘.md", "docs/L1技术选型草稿.md", "log/2026-09-25.md"]},
+     "gold": ["docs/L2-1项目预研.md", "docs/L1复盘.md", "docs/L1技术选型草稿.md", "log/2026-09-25.md", "log/2026-10-07.md"]},
     # 对比类
     {"q": "纯稠密检索和混合检索效果差多少？", "type": "compare",
-     "gold": ["docs/L2-1项目预研.md", "log/2026-10-08.md"]},
+     "gold": ["docs/L2-1项目预研.md", "log/2026-10-08.md", "docs/周复盘-2026-10-11.md", "projects/L2-knowledge-base/README.md"]},
     {"q": "Chroma 和 FAISS 各自优缺点？", "type": "compare",
-     "gold": ["docs/L2-1项目预研.md"]},
+     "gold": ["docs/L2-1项目预研.md", "docs/woshipm精读-RAG落地复盘与检索优化.md", "log/2026-10-07.md", "log/2026-10-13.md"]},
     # 复盘类
     {"q": "L1 复盘总结出几条诚实不足？", "type": "review",
-         "gold": ["docs/L1复盘.md", "log/2026-10-07.md", "docs/周复盘-2026-10-11.md"]},
+         "gold": ["docs/L1复盘.md", "log/2026-10-07.md", "docs/周复盘-2026-10-11.md", "docs/进度快照-2026-10-07.md"]},
     {"q": "Day 5 完成了什么？", "type": "review",
      "gold": ["log/2026-09-27.md", "log/2026-09-28.md", "projects/L2-knowledge-base/README.md", "log/2026-10-08.md"]},
     {"q": "Day 15 完成了什么？", "type": "review",
-         "gold": ["log/2026-10-07.md", "log/2026-10-06.md"]},
+         "gold": ["log/2026-10-07.md", "log/2026-10-06.md", "docs/进度快照-2026-10-07.md"]},
     {"q": "本周（W3）复盘的满意度是几分？", "type": "review",
          "gold": ["docs/周复盘-2026-10-11.md", "log/2026-10-11.md"]},
     # 操作类

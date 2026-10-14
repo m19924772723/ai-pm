@@ -1,7 +1,7 @@
 {
-  "recall@5": 0.9,
-  "mrr": 0.5517,
-  "context_relevance": 0.3,
+  "recall@5": 1.0,
+  "mrr": 0.7125,
+  "context_relevance": 0.55,
   "rows": [
     {
       "q": "跨端点故障转移是做什么的？",
@@ -11,14 +11,14 @@
         "docs/L1复盘.md"
       ],
       "top": [
-        "projects/L2-knowledge-base/README.md",
-        "log/2026-10-09.md",
         "log/2026-10-06.md",
-        "docs/L2失败分类-D7.md",
-        "log/2026-10-06.md"
+        "log/2026-10-06.md",
+        "docs/进度快照-2026-10-07.md",
+        "docs/周复盘-2026-10-11.md",
+        "docs/进度快照-2026-10-07.md"
       ],
       "recall": true,
-      "mrr": 0.3333333333333333,
+      "mrr": 1.0,
       "context": 0.4
     },
     {
@@ -28,18 +28,20 @@
         "docs/进度快照-2026-10-07.md",
         "docs/L1-1项目说明.md",
         "log/2026-10-01.md",
-        "log/2026-10-04.md"
-      ],
-      "top": [
-        "docs/L1评测方法.md",
-        "log/2026-10-09.md",
         "log/2026-10-04.md",
-        "docs/L1提示词初稿.md",
+        "log/2026-10-09.md",
         "log/2026-10-11.md"
       ],
+      "top": [
+        "log/2026-10-04.md",
+        "log/2026-10-01.md",
+        "log/2026-10-09.md",
+        "log/2026-10-11.md",
+        "docs/进度快照-2026-10-07.md"
+      ],
       "recall": true,
-      "mrr": 0.3333333333333333,
-      "context": 0.2
+      "mrr": 1.0,
+      "context": 1.0
     },
     {
       "q": "L1 的要点覆盖率是多少？",
@@ -47,36 +49,39 @@
       "gold": [
         "docs/进度快照-2026-10-07.md",
         "docs/L1-1项目说明.md",
-        "docs/L1-1项目启动说明书.md"
+        "docs/L1-1项目启动说明书.md",
+        "log/2026-10-04.md",
+        "docs/L1评测方法.md"
       ],
       "top": [
+        "docs/进度快照-2026-10-07.md",
+        "docs/L1评测方法.md",
         "docs/L1-1项目启动说明书.md",
-        "docs/面试准备参考文档.md",
-        "log/2026-10-09.md",
-        "docs/L1-1项目说明.md",
-        "log/2026-10-05.md"
+        "docs/进度快照-2026-10-07.md",
+        "log/2026-10-04.md"
       ],
       "recall": true,
       "mrr": 1.0,
-      "context": 0.4
+      "context": 1.0
     },
     {
       "q": "L1 用了哪个界面框架？",
       "type": "fact",
       "gold": [
         "docs/L1技术选型草稿.md",
-        "docs/L1-1项目启动说明书.md"
+        "docs/L1-1项目启动说明书.md",
+        "docs/L1部署上线方案.md"
       ],
       "top": [
-        "docs/L2失败分类-D7.md",
-        "docs/L1评测方法.md",
         "docs/woshipm精读-RAG落地复盘与检索优化.md",
-        "log/2026-10-07.md",
-        "log/2026-10-12.md"
+        "docs/L2失败分类-D7.md",
+        "docs/暂定事项.md",
+        "docs/L1部署上线方案.md",
+        "docs/L2-1项目预研.md"
       ],
-      "recall": false,
-      "mrr": 0.0,
-      "context": 0.0
+      "recall": true,
+      "mrr": 0.25,
+      "context": 0.2
     },
     {
       "q": "L2 项目用什么向量数据库？",
@@ -87,14 +92,14 @@
         "log/2026-10-08.md"
       ],
       "top": [
-        "log/2026-09-25.md",
-        "docs/L1技术选型草稿.md",
         "log/2026-10-08.md",
-        "docs/L1复盘.md",
-        "docs/L1技术选型草稿.md"
+        "log/2026-10-07.md",
+        "docs/L1技术选型草稿.md",
+        "docs/L2-1项目预研.md",
+        "docs/简历骨架.md"
       ],
       "recall": true,
-      "mrr": 0.5,
+      "mrr": 1.0,
       "context": 0.6
     },
     {
@@ -102,35 +107,39 @@
       "type": "fact",
       "gold": [
         "docs/L1评测方法.md",
-        "docs/进度快照-2026-10-07.md"
+        "docs/进度快照-2026-10-07.md",
+        "log/2026-10-04.md"
       ],
       "top": [
-        "log/2026-09-27.md",
         "log/2026-10-12.md",
-        "docs/L1-1项目启动说明书.md",
-        "docs/L1评测方法.md",
-        "docs/L1评测方法.md"
+        "docs/进度快照-2026-10-07.md",
+        "log/2026-10-04.md",
+        "docs/待做项目清单.md",
+        "log/2026-09-29.md"
       ],
       "recall": true,
-      "mrr": 0.25,
+      "mrr": 0.5,
       "context": 0.4
     },
     {
       "q": "为什么 L2 不用 FAISS 用 Chroma？",
       "type": "decision",
       "gold": [
-        "docs/L2-1项目预研.md"
+        "docs/L2-1项目预研.md",
+        "log/2026-10-07.md",
+        "docs/woshipm精读-RAG落地复盘与检索优化.md",
+        "log/2026-10-13.md"
       ],
       "top": [
-        "log/2026-09-25.md",
+        "log/2026-10-07.md",
         "docs/L2-1项目预研.md",
-        "log/2026-10-12.md",
         "docs/woshipm精读-RAG落地复盘与检索优化.md",
+        "log/2026-10-13.md",
         "docs/woshipm精读-RAG落地复盘与检索优化.md"
       ],
       "recall": true,
-      "mrr": 0.5,
-      "context": 0.2
+      "mrr": 1.0,
+      "context": 1.0
     },
     {
       "q": "为什么做混合检索而不是纯向量？",
@@ -142,14 +151,14 @@
       ],
       "top": [
         "projects/L2-knowledge-base/README.md",
-        "log/2026-10-12.md",
-        "docs/周复盘-2026-10-11.md",
+        "log/2026-10-08.md",
+        "docs/L2失败分类-D7.md",
         "docs/woshipm精读-高质量RAG数据集.md",
-        "log/2026-10-12.md"
+        "docs/周复盘-2026-10-11.md"
       ],
       "recall": true,
       "mrr": 1.0,
-      "context": 0.2
+      "context": 0.4
     },
     {
       "q": "分块策略为什么要保留字符偏移？",
@@ -160,15 +169,15 @@
         "docs/L1复盘.md"
       ],
       "top": [
-        "projects/L2-knowledge-base/README.md",
-        "docs/woshipm精读-高质量RAG数据集.md",
-        "log/2026-10-08.md",
         "log/2026-10-09.md",
-        "log/2026-10-11.md"
+        "log/2026-10-11.md",
+        "log/2026-10-08.md",
+        "projects/L2-knowledge-base/README.md",
+        "docs/L2-1项目预研.md"
       ],
       "recall": true,
       "mrr": 0.3333333333333333,
-      "context": 0.2
+      "context": 0.4
     },
     {
       "q": "L1 为什么不用长上下文硬喂？",
@@ -177,53 +186,59 @@
         "docs/L2-1项目预研.md",
         "docs/L1复盘.md",
         "docs/L1技术选型草稿.md",
-        "log/2026-09-25.md"
+        "log/2026-09-25.md",
+        "log/2026-10-07.md"
       ],
       "top": [
-        "docs/L1评测方法.md",
         "log/2026-10-12.md",
-        "docs/产品经理学习之路.md",
-        "log/2026-09-25.md",
-        "docs/woshipm精读-RAG落地复盘与检索优化.md"
+        "log/2026-10-07.md",
+        "docs/L1评测方法.md",
+        "docs/L1部署上线方案.md",
+        "docs/L1复盘.md"
       ],
       "recall": true,
-      "mrr": 0.25,
-      "context": 0.2
+      "mrr": 0.5,
+      "context": 0.4
     },
     {
       "q": "纯稠密检索和混合检索效果差多少？",
       "type": "compare",
       "gold": [
         "docs/L2-1项目预研.md",
-        "log/2026-10-08.md"
+        "log/2026-10-08.md",
+        "docs/周复盘-2026-10-11.md",
+        "projects/L2-knowledge-base/README.md"
       ],
       "top": [
         "log/2026-10-08.md",
-        "docs/简历骨架.md",
-        "log/2026-10-02.md",
-        "docs/面试准备参考文档.md",
-        "docs/周复盘-2026-10-11.md"
+        "docs/周复盘-2026-10-11.md",
+        "docs/woshipm精读-高质量RAG数据集.md",
+        "docs/周复盘-2026-10-11.md",
+        "projects/L2-knowledge-base/README.md"
       ],
       "recall": true,
       "mrr": 1.0,
-      "context": 0.2
+      "context": 0.8
     },
     {
       "q": "Chroma 和 FAISS 各自优缺点？",
       "type": "compare",
       "gold": [
-        "docs/L2-1项目预研.md"
+        "docs/L2-1项目预研.md",
+        "docs/woshipm精读-RAG落地复盘与检索优化.md",
+        "log/2026-10-07.md",
+        "log/2026-10-13.md"
       ],
       "top": [
         "log/2026-10-12.md",
         "docs/woshipm精读-RAG落地复盘与检索优化.md",
-        "docs/woshipm精读-RAG落地复盘与检索优化.md",
-        "log/2026-10-12.md",
+        "log/2026-10-07.md",
+        "docs/L2-1项目预研.md",
         "log/2026-10-13.md"
       ],
-      "recall": false,
-      "mrr": 0.0,
-      "context": 0.0
+      "recall": true,
+      "mrr": 0.5,
+      "context": 0.8
     },
     {
       "q": "L1 复盘总结出几条诚实不足？",
@@ -231,18 +246,19 @@
       "gold": [
         "docs/L1复盘.md",
         "log/2026-10-07.md",
-        "docs/周复盘-2026-10-11.md"
+        "docs/周复盘-2026-10-11.md",
+        "docs/进度快照-2026-10-07.md"
       ],
       "top": [
+        "docs/进度快照-2026-10-07.md",
+        "log/2026-10-07.md",
         "docs/周复盘-2026-10-11.md",
         "log/2026-10-07.md",
-        "docs/进度快照-2026-10-07.md",
-        "log/2026-10-05.md",
-        "docs/L1评测方法.md"
+        "log/2026-09-27.md"
       ],
       "recall": true,
       "mrr": 1.0,
-      "context": 0.4
+      "context": 0.8
     },
     {
       "q": "Day 5 完成了什么？",
@@ -254,11 +270,11 @@
         "log/2026-10-08.md"
       ],
       "top": [
+        "projects/L2-knowledge-base/README.md",
+        "log/2026-10-10.md",
         "log/2026-10-08.md",
-        "log/2026-10-05.md",
-        "log/2026-10-10.md",
-        "log/2026-10-10.md",
-        "projects/L2-knowledge-base/README.md"
+        "docs/woshipm精读-高质量RAG数据集.md",
+        "log/2026-10-09.md"
       ],
       "recall": true,
       "mrr": 1.0,
@@ -269,17 +285,18 @@
       "type": "review",
       "gold": [
         "log/2026-10-07.md",
-        "log/2026-10-06.md"
+        "log/2026-10-06.md",
+        "docs/进度快照-2026-10-07.md"
       ],
       "top": [
-        "log/2026-10-06.md",
+        "projects/L2-knowledge-base/README.md",
+        "docs/进度快照-2026-10-07.md",
+        "log/2026-10-10.md",
         "log/2026-10-08.md",
-        "docs/hello-agents-学习索引.md",
-        "log/2026-10-12.md",
-        "log/2026-10-10.md"
+        "docs/woshipm精读-高质量RAG数据集.md"
       ],
       "recall": true,
-      "mrr": 1.0,
+      "mrr": 0.5,
       "context": 0.2
     },
     {
@@ -291,14 +308,14 @@
       ],
       "top": [
         "log/2026-10-12.md",
-        "docs/hello-agents-学习索引.md",
         "docs/周复盘-2026-10-11.md",
-        "log/2026-10-12.md",
-        "docs/周复盘-2026-10-11.md"
+        "docs/周复盘-2026-10-11.md",
+        "log/2026-10-11.md",
+        "projects/L2-knowledge-base/README.md"
       ],
       "recall": true,
-      "mrr": 0.3333333333333333,
-      "context": 0.4
+      "mrr": 0.5,
+      "context": 0.6
     },
     {
       "q": "如何重建 L2 索引？",
@@ -309,15 +326,15 @@
         "projects/L2-knowledge-base/README.md"
       ],
       "top": [
-        "log/2026-10-08.md",
-        "log/2026-10-08.md",
         "log/2026-10-12.md",
-        "log/2026-10-12.md",
+        "log/2026-10-07.md",
+        "log/2026-10-10.md",
+        "log/2026-10-09.md",
         "projects/L2-knowledge-base/README.md"
       ],
       "recall": true,
-      "mrr": 1.0,
-      "context": 0.6
+      "mrr": 0.3333333333333333,
+      "context": 0.4
     },
     {
       "q": "怎么验证索引和语料同步？",
@@ -328,15 +345,15 @@
         "projects/L2-knowledge-base/README.md"
       ],
       "top": [
-        "docs/周复盘-2026-10-11.md",
-        "log/2026-10-08.md",
-        "log/2026-09-25.md",
+        "projects/L2-knowledge-base/README.md",
+        "log/2026-10-13.md",
         "log/2026-10-12.md",
-        "projects/L2-knowledge-base/README.md"
+        "log/2026-10-13.md",
+        "docs/周复盘-2026-10-11.md"
       ],
       "recall": true,
-      "mrr": 0.5,
-      "context": 0.4
+      "mrr": 1.0,
+      "context": 0.2
     },
     {
       "q": "简历里的经历怎么写法？",
@@ -346,15 +363,15 @@
         "docs/简历骨架.md"
       ],
       "top": [
-        "log/README.md",
+        "docs/待做项目清单.md",
         "docs/简历打造参考文档.md",
+        "docs/简历骨架.md",
         "docs/简历打造参考文档.md",
-        "docs/面试准备参考文档.md",
         "log/2026-10-10.md"
       ],
       "recall": true,
       "mrr": 0.5,
-      "context": 0.4
+      "context": 0.6
     },
     {
       "q": "面试怎么练习？",
@@ -363,17 +380,17 @@
         "docs/面试准备参考文档.md"
       ],
       "top": [
-        "docs/周复盘-2026-10-11.md",
-        "docs/L2-1项目预研.md",
-        "log/README.md",
-        "docs/woshipm精读-高质量RAG数据集.md",
-        "docs/面试准备参考文档.md"
+        "docs/待做项目清单.md",
+        "log/2026-09-29.md",
+        "docs/面试准备参考文档.md",
+        "docs/面试准备参考文档.md",
+        "docs/周复盘-2026-10-11.md"
       ],
       "recall": true,
-      "mrr": 0.2,
-      "context": 0.2
+      "mrr": 0.3333333333333333,
+      "context": 0.4
     }
   ],
-  "elapsed_s": 4.1,
+  "elapsed_s": 24.2,
   "gold_status": "draft_manual"
 }

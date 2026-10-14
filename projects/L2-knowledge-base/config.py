@@ -60,6 +60,6 @@ if not RERANK_MODEL_DIR:
     _hub = Path(r"D:/code/environment/cache/hf/hub/models--maidalun1020--bce-reranker-base_v1/snapshots")
     _snaps = sorted(_hub.glob("*/")) if _hub.exists() else []
     RERANK_MODEL_DIR = str(_snaps[0]) if _snaps else ""
-RERANK_POOL = int(os.environ.get("L2_RERANK_POOL", "40"))  # 候选池：每榜 top-N 并入，再重排
+RERANK_POOL = int(os.environ.get("L2_RERANK_POOL", "30"))  # 候选池：每榜 top-N 并入，再重排（Day 22 实测 30 优于 40）
 RERANK_CACHE = DATA_DIR / "rerank_cache.json"             # 分数缓存（gitignore 的 data/ 下）
 

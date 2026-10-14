@@ -17,6 +17,7 @@ from __future__ import annotations
 import hashlib
 import json
 import threading
+from pathlib import Path
 
 import config
 

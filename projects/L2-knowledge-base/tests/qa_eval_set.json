@@ -1,5 +1,5 @@
 {
-  "built_at": "2026-10-12 15:12:35",
+  "built_at": "2026-10-14 22:51:06",
   "n_answerable": 20,
   "n_unanswerable": 10,
   "gold_status": "draft_manual",
@@ -19,7 +19,9 @@
         "docs/进度快照-2026-10-07.md",
         "docs/L1-1项目说明.md",
         "log/2026-10-01.md",
-        "log/2026-10-04.md"
+        "log/2026-10-04.md",
+        "log/2026-10-09.md",
+        "log/2026-10-11.md"
       ]
     },
     {
@@ -28,7 +30,9 @@
       "gold": [
         "docs/进度快照-2026-10-07.md",
         "docs/L1-1项目说明.md",
-        "docs/L1-1项目启动说明书.md"
+        "docs/L1-1项目启动说明书.md",
+        "log/2026-10-04.md",
+        "docs/L1评测方法.md"
       ]
     },
     {
@@ -36,7 +40,8 @@
       "type": "fact",
       "gold": [
         "docs/L1技术选型草稿.md",
-        "docs/L1-1项目启动说明书.md"
+        "docs/L1-1项目启动说明书.md",
+        "docs/L1部署上线方案.md"
       ]
     },
     {
@@ -53,14 +58,18 @@
       "type": "fact",
       "gold": [
         "docs/L1评测方法.md",
-        "docs/进度快照-2026-10-07.md"
+        "docs/进度快照-2026-10-07.md",
+        "log/2026-10-04.md"
       ]
     },
     {
       "q": "为什么 L2 不用 FAISS 用 Chroma？",
       "type": "decision",
       "gold": [
-        "docs/L2-1项目预研.md"
+        "docs/L2-1项目预研.md",
+        "log/2026-10-07.md",
+        "docs/woshipm精读-RAG落地复盘与检索优化.md",
+        "log/2026-10-13.md"
       ]
     },
     {
@@ -88,7 +97,8 @@
         "docs/L2-1项目预研.md",
         "docs/L1复盘.md",
         "docs/L1技术选型草稿.md",
-        "log/2026-09-25.md"
+        "log/2026-09-25.md",
+        "log/2026-10-07.md"
       ]
     },
     {
@@ -96,14 +106,19 @@
       "type": "compare",
       "gold": [
         "docs/L2-1项目预研.md",
-        "log/2026-10-08.md"
+        "log/2026-10-08.md",
+        "docs/周复盘-2026-10-11.md",
+        "projects/L2-knowledge-base/README.md"
       ]
     },
     {
       "q": "Chroma 和 FAISS 各自优缺点？",
       "type": "compare",
       "gold": [
-        "docs/L2-1项目预研.md"
+        "docs/L2-1项目预研.md",
+        "docs/woshipm精读-RAG落地复盘与检索优化.md",
+        "log/2026-10-07.md",
+        "log/2026-10-13.md"
       ]
     },
     {
@@ -112,7 +127,8 @@
       "gold": [
         "docs/L1复盘.md",
         "log/2026-10-07.md",
-        "docs/周复盘-2026-10-11.md"
+        "docs/周复盘-2026-10-11.md",
+        "docs/进度快照-2026-10-07.md"
       ]
     },
     {
@@ -130,7 +146,8 @@
       "type": "review",
       "gold": [
         "log/2026-10-07.md",
-        "log/2026-10-06.md"
+        "log/2026-10-06.md",
+        "docs/进度快照-2026-10-07.md"
       ]
     },
     {

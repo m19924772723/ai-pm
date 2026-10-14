@@ -1,3 +1,9 @@
 chromadb>=1.5
 httpx>=0.27
 streamlit>=1.36
+
+# Day 22: rerank 精排（本地 cross-encoder）依赖
+# torch 需从 CPU 源安装：uv pip install torch --index-url https://download.pytorch.org/whl/cpu
+# FlagEmbedding 从 pypi 清华镜像装：uv pip install FlagEmbedding --index-url https://pypi.tuna.tsinghua.edu.cn/simple
+torch
+FlagEmbedding>=1.9

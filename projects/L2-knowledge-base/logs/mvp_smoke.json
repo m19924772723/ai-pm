@@ -6,7 +6,7 @@
     {
       "q": "跨端点故障转移是做什么的？",
       "expect": "answer",
-      "elapsed_s": 138.5,
+      "elapsed_s": 140.2,
       "unanswerable": false,
       "citations": 4,
       "provider": "tuoji",
@@ -23,27 +23,32 @@
     {
       "q": "L1 的幻觉率是多少？",
       "expect": "answer",
-      "elapsed_s": 8.4,
+      "elapsed_s": 10.0,
       "unanswerable": false,
-      "citations": 2,
-      "provider": "stepfun",
-      "fallback": [],
-      "warnings": [],
-      "ok": true,
-      "loc_msgs": []
-    },
-    {
-      "q": "分块策略为什么要保留字符偏移？",
-      "expect": "answer",
-      "elapsed_s": 21.1,
-      "unanswerable": false,
-      "citations": 2,
+      "citations": 4,
       "provider": "deepseek",
       "fallback": [
         "stepfun"
       ],
       "warnings": [
         "主端点失败已自动转移：stepfun → 改用 deepseek"
+      ],
+      "ok": true,
+      "loc_msgs": []
+    },
+    {
+      "q": "分块策略为什么要保留字符偏移？",
+      "expect": "answer",
+      "elapsed_s": 69.3,
+      "unanswerable": false,
+      "citations": 2,
+      "provider": "tuoji",
+      "fallback": [
+        "stepfun",
+        "deepseek"
+      ],
+      "warnings": [
+        "主端点失败已自动转移：stepfun、deepseek → 改用 tuoji"
       ],
       "ok": true,
       "loc_msgs": []
@@ -51,15 +56,16 @@
     {
       "q": "向量数据库用 Chroma 还是 FAISS？",
       "expect": "answer",
-      "elapsed_s": 14.7,
+      "elapsed_s": 164.5,
       "unanswerable": false,
-      "citations": 5,
-      "provider": "deepseek",
+      "citations": 3,
+      "provider": "tuoji",
       "fallback": [
-        "stepfun"
+        "stepfun",
+        "deepseek"
       ],
       "warnings": [
-        "主端点失败已自动转移：stepfun → 改用 deepseek"
+        "主端点失败已自动转移：stepfun、deepseek → 改用 tuoji"
       ],
       "ok": true,
       "loc_msgs": []
@@ -67,25 +73,34 @@
     {
       "q": "今天中午吃什么好？",
       "expect": "refuse",
-      "elapsed_s": 8.4,
+      "elapsed_s": 71.9,
       "unanswerable": true,
       "citations": 0,
-      "provider": "stepfun",
-      "fallback": [],
-      "warnings": [],
+      "provider": "tuoji",
+      "fallback": [
+        "stepfun",
+        "deepseek"
+      ],
+      "warnings": [
+        "主端点失败已自动转移：stepfun、deepseek → 改用 tuoji"
+      ],
       "ok": true
     },
     {
       "q": "如何写一篇 Nature 论文？",
       "expect": "refuse",
-      "elapsed_s": 6.8,
-      "unanswerable": true,
-      "citations": 0,
-      "provider": "stepfun",
-      "fallback": [],
-      "warnings": [],
+      "elapsed_s": 14.4,
+      "unanswerable": false,
+      "citations": 3,
+      "provider": "deepseek",
+      "fallback": [
+        "stepfun"
+      ],
+      "warnings": [
+        "主端点失败已自动转移：stepfun → 改用 deepseek"
+      ],
       "ok": true
     }
   ],
-  "elapsed_s": 199.3
+  "elapsed_s": 472.9
 }

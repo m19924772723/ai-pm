@@ -16,3 +16,5 @@ data/embed_cache/
 logs/*.txt
 .spyderproject
 .streamlit/secrets.toml
+
+data/rerank_cache.json
