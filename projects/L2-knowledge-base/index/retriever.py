@@ -95,47 +95,62 @@ def rrf_fuse(ranked: list[list[int]], k: int = 60) -> list[int]:
 # ---------- 完整检索 ----------
 
 def search_all(question: str, k: int = 5, dense: bool = True, lexical: bool = True,
-            rerank: bool = True) -> list[store.Hit]:
+            rerank: bool = True, alt_queries: list[str] | None = None,
+            lex_floor: int = 0) -> list[store.Hit]:
     """embedding 排序 + BM25 排序 → 候选池 →（可选）cross-encoder 重排 / RRF 融合 → 还原成 Hit（带原文偏移）。
 
-    用一次 get 同时取 documents+metadatas —— Chroma 在**同一次调用内**保证数组对齐；
-    拆成两次独立 get 时返回顺序不保证一致，会导致文本与元数据错位（Day 18 定位的真实 bug）。
+    Day 25 新增参数：
+    - alt_queries：查询改写提供的并集候选（含原查询本身时自动去重）。
+      每个查询贡献 dense top-POOl + lexical top-POOL 进候选池；重排/词面保底只按
+      **原始问题** 打分排序（用户意图为准，改写只负责把池撑大——对齐 woshipm
+      《RAG 生产调优 12 策略》的「保留原查询，防改写带偏」）。
+    - lex_floor：词面保底条数。重排后的 top-k 里强制并入 lexical top-lex_floor 的块
+      （治操作命令题：cross-encoder 对 build_index 这类代码命令块压分，Day 14 记录，
+      log/2026-10-08 的 build_index 块 BM25 rank=1 却掉出 top-5）。
+      实现：按重排分从尾部把「词面强命中但重排低分」的块补进去，块数仍 = k。
     """
+    # corpus 元数据一次取全（Day 18 教训：documents+metadatas 必须同一次 get）
     col = store.get_collection(create=False)
     allg = col.get(include=["documents", "metadatas"])
     texts: list[str] = allg["documents"]
     metas: list = allg["metadatas"]
     n = len(texts)
 
-    # dense 候选（Top-k 与全量排名都拿：候选用 top-k，RRF 用全量排名）
-    dense_order: list[int] = []
-    if dense:
-        hits = store.query(embed.embed_one(question), k=n)
-        # 换算出块在 texts 里的位置（用 (doc_id,char_start) 对充当稳定键，text 可能重复）
-        pos_of: dict[tuple, int] = {}
-        for i, m in enumerate(metas):
-            pos_of.setdefault((m.get("doc_id", ""), int(m.get("char_start", 0))), i)
-        dense_order = [pos_of[(h.doc_id, h.char_start)] for h in hits]
+    queries: list[str] = [question]
+    if alt_queries:
+        for q in alt_queries:
+            if q and q not in queries:
+                queries.append(q)
 
-    # lexical 全量排名
-    lex_rank_all: list[int] = []
-    if lexical:
-        bm = BM25.build(texts)
-        scores = bm.score_all(question)
-        lex_rank_all = sorted(range(n), key=lambda i: scores[i], reverse=True)
+    # dense 候选与全量排名（每个查询一份）
+    pos_of: dict[tuple, int] = {}
+    for i, m in enumerate(metas):
+        pos_of.setdefault((m.get("doc_id", ""), int(m.get("char_start", 0))), i)
 
-    # 候选池 = dense top-POOL ∪ lexical top-POOL（**lexical 强制保底**：
-    # nemotron embedding 对中文区分弱，词面强命中的块不能被不可靠的 dense 稀释出池，
-    # Day 20 评测定位：含 build_index 命令的块 lex_rank=1 却 fused 掉到 19 没进 top-5）
-    # Day 22：POOL 从 k 扩到 40——池太小（≤10 块）时相关块在榜内排 6~30 直接出局，
-    # 重排无从谈起；实测 gold 块在 dense/lex 榜 top-40 内基本全覆盖。
+    per_query: list[dict] = []
+    lex_ranks_primary = None
+    for qi, q in enumerate(queries):
+        qinfo: dict = {}
+        if dense:
+            hits = store.query(embed.embed_one(q), k=n)
+            qinfo["dense_order"] = [pos_of[(h.doc_id, h.char_start)] for h in hits]
+        if lexical:
+            bm = BM25.build(texts)
+            scores = bm.score_all(q)
+            qinfo["lex_rank_all"] = sorted(range(n), key=lambda i: scores[i], reverse=True)
+        if qi == 0:
+            lex_ranks_primary = qinfo.get("lex_rank_all")
+        per_query.append(qinfo)
+
+    # 候选池 = 各查询 (dense top-POOL ∪ lexical top-POOL) 的并集
     pool = config.RERANK_POOL
     cand = []
-    if dense_order:
-        cand += dense_order[:pool]
-    if lex_rank_all:
-        cand += lex_rank_all[:pool]
-    cand = list(dict.fromkeys(cand))  # 去重保序
+    for qinfo in per_query:
+        if qinfo.get("dense_order"):
+            cand += qinfo["dense_order"][:pool]
+        if qinfo.get("lex_rank_all"):
+            cand += qinfo["lex_rank_all"][:pool]
+    cand = list(dict.fromkeys(cand))[:pool * 2 * len(queries) + 64]
     cand_set = set(cand)
 
     use_rerank = False
@@ -143,17 +158,25 @@ def search_all(question: str, k: int = 5, dense: bool = True, lexical: bool = Tr
         try:
             use_rerank = rerank_mod.available()
             if use_rerank:
-                # Day 22：cross-encoder 直接判 (question, chunk) 语义相关，
-                # 替代 RRF 的"排名信任"——两榜 top 都被日志块挤占时 RRF 无解。
                 sc = rerank_mod.rerank(question, [texts[i] for i in cand])
                 cand = [cand[j] for j in
-                        sorted(range(len(cand)), key=lambda j: sc[j], reverse=True)[:k]]
+                        sorted(range(len(cand)), key=lambda j: sc[j], reverse=True)]
+                # 词面保底：把 lexical top-lex_floor（原始查询）强制并入 final top-k
+                # （从尾部替换“重排最不认可”的块，保持数量 = k）
+                if lex_floor > 0 and lex_ranks_primary is not None:
+                    final = cand[:k]
+                    for i in lex_ranks_primary[:lex_floor]:
+                        if i not in final:
+                            final[-1] = i
+                            break
+                    cand = final
+                else:
+                    cand = cand[:k]
         except Exception:
             use_rerank = False  # 模型加载/推理失败 → 回退 RRF，不中断检索
 
     if not use_rerank:
-        # RRF 在候选池内重算（候选池只有 ~2k 个块，词面强命中块在池内 rank 靠前，
-        # 不会再被"两榜都中等"的块挤出 top-k——这是与全库 RRF 的本质区别）
+        # RRF 在候选池内重算（多查询时对每个查询的榜内名次求和）
         def _rank_within(full: list[int]) -> dict[int, int]:
             r, pos = {}, 0
             for idx_ in full:
@@ -162,16 +185,14 @@ def search_all(question: str, k: int = 5, dense: bool = True, lexical: bool = Tr
                     pos += 1
             return r
 
-        if dense_order or lex_rank_all:
-            dr = _rank_within(dense_order)
-            lr = _rank_within(lex_rank_all)
-            acc = {}
+        acc: dict[int, float] = {}
+        for qinfo in per_query:
+            dr = _rank_within(qinfo.get("dense_order") or [])
+            lr = _rank_within(qinfo.get("lex_rank_all") or [])
             for idx_ in cand:
-                acc[idx_] = (1.0 / (60 + dr.get(idx_, 10 ** 9) + 1) +
-                             1.0 / (60 + lr.get(idx_, 10 ** 9) + 1))
-            cand = sorted(cand, key=lambda i: acc[i], reverse=True)[:k]
-        else:
-            cand = cand[:k]
+                acc[idx_] = acc.get(idx_, 0.0) +                     (1.0 / (60 + dr.get(idx_, 10 ** 9) + 1) +
+                     1.0 / (60 + lr.get(idx_, 10 ** 9) + 1))
+        cand = sorted(cand, key=lambda i: acc.get(i, 0.0), reverse=True)[:k]
 
     hits: list[store.Hit] = []
     for idx_ in cand:
@@ -181,6 +202,7 @@ def search_all(question: str, k: int = 5, dense: bool = True, lexical: bool = Tr
             char_start=int(m.get("char_start", 0)), char_end=int(m.get("char_end", 0)),
             heading_path=m.get("heading_path", ""), source=m.get("source", "")))
     return hits
+
 
 
 if __name__ == "__main__":

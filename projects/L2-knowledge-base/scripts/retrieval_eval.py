@@ -21,6 +21,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from index import retriever  # noqa: E402
+from query import rewrite  # noqa: E402
 
 
 def main() -> int:
@@ -32,7 +33,11 @@ def main() -> int:
     for item in answerable:
         q = item["q"]
         gold = item["gold"]
-        hits = retriever.search_all(q, k=5)
+        # Day 25：查询改写（读缓存，离线、可复现；缓存缺该题 = 降级原查询不调网）
+        rws = rewrite.rewrite(q, cache_only=True)
+        alt = rws[1:] if len(rws) > 1 else None
+        lex_floor = int(__import__("os").environ.get("L2_LEX_FLOOR", "0"))
+        hits = retriever.search_all(q, k=5, alt_queries=alt, lex_floor=lex_floor)
         docs = [h.doc_id for h in hits]
 
         # Recall@5：gold 文档是否在 top-5
@@ -63,9 +68,9 @@ def main() -> int:
                "context_relevance": round(context, 4),
                "rows": rows, "elapsed_s": round(dt, 1),
                "gold_status": data.get("gold_status", "")},
-              open("logs/retrieval_eval_w3.json", "w", encoding="utf-8"),
+              open("logs/retrieval_eval_w4.json", "w", encoding="utf-8"),
               ensure_ascii=False, indent=2)
-    print("已写 logs/retrieval_eval_w3.json")
+    print("已写 logs/retrieval_eval_w4.json")
     return 0
 
 
